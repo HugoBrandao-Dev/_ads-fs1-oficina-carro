@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 880" width="960" height="880" role="img" font-family="sans-serif">
+<title>Malha de rastreabilidade: requisito até teste, com exemplo UC-10</title>
+<desc>Oito elos em coluna: requisito, história, caso de uso, classe e OCL, sequência, tela, tabela e teste. À direita de cada elo, o exemplo concreto do UC-10 (chamar senha) com o artefato correspondente.</desc>
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker></defs>
+<rect x="0" y="0" width="960" height="880" fill="#ffffff"/>
+<text x="40" y="36" font-size="18" font-weight="bold" fill="#111827">Malha de rastreabilidade: do requisito ao teste</text>
+<text x="40" y="60" font-size="13" fill="#4b5563">Cadeia de cada RF. Exemplo: RF-039, a partir do UC-10.</text>
+<text x="40" y="82" font-size="12" font-weight="bold" fill="#6b7280">ELO DA CADEIA</text>
+<text x="380" y="82" font-size="12" font-weight="bold" fill="#6b7280">EXEMPLO CONCRETO (UC-10)</text>
+<rect x="40" y="96" width="300" height="66" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1"/>
+<text x="54" y="115" font-size="12" fill="#6b7280">1. REQUISITO</text>
+<text x="54" y="138" font-size="15" font-weight="bold" fill="#1d4ed8">RF-039 Chamar senha</text>
+<line x1="190.0" y1="162" x2="190.0" y2="192" stroke="#6b7280" stroke-width="1.5" marker-end="url(#seta)"/>
+<line x1="340" y1="129.0" x2="380" y2="129.0" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="396" y="120" font-size="13" fill="#1f2937">Só senha AGUARDANDO; operador sem outro atendimento em curso;</text>
+<text x="396" y="138" font-size="13" fill="#1f2937">mesa livre. Violação responde 409 (requisitos-funcionais.md).</text>
+<rect x="40" y="192" width="300" height="66" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1"/>
+<text x="54" y="211" font-size="12" fill="#6b7280">2. HISTÓRIA</text>
+<text x="54" y="234" font-size="15" font-weight="bold" fill="#1d4ed8">US-024 Chamar próxima senha</text>
+<line x1="190.0" y1="258" x2="190.0" y2="288" stroke="#6b7280" stroke-width="1.5" marker-end="url(#seta)"/>
+<line x1="340" y1="225.0" x2="380" y2="225.0" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="396" y="216" font-size="13" fill="#1f2937">Cenários Gherkin em historias-de-usuario.md. Também cobre</text>
+<text x="396" y="234" font-size="13" fill="#1f2937">US-025 (pular cidadão em atendimento) e US-026 (rechamar).</text>
+<rect x="40" y="288" width="300" height="66" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1"/>
+<text x="54" y="307" font-size="12" fill="#6b7280">3. CASO DE USO</text>
+<text x="54" y="330" font-size="15" font-weight="bold" fill="#1d4ed8">UC-10</text>
+<text x="54" y="346" font-size="12" fill="#374151">Chamar, rechamar e assumir senha</text>
+<line x1="190.0" y1="354" x2="190.0" y2="384" stroke="#6b7280" stroke-width="1.5" marker-end="url(#seta)"/>
+<line x1="340" y1="321.0" x2="380" y2="321.0" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="396" y="312" font-size="13" fill="#1f2937">Catálogo em casos-de-uso/README.md; diagrama</text>
+<text x="396" y="330" font-size="13" fill="#1f2937">casos-de-uso.svg, ator ACT-02 Operador.</text>
+<rect x="40" y="384" width="300" height="66" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1"/>
+<text x="54" y="403" font-size="12" fill="#6b7280">4. CLASSE E OCL</text>
+<text x="54" y="426" font-size="15" font-weight="bold" fill="#1d4ed8">Senha e Mesa</text>
+<line x1="190.0" y1="450" x2="190.0" y2="480" stroke="#6b7280" stroke-width="1.5" marker-end="url(#seta)"/>
+<line x1="340" y1="417.0" x2="380" y2="417.0" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="396" y="408" font-size="13" fill="#1f2937">OP-02 Senha::chamar; INV-07 um atendimento por operador;</text>
+<text x="396" y="426" font-size="13" fill="#1f2937">INV-08 mesa exclusiva por fila (ocl/README.md).</text>
+<rect x="40" y="480" width="300" height="66" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1"/>
+<text x="54" y="499" font-size="12" fill="#6b7280">5. SEQUÊNCIA</text>
+<text x="54" y="522" font-size="15" font-weight="bold" fill="#1d4ed8">seq-chamar-senha.svg</text>
+<line x1="190.0" y1="546" x2="190.0" y2="576" stroke="#6b7280" stroke-width="1.5" marker-end="url(#seta)"/>
+<line x1="340" y1="513.0" x2="380" y2="513.0" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="396" y="504" font-size="13" fill="#1f2937">POST /senhas/:id/chamar até SenhaService.chamar. Estado da</text>
+<text x="396" y="522" font-size="13" fill="#1f2937">senha: estado-senha.svg (AGUARDANDO → EM_ATENDIMENTO).</text>
+<rect x="40" y="576" width="300" height="66" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1"/>
+<text x="54" y="595" font-size="12" fill="#6b7280">6. TELA</text>
+<text x="54" y="618" font-size="15" font-weight="bold" fill="#1d4ed8">T-OPE-01 Painel de atendimento</text>
+<line x1="190.0" y1="642" x2="190.0" y2="672" stroke="#6b7280" stroke-width="1.5" marker-end="url(#seta)"/>
+<line x1="340" y1="609.0" x2="380" y2="609.0" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="396" y="600" font-size="13" fill="#1f2937">Exceções: T-OPE-05 (fila vazia), T-OPE-06 (senha já em</text>
+<text x="396" y="618" font-size="13" fill="#1f2937">atendimento), T-OPE-07 (sem permissão). Pasta operador/.</text>
+<rect x="40" y="672" width="300" height="66" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1"/>
+<text x="54" y="691" font-size="12" fill="#6b7280">7. TABELA</text>
+<text x="54" y="714" font-size="15" font-weight="bold" fill="#1d4ed8">senhas e mesas</text>
+<line x1="190.0" y1="738" x2="190.0" y2="768" stroke="#6b7280" stroke-width="1.5" marker-end="url(#seta)"/>
+<line x1="340" y1="705.0" x2="380" y2="705.0" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="396" y="696" font-size="13" fill="#1f2937">senhas: status, operadorId, mesa, mesaNome.</text>
+<text x="396" y="714" font-size="13" fill="#1f2937">mesas: numero, nome, ativa (prisma/schema.prisma).</text>
+<rect x="40" y="768" width="300" height="66" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1"/>
+<text x="54" y="787" font-size="12" fill="#6b7280">8. TESTE</text>
+<text x="54" y="810" font-size="15" font-weight="bold" fill="#1d4ed8">SenhaService.test.js</text>
+<line x1="340" y1="801.0" x2="380" y2="801.0" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="396" y="792" font-size="13" fill="#1f2937">src/tests/integracao/SenhaService.test.js (describe 'chamar') e</text>
+<text x="396" y="810" font-size="13" fill="#1f2937">SenhaServiceEventos.test.js (evento senha:chamada).</text>
+</svg>

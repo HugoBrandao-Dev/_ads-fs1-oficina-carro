@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_AsIs" targetNamespace="urn:filacidada:processo-as-is" exporter="manual" exporterVersion="1.0">
+  <bpmn:collaboration id="Collab_AsIs">
+    <bpmn:participant id="Part_Cidadao" name="Cidadão" processRef="Proc_Cidadao" />
+    <bpmn:participant id="Part_Orgao" name="Órgão público" processRef="Proc_Orgao" />
+    <bpmn:messageFlow id="MF_1" name="Nome e motivo" sourceRef="Task_Informar" targetRef="Ev_Pedido" />
+    <bpmn:messageFlow id="MF_2" name="Senha em papel" sourceRef="Task_Entregar" targetRef="Task_Receber" />
+    <bpmn:messageFlow id="MF_3" name="Chamada em voz alta" sourceRef="Task_Chamar" targetRef="Ev_Chamada" />
+    <bpmn:messageFlow id="MF_4" name="Comparecimento no guichê" sourceRef="Task_Dirigir" targetRef="Task_Atender" />
+  </bpmn:collaboration>
+
+  <bpmn:process id="Proc_Cidadao" name="Cidadão" isExecutable="false">
+    <bpmn:startEvent id="Ev_Inicio_Cidadao" name="Chegar ao órgão">
+      <bpmn:outgoing>Flow_C1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:manualTask id="Task_Informar" name="Informar nome e motivo do atendimento">
+      <bpmn:incoming>Flow_C1</bpmn:incoming>
+      <bpmn:outgoing>Flow_C2</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Task_Receber" name="Receber senha em papel">
+      <bpmn:incoming>Flow_C2</bpmn:incoming>
+      <bpmn:outgoing>Flow_C3</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Task_Aguardar" name="Aguardar chamada na sala de espera">
+      <bpmn:incoming>Flow_C3</bpmn:incoming>
+      <bpmn:outgoing>Flow_C4</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:intermediateCatchEvent id="Ev_Chamada" name="Senha chamada em voz alta">
+      <bpmn:incoming>Flow_C4</bpmn:incoming>
+      <bpmn:outgoing>Flow_C5</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MED_Chamada" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:manualTask id="Task_Dirigir" name="Dirigir-se ao guichê">
+      <bpmn:incoming>Flow_C5</bpmn:incoming>
+      <bpmn:outgoing>Flow_C6</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="Ev_Fim_Cidadao" name="Sair do órgão">
+      <bpmn:incoming>Flow_C6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_C1" sourceRef="Ev_Inicio_Cidadao" targetRef="Task_Informar" />
+    <bpmn:sequenceFlow id="Flow_C2" sourceRef="Task_Informar" targetRef="Task_Receber" />
+    <bpmn:sequenceFlow id="Flow_C3" sourceRef="Task_Receber" targetRef="Task_Aguardar" />
+    <bpmn:sequenceFlow id="Flow_C4" sourceRef="Task_Aguardar" targetRef="Ev_Chamada" />
+    <bpmn:sequenceFlow id="Flow_C5" sourceRef="Ev_Chamada" targetRef="Task_Dirigir" />
+    <bpmn:sequenceFlow id="Flow_C6" sourceRef="Task_Dirigir" targetRef="Ev_Fim_Cidadao" />
+  </bpmn:process>
+
+  <bpmn:process id="Proc_Orgao" name="Órgão público" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_Orgao">
+      <bpmn:lane id="Lane_Recepcao" name="Recepção">
+        <bpmn:flowNodeRef>Ev_Pedido</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>GW_Prioridade</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_EmitirPrioritaria</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_EmitirNormal</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Entregar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Ev_Entregue</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Atendente" name="Atendente">
+        <bpmn:flowNodeRef>Ev_Guiche</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Chamar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>GW_Compareceu</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Atender</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>GW_Resolvido</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Registrar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Ev_Registrado</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_Encaminhar</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_RegistrarAusencia</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Ev_Descartada</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Ev_Pedido" name="Pedido de atendimento">
+      <bpmn:outgoing>Flow_O1</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MED_Pedido" />
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="GW_Prioridade" name="Prioritário?">
+      <bpmn:incoming>Flow_O1</bpmn:incoming>
+      <bpmn:outgoing>Flow_O2</bpmn:outgoing>
+      <bpmn:outgoing>Flow_O3</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:manualTask id="Task_EmitirPrioritaria" name="Emitir senha prioritária em papel">
+      <bpmn:incoming>Flow_O2</bpmn:incoming>
+      <bpmn:outgoing>Flow_O4</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Task_EmitirNormal" name="Emitir senha normal em papel">
+      <bpmn:incoming>Flow_O3</bpmn:incoming>
+      <bpmn:outgoing>Flow_O5</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Task_Entregar" name="Entregar senha ao cidadão">
+      <bpmn:incoming>Flow_O4</bpmn:incoming>
+      <bpmn:incoming>Flow_O5</bpmn:incoming>
+      <bpmn:outgoing>Flow_O6</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="Ev_Entregue" name="Senha entregue">
+      <bpmn:incoming>Flow_O6</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:startEvent id="Ev_Guiche" name="Guichê livre">
+      <bpmn:outgoing>Flow_O7</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:manualTask id="Task_Chamar" name="Chamar senha em voz alta">
+      <bpmn:incoming>Flow_O7</bpmn:incoming>
+      <bpmn:outgoing>Flow_O8</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:exclusiveGateway id="GW_Compareceu" name="Cidadão compareceu?">
+      <bpmn:incoming>Flow_O8</bpmn:incoming>
+      <bpmn:outgoing>Flow_O9</bpmn:outgoing>
+      <bpmn:outgoing>Flow_O10</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:manualTask id="Task_Atender" name="Conferir documentos e atender demanda">
+      <bpmn:incoming>Flow_O9</bpmn:incoming>
+      <bpmn:outgoing>Flow_O11</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:exclusiveGateway id="GW_Resolvido" name="Demanda resolvida?">
+      <bpmn:incoming>Flow_O11</bpmn:incoming>
+      <bpmn:outgoing>Flow_O12</bpmn:outgoing>
+      <bpmn:outgoing>Flow_O13</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:manualTask id="Task_Registrar" name="Registrar atendimento no livro">
+      <bpmn:incoming>Flow_O12</bpmn:incoming>
+      <bpmn:incoming>Flow_O14</bpmn:incoming>
+      <bpmn:outgoing>Flow_O15</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="Ev_Registrado" name="Atendimento registrado">
+      <bpmn:incoming>Flow_O15</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:manualTask id="Task_Encaminhar" name="Encaminhar cidadão a outro setor">
+      <bpmn:incoming>Flow_O13</bpmn:incoming>
+      <bpmn:outgoing>Flow_O14</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Task_RegistrarAusencia" name="Registrar ausência no livro">
+      <bpmn:incoming>Flow_O10</bpmn:incoming>
+      <bpmn:outgoing>Flow_O16</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="Ev_Descartada" name="Senha encerrada">
+      <bpmn:incoming>Flow_O16</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_O1" sourceRef="Ev_Pedido" targetRef="GW_Prioridade" />
+    <bpmn:sequenceFlow id="Flow_O2" name="Sim" sourceRef="GW_Prioridade" targetRef="Task_EmitirPrioritaria" />
+    <bpmn:sequenceFlow id="Flow_O3" name="Não" sourceRef="GW_Prioridade" targetRef="Task_EmitirNormal" />
+    <bpmn:sequenceFlow id="Flow_O4" sourceRef="Task_EmitirPrioritaria" targetRef="Task_Entregar" />
+    <bpmn:sequenceFlow id="Flow_O5" sourceRef="Task_EmitirNormal" targetRef="Task_Entregar" />
+    <bpmn:sequenceFlow id="Flow_O6" sourceRef="Task_Entregar" targetRef="Ev_Entregue" />
+    <bpmn:sequenceFlow id="Flow_O7" sourceRef="Ev_Guiche" targetRef="Task_Chamar" />
+    <bpmn:sequenceFlow id="Flow_O8" sourceRef="Task_Chamar" targetRef="GW_Compareceu" />
+    <bpmn:sequenceFlow id="Flow_O9" name="Sim" sourceRef="GW_Compareceu" targetRef="Task_Atender" />
+    <bpmn:sequenceFlow id="Flow_O10" name="Não" sourceRef="GW_Compareceu" targetRef="Task_RegistrarAusencia" />
+    <bpmn:sequenceFlow id="Flow_O11" sourceRef="Task_Atender" targetRef="GW_Resolvido" />
+    <bpmn:sequenceFlow id="Flow_O12" name="Sim" sourceRef="GW_Resolvido" targetRef="Task_Registrar" />
+    <bpmn:sequenceFlow id="Flow_O13" name="Não" sourceRef="GW_Resolvido" targetRef="Task_Encaminhar" />
+    <bpmn:sequenceFlow id="Flow_O14" sourceRef="Task_Encaminhar" targetRef="Task_Registrar" />
+    <bpmn:sequenceFlow id="Flow_O15" sourceRef="Task_Registrar" targetRef="Ev_Registrado" />
+    <bpmn:sequenceFlow id="Flow_O16" sourceRef="Task_RegistrarAusencia" targetRef="Ev_Descartada" />
+  </bpmn:process>
+
+  <bpmndi:BPMNDiagram id="Diagram_AsIs">
+    <bpmndi:BPMNPlane id="Plane_AsIs" bpmnElement="Collab_AsIs">
+      <bpmndi:BPMNShape id="Shape_Part_Cidadao" bpmnElement="Part_Cidadao" isHorizontal="true">
+        <dc:Bounds x="40" y="40" width="1520" height="180" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Part_Orgao" bpmnElement="Part_Orgao" isHorizontal="true">
+        <dc:Bounds x="40" y="240" width="1520" height="440" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_Recepcao" bpmnElement="Lane_Recepcao" isHorizontal="true">
+        <dc:Bounds x="80" y="240" width="1480" height="190" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_Atendente" bpmnElement="Lane_Atendente" isHorizontal="true">
+        <dc:Bounds x="80" y="430" width="1480" height="250" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Shape_Ev_Inicio_Cidadao" bpmnElement="Ev_Inicio_Cidadao">
+        <dc:Bounds x="182" y="112" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_Informar" bpmnElement="Task_Informar">
+        <dc:Bounds x="260" y="98" width="130" height="64" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_Receber" bpmnElement="Task_Receber">
+        <dc:Bounds x="430" y="98" width="130" height="64" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_Aguardar" bpmnElement="Task_Aguardar">
+        <dc:Bounds x="600" y="98" width="130" height="64" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ev_Chamada" bpmnElement="Ev_Chamada">
+        <dc:Bounds x="772" y="112" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_Dirigir" bpmnElement="Task_Dirigir">
+        <dc:Bounds x="840" y="98" width="130" height="64" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ev_Fim_Cidadao" bpmnElement="Ev_Fim_Cidadao">
+        <dc:Bounds x="1012" y="112" width="36" height="36" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Shape_Ev_Pedido" bpmnElement="Ev_Pedido">
+        <dc:Bounds x="307" y="312" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_GW_Prioridade" bpmnElement="GW_Prioridade" isMarkerVisible="true">
+        <dc:Bounds x="395" y="305" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_EmitirPrioritaria" bpmnElement="Task_EmitirPrioritaria">
+        <dc:Bounds x="475" y="264" width="140" height="52" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_EmitirNormal" bpmnElement="Task_EmitirNormal">
+        <dc:Bounds x="475" y="344" width="140" height="52" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_Entregar" bpmnElement="Task_Entregar">
+        <dc:Bounds x="650" y="302" width="130" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ev_Entregue" bpmnElement="Ev_Entregue">
+        <dc:Bounds x="822" y="312" width="36" height="36" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Shape_Ev_Guiche" bpmnElement="Ev_Guiche">
+        <dc:Bounds x="682" y="502" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_Chamar" bpmnElement="Task_Chamar">
+        <dc:Bounds x="835" y="492" width="130" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_GW_Compareceu" bpmnElement="GW_Compareceu" isMarkerVisible="true">
+        <dc:Bounds x="985" y="495" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_Atender" bpmnElement="Task_Atender">
+        <dc:Bounds x="1075" y="492" width="130" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_GW_Resolvido" bpmnElement="GW_Resolvido" isMarkerVisible="true">
+        <dc:Bounds x="1245" y="495" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_Registrar" bpmnElement="Task_Registrar">
+        <dc:Bounds x="1335" y="492" width="130" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ev_Registrado" bpmnElement="Ev_Registrado">
+        <dc:Bounds x="1502" y="502" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_Encaminhar" bpmnElement="Task_Encaminhar">
+        <dc:Bounds x="1205" y="602" width="130" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Task_RegistrarAusencia" bpmnElement="Task_RegistrarAusencia">
+        <dc:Bounds x="945" y="602" width="130" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Ev_Descartada" bpmnElement="Ev_Descartada">
+        <dc:Bounds x="1152" y="612" width="36" height="36" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNEdge id="Edge_C1" bpmnElement="Flow_C1"><di:waypoint x="218" y="130" /><di:waypoint x="260" y="130" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_C2" bpmnElement="Flow_C2"><di:waypoint x="390" y="130" /><di:waypoint x="430" y="130" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_C3" bpmnElement="Flow_C3"><di:waypoint x="560" y="130" /><di:waypoint x="600" y="130" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_C4" bpmnElement="Flow_C4"><di:waypoint x="730" y="130" /><di:waypoint x="772" y="130" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_C5" bpmnElement="Flow_C5"><di:waypoint x="808" y="130" /><di:waypoint x="840" y="130" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_C6" bpmnElement="Flow_C6"><di:waypoint x="970" y="130" /><di:waypoint x="1012" y="130" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O1" bpmnElement="Flow_O1"><di:waypoint x="343" y="330" /><di:waypoint x="395" y="330" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O2" bpmnElement="Flow_O2"><di:waypoint x="420" y="305" /><di:waypoint x="420" y="290" /><di:waypoint x="475" y="290" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O3" bpmnElement="Flow_O3"><di:waypoint x="420" y="355" /><di:waypoint x="420" y="370" /><di:waypoint x="475" y="370" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O4" bpmnElement="Flow_O4"><di:waypoint x="615" y="290" /><di:waypoint x="630" y="290" /><di:waypoint x="630" y="330" /><di:waypoint x="650" y="330" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O5" bpmnElement="Flow_O5"><di:waypoint x="615" y="370" /><di:waypoint x="630" y="370" /><di:waypoint x="630" y="330" /><di:waypoint x="650" y="330" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O6" bpmnElement="Flow_O6"><di:waypoint x="780" y="330" /><di:waypoint x="822" y="330" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O7" bpmnElement="Flow_O7"><di:waypoint x="718" y="520" /><di:waypoint x="835" y="520" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O8" bpmnElement="Flow_O8"><di:waypoint x="965" y="520" /><di:waypoint x="985" y="520" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O9" bpmnElement="Flow_O9"><di:waypoint x="1035" y="520" /><di:waypoint x="1075" y="520" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O10" bpmnElement="Flow_O10"><di:waypoint x="1010" y="545" /><di:waypoint x="1010" y="602" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O11" bpmnElement="Flow_O11"><di:waypoint x="1205" y="520" /><di:waypoint x="1245" y="520" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O12" bpmnElement="Flow_O12"><di:waypoint x="1295" y="520" /><di:waypoint x="1335" y="520" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O13" bpmnElement="Flow_O13"><di:waypoint x="1270" y="545" /><di:waypoint x="1270" y="602" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O14" bpmnElement="Flow_O14"><di:waypoint x="1335" y="630" /><di:waypoint x="1400" y="630" /><di:waypoint x="1400" y="548" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O15" bpmnElement="Flow_O15"><di:waypoint x="1465" y="520" /><di:waypoint x="1502" y="520" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_O16" bpmnElement="Flow_O16"><di:waypoint x="1075" y="630" /><di:waypoint x="1152" y="630" /></bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Edge_MF_1" bpmnElement="MF_1"><di:waypoint x="325" y="162" /><di:waypoint x="325" y="312" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_MF_2" bpmnElement="MF_2"><di:waypoint x="715" y="302" /><di:waypoint x="715" y="200" /><di:waypoint x="495" y="200" /><di:waypoint x="495" y="162" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_MF_3" bpmnElement="MF_3"><di:waypoint x="900" y="492" /><di:waypoint x="900" y="200" /><di:waypoint x="790" y="200" /><di:waypoint x="790" y="148" /></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_MF_4" bpmnElement="MF_4"><di:waypoint x="940" y="162" /><di:waypoint x="940" y="212" /><di:waypoint x="1140" y="212" /><di:waypoint x="1140" y="492" /></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

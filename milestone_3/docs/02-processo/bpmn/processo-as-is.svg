@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" width="1600" height="720" font-family="sans-serif" font-size="12" fill="#222">
+  <title>Processo AS-IS do atendimento presencial</title>
+  <desc>Diagrama BPMN 2.0 com duas pools, Cidadão e Órgão público. A pool do órgão tem as raias Recepção e Atendente. Mostra a emissão de senha em papel, a espera, a chamada em voz alta, o atendimento no guichê, os desvios por ausência e por encaminhamento, e as mensagens trocadas entre as pools.</desc>
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1600" height="720" fill="#fff"/>
+  <text x="40" y="26" font-size="16" font-weight="bold">Processo AS-IS: atendimento presencial (sem sistema)</text>
+
+  <!-- Pools -->
+  <rect x="40" y="40" width="1520" height="180" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <rect x="40" y="40" width="40" height="180" fill="#e6e6e6" stroke="#333" stroke-width="1.5"/>
+  <text transform="translate(60,130) rotate(-90)" text-anchor="middle" font-size="13" font-weight="bold">Cidadão</text>
+
+  <rect x="40" y="240" width="1520" height="440" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <rect x="40" y="240" width="40" height="440" fill="#e6e6e6" stroke="#333" stroke-width="1.5"/>
+  <text transform="translate(60,460) rotate(-90)" text-anchor="middle" font-size="13" font-weight="bold">Órgão público</text>
+
+  <!-- Raias do órgão -->
+  <rect x="80" y="240" width="70" height="190" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+  <rect x="150" y="240" width="1410" height="190" fill="#fbfbfb" stroke="#333" stroke-width="1"/>
+  <text x="115" y="335" text-anchor="middle" font-size="12" font-weight="bold">Recepção</text>
+  <rect x="80" y="430" width="70" height="250" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+  <rect x="150" y="430" width="1410" height="250" fill="#fff" stroke="#333" stroke-width="1"/>
+  <text x="115" y="555" text-anchor="middle" font-size="12" font-weight="bold">Atendente</text>
+
+  <!-- Fluxos de sequencia (dentro das pools) -->
+  <g fill="none" stroke="#333" stroke-width="1.2" marker-end="url(#seta)">
+    <path d="M218,130 L260,130"/>
+    <path d="M390,130 L430,130"/>
+    <path d="M560,130 L600,130"/>
+    <path d="M730,130 L772,130"/>
+    <path d="M808,130 L840,130"/>
+    <path d="M970,130 L1012,130"/>
+    <path d="M343,330 L395,330"/>
+    <path d="M420,305 L420,290 L475,290"/>
+    <path d="M420,355 L420,370 L475,370"/>
+    <path d="M615,290 L630,290 L630,330 L650,330"/>
+    <path d="M615,370 L630,370 L630,330 L650,330"/>
+    <path d="M780,330 L822,330"/>
+    <path d="M718,520 L835,520"/>
+    <path d="M965,520 L985,520"/>
+    <path d="M1035,520 L1075,520"/>
+    <path d="M1010,545 L1010,602"/>
+    <path d="M1205,520 L1245,520"/>
+    <path d="M1295,520 L1335,520"/>
+    <path d="M1270,545 L1270,602"/>
+    <path d="M1335,630 L1400,630 L1400,548"/>
+    <path d="M1465,520 L1502,520"/>
+    <path d="M1075,630 L1152,630"/>
+  </g>
+
+  <!-- Fluxos de mensagem (entre pools) -->
+  <g fill="none" stroke="#333" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#seta)">
+    <path d="M325,162 L325,312"/>
+    <path d="M715,302 L715,200 L495,200 L495,162"/>
+    <path d="M900,492 L900,200 L790,200 L790,148"/>
+    <path d="M940,162 L940,212 L1140,212 L1140,492"/>
+  </g>
+  <g fill="#fff" stroke="#333" stroke-width="1.2">
+    <circle cx="325" cy="162" r="4"/>
+    <circle cx="715" cy="302" r="4"/>
+    <circle cx="900" cy="492" r="4"/>
+    <circle cx="940" cy="162" r="4"/>
+  </g>
+
+  <!-- Eventos -->
+  <g fill="#fff" stroke="#333" stroke-width="1.5">
+    <circle cx="200" cy="130" r="18"/>
+    <circle cx="325" cy="330" r="18"/>
+    <circle cx="840" cy="330" r="18" stroke-width="4"/>
+    <circle cx="700" cy="520" r="18"/>
+    <circle cx="1520" cy="520" r="18" stroke-width="4"/>
+    <circle cx="1170" cy="630" r="18" stroke-width="4"/>
+    <circle cx="1030" cy="130" r="18" stroke-width="4"/>
+    <circle cx="790" cy="130" r="18"/>
+    <circle cx="790" cy="130" r="14"/>
+  </g>
+  <!-- Envelopes (eventos de mensagem) -->
+  <g fill="none" stroke="#333" stroke-width="1">
+    <rect x="318" y="325" width="14" height="10"/>
+    <path d="M318,325 L325,331 L332,325"/>
+    <rect x="783" y="125" width="14" height="10"/>
+    <path d="M783,125 L790,131 L797,125"/>
+  </g>
+  <!-- Marcador de ponto de inicio sem mensagem: nenhum -->
+
+  <!-- Gateways exclusivos -->
+  <g fill="#fff" stroke="#333" stroke-width="1.5">
+    <polygon points="420,305 445,330 420,355 395,330"/>
+    <polygon points="1010,495 1035,520 1010,545 985,520"/>
+    <polygon points="1270,495 1295,520 1270,545 1245,520"/>
+  </g>
+  <g fill="none" stroke="#333" stroke-width="1.5">
+    <path d="M412,322 L428,338 M428,322 L412,338"/>
+    <path d="M1002,512 L1018,528 M1018,512 L1002,528"/>
+    <path d="M1262,512 L1278,528 M1278,512 L1262,528"/>
+  </g>
+
+  <!-- Atividades manuais -->
+  <g fill="#f4f4f4" stroke="#555" stroke-width="1.2">
+    <rect x="260" y="98" width="130" height="64" rx="6"/>
+    <rect x="430" y="98" width="130" height="64" rx="6"/>
+    <rect x="600" y="98" width="130" height="64" rx="6"/>
+    <rect x="840" y="98" width="130" height="64" rx="6"/>
+    <rect x="475" y="264" width="140" height="52" rx="6"/>
+    <rect x="475" y="344" width="140" height="52" rx="6"/>
+    <rect x="650" y="302" width="130" height="56" rx="6"/>
+    <rect x="835" y="492" width="130" height="56" rx="6"/>
+    <rect x="1075" y="492" width="130" height="56" rx="6"/>
+    <rect x="1335" y="492" width="130" height="56" rx="6"/>
+    <rect x="1205" y="602" width="130" height="56" rx="6"/>
+    <rect x="945" y="602" width="130" height="56" rx="6"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="325" y="119">Informar nome</text>
+    <text x="325" y="134">e motivo do</text>
+    <text x="325" y="149">atendimento</text>
+    <text x="495" y="127">Receber senha</text>
+    <text x="495" y="142">em papel</text>
+    <text x="665" y="127">Aguardar chamada</text>
+    <text x="665" y="142">na sala de espera</text>
+    <text x="905" y="127">Dirigir-se</text>
+    <text x="905" y="142">ao guichê</text>
+    <text x="545" y="287">Emitir senha</text>
+    <text x="545" y="302">prioritária em papel</text>
+    <text x="545" y="367">Emitir senha</text>
+    <text x="545" y="382">normal em papel</text>
+    <text x="715" y="327">Entregar senha</text>
+    <text x="715" y="342">ao cidadão</text>
+    <text x="900" y="517">Chamar senha</text>
+    <text x="900" y="532">em voz alta</text>
+    <text x="1140" y="517">Conferir documentos</text>
+    <text x="1140" y="532">e atender demanda</text>
+    <text x="1400" y="509">Registrar</text>
+    <text x="1400" y="524">atendimento</text>
+    <text x="1400" y="539">no livro</text>
+    <text x="1270" y="627">Encaminhar cidadão</text>
+    <text x="1270" y="642">a outro setor</text>
+    <text x="1010" y="627">Registrar ausência</text>
+    <text x="1010" y="642">no livro</text>
+  </g>
+
+  <!-- Textos de eventos e fluxos -->
+  <g>
+    <text x="200" y="168" text-anchor="middle">Chegar ao</text>
+    <text x="200" y="181" text-anchor="middle">órgão</text>
+    <text x="790" y="104" text-anchor="middle">Chamada</text>
+    <text x="1030" y="168" text-anchor="middle">Sair do órgão</text>
+    <text x="298" y="326" text-anchor="end">Pedido de</text>
+    <text x="298" y="340" text-anchor="end">atendimento</text>
+    <text x="840" y="370" text-anchor="middle">Senha entregue</text>
+    <text x="700" y="566" text-anchor="middle">Guichê livre</text>
+    <text x="1520" y="566" text-anchor="middle">Atendimento</text>
+    <text x="1520" y="580" text-anchor="middle">registrado</text>
+    <text x="1170" y="672" text-anchor="middle">Senha encerrada</text>
+    <text x="420" y="392" text-anchor="middle">Prioritário?</text>
+    <text x="1010" y="482" text-anchor="middle">Cidadão compareceu?</text>
+    <text x="1270" y="482" text-anchor="middle">Demanda resolvida?</text>
+    <text x="428" y="284">Sim</text>
+    <text x="428" y="364">Não</text>
+    <text x="1040" y="512">Sim</text>
+    <text x="1018" y="578">Não</text>
+    <text x="1302" y="512">Sim</text>
+    <text x="1278" y="578">Não</text>
+  </g>
+
+  <!-- Rotulos das mensagens -->
+  <g font-style="italic" fill="#333">
+    <text x="334" y="190">Nome e motivo</text>
+    <text x="560" y="190" text-anchor="middle">Senha em papel</text>
+    <text x="845" y="190" text-anchor="middle">Chamada em voz alta</text>
+    <text x="1150" y="300">Comparecimento no guichê</text>
+  </g>
+
+  <!-- Requisitos de processo verificaveis (ver README) -->
+  <g fill="#1f5fa8" font-weight="bold">
+    <text x="475" y="256">RP-01</text>
+    <text x="835" y="484">RP-02</text>
+    <text x="1335" y="484">RP-03</text>
+  </g>
+
+  <text x="40" y="706" fill="#444">Seta cheia: fluxo de sequência. Seta tracejada: fluxo de mensagem entre pools. Retângulo: atividade manual. Círculo grosso: fim. RP-nn: requisito de processo (ver README).</text>
+</svg>

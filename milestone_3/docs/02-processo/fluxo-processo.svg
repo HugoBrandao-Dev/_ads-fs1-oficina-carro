@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" font-family="sans-serif">
+  <title>Fluxo de trabalho Kanban do FilaCidada</title>
+  <desc>Três colunas do quadro Kanban, cada uma ligada à label de escopo workflow:: do GitLab: To Do, Doing e Done. As setas indicam que a equipe puxa a próxima issue da coluna anterior quando há vaga. Doing tem limite de WIP de 5 itens. O rodapé traz o critério de pronto para fechar uma issue.</desc>
+  <rect x="0" y="0" width="960" height="430" fill="#ffffff"/>
+  <text x="30" y="34" font-size="18" font-weight="bold" fill="#222">Fluxo do quadro Kanban no GitLab</text>
+  <text x="30" y="56" font-size="13" fill="#444">Cada coluna é uma label de escopo workflow:: no board; mudar de coluna é mudar a label.</text>
+
+  <!-- Coluna To Do -->
+  <rect x="30" y="80" width="260" height="230" rx="6" fill="#f5f7fa" stroke="#c9ced6" stroke-width="1"/>
+  <rect x="30" y="80" width="260" height="62" rx="6" fill="#e6eaf0" stroke="#c9ced6" stroke-width="1"/>
+  <text x="50" y="106" font-size="16" font-weight="bold" fill="#222">To Do</text>
+  <text x="50" y="128" font-size="13" font-family="monospace" fill="#444">workflow::To Do</text>
+  <text x="50" y="170" font-size="13" fill="#222">Issues priorizadas na milestone</text>
+  <text x="50" y="192" font-size="13" fill="#222">Com UC ou US vinculado e critério</text>
+  <text x="50" y="214" font-size="13" fill="#222">de aceite escrito</text>
+  <text x="50" y="256" font-size="13" fill="#444">Sem responsável definido</text>
+
+  <!-- Coluna Doing -->
+  <rect x="360" y="80" width="260" height="230" rx="6" fill="#f5f7fa" stroke="#1f5fbf" stroke-width="2"/>
+  <rect x="360" y="80" width="260" height="62" rx="6" fill="#dce7f7" stroke="#1f5fbf" stroke-width="2"/>
+  <text x="380" y="106" font-size="16" font-weight="bold" fill="#222">Doing</text>
+  <text x="380" y="128" font-size="13" font-family="monospace" fill="#444">workflow::Doing</text>
+  <text x="380" y="170" font-size="13" fill="#222">Um responsável por issue</text>
+  <text x="380" y="192" font-size="13" fill="#222">Desenvolvimento, testes e revisão</text>
+  <text x="380" y="214" font-size="13" fill="#222">em merge request</text>
+  <text x="380" y="256" font-size="13" font-weight="bold" fill="#1f5fbf">Limite de WIP: 5 itens</text>
+
+  <!-- Coluna Done -->
+  <rect x="690" y="80" width="240" height="230" rx="6" fill="#f5f7fa" stroke="#c9ced6" stroke-width="1"/>
+  <rect x="690" y="80" width="240" height="62" rx="6" fill="#e6eaf0" stroke="#c9ced6" stroke-width="1"/>
+  <text x="710" y="106" font-size="16" font-weight="bold" fill="#222">Done</text>
+  <text x="710" y="128" font-size="13" font-family="monospace" fill="#444">workflow::Done</text>
+  <text x="710" y="170" font-size="13" fill="#222">Critério de pronto atendido</text>
+  <text x="710" y="192" font-size="13" fill="#222">Issue fechada pela merge request</text>
+  <text x="710" y="214" font-size="13" fill="#222">Documentação do UC atualizada</text>
+
+  <!-- Setas de puxada -->
+  <line x1="292" y1="195" x2="354" y2="195" stroke="#1f5fbf" stroke-width="2"/>
+  <polygon points="354,195 346,190 346,200" fill="#1f5fbf"/>
+  <text x="323" y="182" font-size="13" text-anchor="middle" fill="#1f5fbf">puxar</text>
+  <line x1="622" y1="195" x2="684" y2="195" stroke="#1f5fbf" stroke-width="2"/>
+  <polygon points="684,195 676,190 676,200" fill="#1f5fbf"/>
+  <text x="653" y="182" font-size="13" text-anchor="middle" fill="#1f5fbf">concluir</text>
+
+  <!-- Rodape: politicas -->
+  <rect x="30" y="336" width="900" height="70" rx="6" fill="#ffffff" stroke="#c9ced6" stroke-width="1"/>
+  <text x="50" y="362" font-size="13" font-weight="bold" fill="#222">Critério de pronto</text>
+  <text x="50" y="384" font-size="13" fill="#222">Código revisado em MR, testes passando, documentação do UC atualizada e issue fechada.</text>
+</svg>

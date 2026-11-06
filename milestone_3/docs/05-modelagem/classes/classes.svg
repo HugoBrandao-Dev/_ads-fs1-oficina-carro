@@ -1,0 +1,265 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">Diagrama de classes de domínio (núcleo) do FilaCidadã</title>
+  <desc id="descricao">Classes do núcleo do domínio: Instituicao, TipoEtapa, Usuario, Fila, QrCode, Senha e Mesa, com atributos, operações e multiplicidades nas duas pontas das associações. Composições com losango preenchido. Enumerações (Papel, StatusInstituicao, TipoAtendimento, ModoQrCode, StatusSenha, PrioridadeSenha) à direita. Classes de apoio em classes-apoio.svg.</desc>
+  <style>
+    text { font-family: sans-serif; fill: #1d1d1f; }
+    .nome { font-size: 15px; font-weight: bold; }
+    .est { font-size: 12px; font-style: italic; fill: #444444; }
+    .at { font-size: 13px; }
+    .ml { font-size: 12px; }
+    .rl { font-size: 12px; font-style: italic; fill: #1f4e8c; }
+    .cl { fill: #ffffff; stroke: #4a5b70; stroke-width: 1.2; }
+    .ch { fill: #e6edf6; stroke: #4a5b70; stroke-width: 1.2; }
+    .en { fill: #ffffff; stroke: #7a7a7a; stroke-width: 1.2; }
+    .eh { fill: #ededed; stroke: #7a7a7a; stroke-width: 1.2; }
+    .ln { fill: none; stroke: #4a5b70; stroke-width: 1.3; }
+    .sp { stroke: #4a5b70; stroke-width: 1; }
+    .cp { fill: #4a5b70; stroke: #4a5b70; stroke-width: 1; }
+  </style>
+  <rect x="0" y="0" width="1600" height="1000" fill="#ffffff"/>
+
+  <!-- Classe: TipoEtapa -->
+  <g id="TipoEtapa">
+    <rect class="cl" x="40" y="60" width="300" height="118"/>
+    <rect class="ch" x="40" y="60" width="300" height="34"/>
+    <text class="nome" x="190" y="82" text-anchor="middle">TipoEtapa</text>
+    <line class="sp" x1="40" y1="94" x2="340" y2="94"/>
+    <text class="at" x="50" y="111">-codigo: Texto</text>
+    <text class="at" x="50" y="129">-nome: Texto</text>
+    <text class="at" x="50" y="147">-cor: Texto</text>
+    <text class="at" x="50" y="165">-ativo: Booleano</text>
+  </g>
+
+  <!-- Classe: Instituicao -->
+  <g id="Instituicao">
+    <rect class="cl" x="40" y="240" width="300" height="250"/>
+    <rect class="ch" x="40" y="240" width="300" height="34"/>
+    <text class="nome" x="190" y="262" text-anchor="middle">Instituicao</text>
+    <line class="sp" x1="40" y1="274" x2="340" y2="274"/>
+    <text class="at" x="50" y="291">-nome: Texto</text>
+    <text class="at" x="50" y="309">-status: StatusInstituicao</text>
+    <text class="at" x="50" y="327">-ativa: Booleano</text>
+    <text class="at" x="50" y="345">-aprovadaEm: DataHora?</text>
+    <text class="at" x="50" y="363">-contratoUrl: Texto?</text>
+    <text class="at" x="50" y="381">-motivoRejeicao: Texto?</text>
+    <text class="at" x="50" y="399">-configuracoes: JSON?</text>
+    <line class="sp" x1="40" y1="406" x2="340" y2="406"/>
+    <text class="at" x="50" y="423">+aprovar(observacao)</text>
+    <text class="at" x="50" y="441">+rejeitar(motivo)</text>
+    <text class="at" x="50" y="459">+reconsiderar()</text>
+    <text class="at" x="50" y="477">+anexarContrato(url)</text>
+  </g>
+
+  <!-- Classe: Usuario -->
+  <g id="Usuario">
+    <rect class="cl" x="40" y="530" width="300" height="250"/>
+    <rect class="ch" x="40" y="530" width="300" height="34"/>
+    <text class="nome" x="190" y="552" text-anchor="middle">Usuario</text>
+    <line class="sp" x1="40" y1="564" x2="340" y2="564"/>
+    <text class="at" x="50" y="581">-nome: Texto</text>
+    <text class="at" x="50" y="599">-email: Texto</text>
+    <text class="at" x="50" y="617">-ativo: Booleano</text>
+    <text class="at" x="50" y="635">-fusoHorario: Texto</text>
+    <text class="at" x="50" y="653">-ultimoLoginEm: DataHora?</text>
+    <text class="at" x="50" y="671">-papeis: Papel[0..*]</text>
+    <line class="sp" x1="40" y1="678" x2="340" y2="678"/>
+    <text class="at" x="50" y="695">+ativar()</text>
+    <text class="at" x="50" y="713">+desativar()</text>
+    <text class="at" x="50" y="731">+possuiPapel(papel)</text>
+    <text class="at" x="50" y="749">+alterarCredencial(atual, nova)</text>
+    <text class="at" x="50" y="767">+atualizarPerfil(dados)</text>
+  </g>
+
+  <!-- Classe: QrCode -->
+  <g id="QrCode">
+    <rect class="cl" x="470" y="60" width="300" height="160"/>
+    <rect class="ch" x="470" y="60" width="300" height="34"/>
+    <text class="nome" x="620" y="82" text-anchor="middle">QrCode</text>
+    <line class="sp" x1="470" y1="94" x2="770" y2="94"/>
+    <text class="at" x="480" y="111">-codigo: Texto</text>
+    <text class="at" x="480" y="129">-validoAte: DataHora</text>
+    <text class="at" x="480" y="147">-toleranciaAte: DataHora</text>
+    <text class="at" x="480" y="165">-ativo: Booleano</text>
+    <line class="sp" x1="470" y1="172" x2="770" y2="172"/>
+    <text class="at" x="480" y="189">+estaValido(momento)</text>
+    <text class="at" x="480" y="207">+desativar()</text>
+  </g>
+
+  <!-- Classe: Fila -->
+  <g id="Fila">
+    <rect class="cl" x="470" y="260" width="300" height="340"/>
+    <rect class="ch" x="470" y="260" width="300" height="34"/>
+    <text class="nome" x="620" y="282" text-anchor="middle">Fila</text>
+    <line class="sp" x1="470" y1="294" x2="770" y2="294"/>
+    <text class="at" x="480" y="311">-nome: Texto</text>
+    <text class="at" x="480" y="329">-tipoAtendimento: TipoAtendimento</text>
+    <text class="at" x="480" y="347">-ativa: Booleano</text>
+    <text class="at" x="480" y="365">-prioridadesHabilitadas: Booleano</text>
+    <text class="at" x="480" y="383">-fidelidadeHabilitada: Booleano</text>
+    <text class="at" x="480" y="401">-modoQrCode: ModoQrCode</text>
+    <text class="at" x="480" y="419">-tempoMaximoAtendimento: Inteiro?</text>
+    <text class="at" x="480" y="437">-tempoExibicaoMin: Inteiro?</text>
+    <text class="at" x="480" y="455">-tempoExpiracaoMin: Inteiro?</text>
+    <text class="at" x="480" y="473">-toleranciaMin: Inteiro?</text>
+    <text class="at" x="480" y="491">-tempoAlertaSegundos: Inteiro?</text>
+    <line class="sp" x1="470" y1="498" x2="770" y2="498"/>
+    <text class="at" x="480" y="515">+emitirOnline(dados)</text>
+    <text class="at" x="480" y="533">+emitirPresencial(dados)</text>
+    <text class="at" x="480" y="551">+proximaAguardando()</text>
+    <text class="at" x="480" y="569">+prioridadeEfetiva(prioridade)</text>
+    <text class="at" x="480" y="587">+regenerarQrCode()</text>
+  </g>
+
+  <!-- Classe: Senha -->
+  <g id="Senha">
+    <rect class="cl" x="470" y="640" width="300" height="286"/>
+    <rect class="ch" x="470" y="640" width="300" height="34"/>
+    <text class="nome" x="620" y="662" text-anchor="middle">Senha</text>
+    <line class="sp" x1="470" y1="674" x2="770" y2="674"/>
+    <text class="at" x="480" y="691">-numero: Inteiro?</text>
+    <text class="at" x="480" y="709">-posicao: Inteiro</text>
+    <text class="at" x="480" y="727">-status: StatusSenha</text>
+    <text class="at" x="480" y="745">-prioridade: PrioridadeSenha?</text>
+    <text class="at" x="480" y="763">-prioridadePeso: Inteiro</text>
+    <text class="at" x="480" y="781">-nomeCidadao: Texto?</text>
+    <text class="at" x="480" y="799">-presencial: Booleano</text>
+    <text class="at" x="480" y="817">-tokenPublico: Texto?</text>
+    <line class="sp" x1="470" y1="824" x2="770" y2="824"/>
+    <text class="at" x="480" y="841">+chamar(mesa)</text>
+    <text class="at" x="480" y="859">+rechamar()</text>
+    <text class="at" x="480" y="877">+assumir(operador)</text>
+    <text class="at" x="480" y="895">+finalizar()</text>
+    <text class="at" x="480" y="913">+cancelar()</text>
+  </g>
+
+  <!-- Classe: Mesa -->
+  <g id="Mesa">
+    <rect class="cl" x="880" y="640" width="300" height="142"/>
+    <rect class="ch" x="880" y="640" width="300" height="34"/>
+    <text class="nome" x="1030" y="662" text-anchor="middle">Mesa</text>
+    <line class="sp" x1="880" y1="674" x2="1180" y2="674"/>
+    <text class="at" x="890" y="691">-numero: Texto</text>
+    <text class="at" x="890" y="709">-nome: Texto?</text>
+    <text class="at" x="890" y="727">-ativa: Booleano</text>
+    <line class="sp" x1="880" y1="734" x2="1180" y2="734"/>
+    <text class="at" x="890" y="751">+estaOcupada()</text>
+    <text class="at" x="890" y="769">+desativar()</text>
+  </g>
+
+  <!-- Associacoes -->
+  <!-- TipoEtapa 0..* a 1 Instituicao (composicao: Instituicao e o todo) -->
+  <line class="ln" x1="190" y1="178" x2="190" y2="240"/>
+  <polygon class="cp" points="190,240 184,234 190,228 196,234"/>
+  <text class="ml" x="198" y="194">0..*</text>
+  <text class="ml" x="200" y="230">1</text>
+
+  <!-- Instituicao 1 a 0..* Fila (composicao) -->
+  <line class="ln" x1="340" y1="300" x2="470" y2="300"/>
+  <polygon class="cp" points="340,300 346,294 352,300 346,306"/>
+  <text class="ml" x="356" y="292">1</text>
+  <text class="ml" x="464" y="292" text-anchor="end">0..*</text>
+
+  <!-- QrCode 0..* a 1 Fila (composicao: Fila e o todo) -->
+  <line class="ln" x1="620" y1="220" x2="620" y2="260"/>
+  <polygon class="cp" points="620,260 626,254 620,248 614,254"/>
+  <text class="ml" x="632" y="234">0..*</text>
+  <text class="ml" x="632" y="256">1</text>
+
+  <!-- Fila 1 a 0..* Senha (associacao) -->
+  <line class="ln" x1="620" y1="600" x2="620" y2="640"/>
+  <text class="ml" x="628" y="614">1</text>
+  <text class="ml" x="628" y="636">0..*</text>
+
+  <!-- Fila 1 a 0..* Mesa (composicao: Fila e o todo) -->
+  <polyline class="ln" points="770,400 1030,400 1030,640"/>
+  <polygon class="cp" points="770,400 776,394 782,400 776,406"/>
+  <text class="ml" x="786" y="392">1</text>
+  <text class="ml" x="1036" y="628">0..*</text>
+
+  <!-- Senha 0..* a 0..1 Mesa (associacao) -->
+  <line class="ln" x1="770" y1="711" x2="880" y2="711"/>
+  <text class="ml" x="776" y="703">0..*</text>
+  <text class="ml" x="874" y="703" text-anchor="end">0..1</text>
+
+  <!-- Instituicao 0..1 a 0..* Usuario (vinculo) -->
+  <line class="ln" x1="190" y1="490" x2="190" y2="530"/>
+  <text class="ml" x="198" y="506">0..1</text>
+  <text class="ml" x="198" y="524">0..*</text>
+
+  <!-- Usuario 0..1 a 0..* Senha (solicitante e operador) -->
+  <line class="ln" x1="340" y1="680" x2="470" y2="680"/>
+  <text class="rl" x="405" y="672" text-anchor="middle">solicitante</text>
+  <text class="ml" x="346" y="696">0..1</text>
+  <text class="ml" x="464" y="696" text-anchor="end">0..*</text>
+  <line class="ln" x1="340" y1="722" x2="470" y2="722"/>
+  <text class="rl" x="405" y="714" text-anchor="middle">operador</text>
+  <text class="ml" x="346" y="738">0..1</text>
+  <text class="ml" x="464" y="738" text-anchor="end">0..*</text>
+
+  <!-- Enumeracoes (coluna direita, sem linhas: o tipo aparece no atributo) -->
+  <g id="TipoAtendimento">
+    <rect class="en" x="1280" y="60" width="280" height="110"/>
+    <rect class="eh" x="1280" y="60" width="280" height="44"/>
+    <text class="est" x="1420" y="77" text-anchor="middle">&#171;enumeração&#187;</text>
+    <text class="nome" x="1420" y="96" text-anchor="middle">TipoAtendimento</text>
+    <line class="sp" x1="1280" y1="104" x2="1560" y2="104"/>
+    <text class="at" x="1290" y="121">ONLINE</text>
+    <text class="at" x="1290" y="139">PRESENCIAL</text>
+    <text class="at" x="1290" y="157">HIBRIDO</text>
+  </g>
+  <g id="ModoQrCode">
+    <rect class="en" x="1280" y="200" width="280" height="92"/>
+    <rect class="eh" x="1280" y="200" width="280" height="44"/>
+    <text class="est" x="1420" y="217" text-anchor="middle">&#171;enumeração&#187;</text>
+    <text class="nome" x="1420" y="236" text-anchor="middle">ModoQrCode</text>
+    <line class="sp" x1="1280" y1="244" x2="1560" y2="244"/>
+    <text class="at" x="1290" y="261">ROTATIVO</text>
+    <text class="at" x="1290" y="279">FIXO</text>
+  </g>
+  <g id="StatusInstituicao">
+    <rect class="en" x="1280" y="330" width="280" height="110"/>
+    <rect class="eh" x="1280" y="330" width="280" height="44"/>
+    <text class="est" x="1420" y="347" text-anchor="middle">&#171;enumeração&#187;</text>
+    <text class="nome" x="1420" y="366" text-anchor="middle">StatusInstituicao</text>
+    <line class="sp" x1="1280" y1="374" x2="1560" y2="374"/>
+    <text class="at" x="1290" y="391">PENDENTE</text>
+    <text class="at" x="1290" y="409">APROVADA</text>
+    <text class="at" x="1290" y="427">REJEITADA</text>
+  </g>
+  <g id="Papel">
+    <rect class="en" x="1280" y="470" width="280" height="128"/>
+    <rect class="eh" x="1280" y="470" width="280" height="44"/>
+    <text class="est" x="1420" y="487" text-anchor="middle">&#171;enumeração&#187;</text>
+    <text class="nome" x="1420" y="506" text-anchor="middle">Papel</text>
+    <line class="sp" x1="1280" y1="514" x2="1560" y2="514"/>
+    <text class="at" x="1290" y="531">ADMIN_PLATAFORMA</text>
+    <text class="at" x="1290" y="549">ADMIN_INSTITUICAO</text>
+    <text class="at" x="1290" y="567">OPERADOR</text>
+    <text class="at" x="1290" y="585">USUARIO_FINAL</text>
+  </g>
+  <g id="StatusSenha">
+    <rect class="en" x="1280" y="630" width="280" height="128"/>
+    <rect class="eh" x="1280" y="630" width="280" height="44"/>
+    <text class="est" x="1420" y="647" text-anchor="middle">&#171;enumeração&#187;</text>
+    <text class="nome" x="1420" y="666" text-anchor="middle">StatusSenha</text>
+    <line class="sp" x1="1280" y1="674" x2="1560" y2="674"/>
+    <text class="at" x="1290" y="691">AGUARDANDO</text>
+    <text class="at" x="1290" y="709">EM_ATENDIMENTO</text>
+    <text class="at" x="1290" y="727">CANCELADA</text>
+    <text class="at" x="1290" y="745">FINALIZADA</text>
+  </g>
+  <g id="PrioridadeSenha">
+    <rect class="en" x="1280" y="790" width="280" height="110"/>
+    <rect class="eh" x="1280" y="790" width="280" height="44"/>
+    <text class="est" x="1420" y="807" text-anchor="middle">&#171;enumeração&#187;</text>
+    <text class="nome" x="1420" y="826" text-anchor="middle">PrioridadeSenha</text>
+    <line class="sp" x1="1280" y1="834" x2="1560" y2="834"/>
+    <text class="at" x="1290" y="851">LEGAL (peso 1)</text>
+    <text class="at" x="1290" y="869">FIDELIDADE (peso 2)</text>
+    <text class="at" x="1290" y="887">NORMAL (peso 3)</text>
+  </g>
+
+  <!-- Legenda -->
+  <text class="ml" x="40" y="955">Visibilidade: - privado, + público. Multiplicidade junto a cada classe: quantas instâncias daquela classe se ligam a uma instância da outra.</text>
+  <text class="ml" x="40" y="975">Losango preenchido = composição (a parte não existe sem o todo). Associações sem losango = vínculo independente. Tipos dos atributos são os nomes à direita.</text>
+</svg>

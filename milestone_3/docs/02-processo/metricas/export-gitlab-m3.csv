@@ -1,0 +1,23 @@
+id,titulo,label,criado,iniciado,fechado,responsavel
+25,UC-09 Modelar emissao presencial e fila de espera,modelagem;UC-09,2026-09-14,2026-09-28,2026-10-01,Ana
+26,UC-09 Endpoint de emissao presencial,backend;UC-09,2026-09-21,2026-09-29,2026-10-06,Bruno
+27,UC-09 Tela de emissao presencial no totem,frontend;UC-09,2026-09-21,2026-10-07,2026-10-14,Carla
+28,"UC-10 Modelar estados de chamada, rechamada e assuncao",modelagem;UC-10,2026-09-21,2026-10-01,2026-10-05,Ana
+29,"UC-10 Chamar, rechamar e assumir senha",backend;UC-10,2026-09-28,2026-10-06,2026-10-15,Diego
+30,UC-10 Painel do operador,frontend;UC-10,2026-09-28,2026-10-16,2026-10-23,Carla
+31,UC-11 Finalizar ou cancelar atendimento,backend;UC-11,2026-10-05,2026-10-14,2026-10-20,Bruno
+32,UC-11 Tela de finalizacao de atendimento,frontend;UC-11,2026-10-05,2026-10-23,2026-10-28,Carla
+33,UC-12 Gerar e revogar QR Codes,backend;UC-12,2026-10-05,2026-10-13,2026-10-21,Diego
+34,UC-12 Tela de gestao de QR Codes,frontend;UC-12,2026-10-12,2026-10-26,2026-11-02,Carla
+35,UC-13 Dashboard e estatisticas: consultas agregadas,backend;UC-13,2026-10-12,2026-10-20,2026-10-30,Bruno
+36,UC-13 Tela de dashboard,frontend;UC-13,2026-10-19,2026-11-02,2026-11-06,Carla
+37,UC-14 Registro e consulta de auditoria,backend;UC-14,2026-10-12,2026-10-21,2026-10-28,Diego
+38,UC-14 Tela de auditoria com filtros,frontend;UC-14,2026-10-19,2026-10-29,2026-11-05,Diego
+39,UC-15 Acompanhar minha senha: posicao na fila,backend;UC-15,2026-10-19,2026-10-26,2026-11-02,Bruno
+40,UC-15 Tela de acompanhamento do cidadao,frontend;UC-15,2026-10-19,2026-11-02,2026-11-06,Ana
+41,UC-09 Testes de emissao presencial,teste;UC-09,2026-10-06,2026-10-14,2026-10-20,Ana
+42,UC-10 Testes de concorrencia na chamada de senha,teste;UC-10,2026-10-15,2026-10-22,2026-10-30,Ana
+43,UC-13 Testes de agregacao do dashboard,teste;UC-13,2026-10-30,2026-11-03,2026-11-06,Diego
+44,UC-11 Testes de cancelamento de atendimento,teste;UC-11,2026-10-20,2026-10-28,2026-11-02,Bruno
+45,Documentar API da milestone 3 e GraphQL,docs,2026-10-26,2026-11-02,2026-11-05,Ana
+46,Revisar RNF de seguranca: autenticacao e papeis,teste;seguranca,2026-10-26,2026-10-29,2026-11-04,Bruno

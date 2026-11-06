@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2173 1200" width="2173" height="1200" role="img" aria-labelledby="t d">
+<title id="t">Modelo lógico: autenticação</title>
+<desc id="d">Tabelas de autenticação (BetterAuth) e de papéis, com chaves, tipos, nulidade e índices.</desc>
+<rect x="0" y="0" width="2173" height="1200" fill="#ffffff"/>
+<text x="40" y="48" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2933">Modelo lógico: autenticação</text>
+<text x="40" y="74" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#52606d">Tabelas de autenticação (BetterAuth) e de papéis, com chaves, tipos, nulidade e índices.</text>
+<line x1="686.5" y1="258.0" x2="885.1" y2="298.0" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="387.5" y1="576.0" x2="1116.8" y2="476.0" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="1232.7" y1="576.0" x2="1348.5" y2="476.0" stroke="#3e4c59" stroke-width="1.3"/>
+<rect x="885.0999999999999" y="120" width="695.1" height="356.0" rx="6" fill="#f4f7fb" stroke="#4a6785" stroke-width="1.5"/>
+<path d="M885.0999999999999 126 a6 6 0 0 1 6 -6 h683.1 a6 6 0 0 1 6 6 v44 h-695.1 z" fill="#dde7f3"/>
+<text x="897.0999999999999" y="142" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">users</text>
+<text x="897.0999999999999" y="159" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo User</text>
+<text x="897.0999999999999" y="192" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="929.0999999999999" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="1054.3999999999999" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1171.6" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="897.0999999999999" y="212" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="929.0999999999999" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">name</text>
+<text x="1054.3999999999999" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1171.6" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="897.0999999999999" y="232" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">UK</text>
+<text x="929.0999999999999" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">email</text>
+<text x="1054.3999999999999" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1171.6" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="897.0999999999999" y="252" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="929.0999999999999" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">emailVerified</text>
+<text x="1054.3999999999999" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="1171.6" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="897.0999999999999" y="272" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="929.0999999999999" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">image</text>
+<text x="1054.3999999999999" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1171.6" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="897.0999999999999" y="292" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="929.0999999999999" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">createdAt</text>
+<text x="1054.3999999999999" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1171.6" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="897.0999999999999" y="312" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="929.0999999999999" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">updatedAt</text>
+<text x="1054.3999999999999" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1171.6" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="897.0999999999999" y="332" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="929.0999999999999" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">pais</text>
+<text x="1054.3999999999999" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1171.6" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="897.0999999999999" y="352" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="929.0999999999999" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ativo</text>
+<text x="1054.3999999999999" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="1171.6" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="897.0999999999999" y="372" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="929.0999999999999" y="372" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">fusoHorario</text>
+<text x="1054.3999999999999" y="372" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(64)</text>
+<text x="1171.6" y="372" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="897.0999999999999" y="392" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="929.0999999999999" y="392" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ultimoLoginEm</text>
+<text x="1054.3999999999999" y="392" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1171.6" y="392" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="897.0999999999999" y="412" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="929.0999999999999" y="412" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">instituicaoId</text>
+<text x="1054.3999999999999" y="412" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1171.6" y="412" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="1256.3999999999999" y="412" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; instituicoes.id  ON DELETE SET NULL</text>
+<line x1="897.0999999999999" y1="420" x2="1568.1999999999998" y2="420" stroke="#4a6785" stroke-opacity="0.45"/>
+<text x="897.0999999999999" y="436" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (instituicaoId)</text>
+<text x="897.0999999999999" y="454" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (ativo)</text>
+<rect x="88.59999999999997" y="120" width="597.9" height="276.0" rx="6" fill="#f4f7fb" stroke="#4a6785" stroke-width="1.5"/>
+<path d="M88.59999999999997 126 a6 6 0 0 1 6 -6 h585.9 a6 6 0 0 1 6 6 v44 h-597.9 z" fill="#dde7f3"/>
+<text x="100.59999999999997" y="142" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">sessions</text>
+<text x="100.59999999999997" y="159" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo Session</text>
+<text x="100.59999999999997" y="192" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="132.59999999999997" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="225.49999999999994" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="342.69999999999993" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="100.59999999999997" y="212" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">UK</text>
+<text x="132.59999999999997" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">token</text>
+<text x="225.49999999999994" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="342.69999999999993" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="100.59999999999997" y="232" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="132.59999999999997" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">expiresAt</text>
+<text x="225.49999999999994" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="342.69999999999993" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="100.59999999999997" y="252" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="132.59999999999997" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ipAddress</text>
+<text x="225.49999999999994" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="342.69999999999993" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="100.59999999999997" y="272" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="132.59999999999997" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">userAgent</text>
+<text x="225.49999999999994" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="342.69999999999993" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="100.59999999999997" y="292" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="132.59999999999997" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">createdAt</text>
+<text x="225.49999999999994" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="342.69999999999993" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="100.59999999999997" y="312" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="132.59999999999997" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">updatedAt</text>
+<text x="225.49999999999994" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="342.69999999999993" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="100.59999999999997" y="332" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="132.59999999999997" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">userId</text>
+<text x="225.49999999999994" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="342.69999999999993" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="427.49999999999994" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; users.id  ON DELETE CASCADE</text>
+<line x1="100.59999999999997" y1="340" x2="674.5" y2="340" stroke="#4a6785" stroke-opacity="0.45"/>
+<text x="100.59999999999997" y="356" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (userId)</text>
+<text x="100.59999999999997" y="374" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (expiresAt)</text>
+<rect x="40.0" y="576" width="695.1" height="376.0" rx="6" fill="#f4f7fb" stroke="#4a6785" stroke-width="1.5"/>
+<path d="M40.0 582 a6 6 0 0 1 6 -6 h683.1 a6 6 0 0 1 6 6 v44 h-695.1 z" fill="#dde7f3"/>
+<text x="52.0" y="598" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">accounts</text>
+<text x="52.0" y="615" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo Account</text>
+<text x="52.0" y="648" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="84.0" y="648" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="274.1" y="648" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="391.29999999999995" y="648" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="52.0" y="668" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="668" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">accountId</text>
+<text x="274.1" y="668" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="391.29999999999995" y="668" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="52.0" y="688" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="688" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">providerId</text>
+<text x="274.1" y="688" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="391.29999999999995" y="688" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="52.0" y="708" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="708" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">accessToken</text>
+<text x="274.1" y="708" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="391.29999999999995" y="708" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="52.0" y="728" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="728" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">refreshToken</text>
+<text x="274.1" y="728" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="391.29999999999995" y="728" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="52.0" y="748" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="748" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">accessTokenExpiresAt</text>
+<text x="274.1" y="748" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="391.29999999999995" y="748" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="52.0" y="768" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="768" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">refreshTokenExpiresAt</text>
+<text x="274.1" y="768" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="391.29999999999995" y="768" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="52.0" y="788" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="788" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">scope</text>
+<text x="274.1" y="788" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="391.29999999999995" y="788" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="52.0" y="808" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="808" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">idToken</text>
+<text x="274.1" y="808" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="391.29999999999995" y="808" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="52.0" y="828" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="828" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">password</text>
+<text x="274.1" y="828" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="391.29999999999995" y="828" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="52.0" y="848" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="848" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">createdAt</text>
+<text x="274.1" y="848" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="391.29999999999995" y="848" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="52.0" y="868" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="868" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">updatedAt</text>
+<text x="274.1" y="868" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="391.29999999999995" y="868" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="52.0" y="888" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="84.0" y="888" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">userId</text>
+<text x="274.1" y="888" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="391.29999999999995" y="888" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="476.09999999999997" y="888" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; users.id  ON DELETE CASCADE</text>
+<line x1="52.0" y1="896" x2="723.0999999999999" y2="896" stroke="#4a6785" stroke-opacity="0.45"/>
+<text x="52.0" y="912" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">UK (providerId, accountId)</text>
+<text x="52.0" y="930" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (userId)</text>
+<rect x="1730.1999999999998" y="120" width="363.0" height="236.0" rx="6" fill="#f4f7fb" stroke="#4a6785" stroke-width="1.5"/>
+<path d="M1730.1999999999998 126 a6 6 0 0 1 6 -6 h351.0 a6 6 0 0 1 6 6 v44 h-363.0 z" fill="#dde7f3"/>
+<text x="1742.1999999999998" y="142" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">verifications</text>
+<text x="1742.1999999999998" y="159" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo Verification</text>
+<text x="1742.1999999999998" y="192" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="1774.1999999999998" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="1875.1999999999998" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1992.3999999999999" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1742.1999999999998" y="212" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1774.1999999999998" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">identifier</text>
+<text x="1875.1999999999998" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1992.3999999999999" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1742.1999999999998" y="232" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1774.1999999999998" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">value</text>
+<text x="1875.1999999999998" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1992.3999999999999" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1742.1999999999998" y="252" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1774.1999999999998" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">expiresAt</text>
+<text x="1875.1999999999998" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1992.3999999999999" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1742.1999999999998" y="272" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1774.1999999999998" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">createdAt</text>
+<text x="1875.1999999999998" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1992.3999999999999" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1742.1999999999998" y="292" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1774.1999999999998" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">updatedAt</text>
+<text x="1875.1999999999998" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1992.3999999999999" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<line x1="1742.1999999999998" y1="300" x2="2081.2" y2="300" stroke="#4a6785" stroke-opacity="0.45"/>
+<text x="1742.1999999999998" y="316" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (identifier)</text>
+<text x="1742.1999999999998" y="334" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (expiresAt)</text>
+<rect x="954.05" y="576" width="557.2" height="156.0" rx="6" fill="#f4f7fb" stroke="#4a6785" stroke-width="1.5"/>
+<path d="M954.05 582 a6 6 0 0 1 6 -6 h545.2 a6 6 0 0 1 6 6 v44 h-557.2 z" fill="#dde7f3"/>
+<text x="966.05" y="598" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">usuario_papeis</text>
+<text x="966.05" y="615" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo UsuarioPapel</text>
+<text x="966.05" y="648" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK,FK</text>
+<text x="1014.05" y="648" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">usuarioId</text>
+<text x="1106.9499999999998" y="648" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1167.4499999999998" y="648" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1252.25" y="648" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; users.id  ON DELETE CASCADE</text>
+<text x="966.05" y="668" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="1014.05" y="668" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">papel</text>
+<text x="1106.9499999999998" y="668" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">Papel</text>
+<text x="1167.4499999999998" y="668" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<line x1="966.05" y1="676" x2="1499.25" y2="676" stroke="#4a6785" stroke-opacity="0.45"/>
+<text x="966.05" y="692" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">PK (usuarioId, papel)</text>
+<text x="966.05" y="710" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (papel)</text>
+<rect x="697.2" y="257.7" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="719.8" y="268.7" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="829.2" y="284.3" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="851.8" y="295.3" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="477.9" y="553.5" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="500.5" y="564.5" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="995.1" y="482.6" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1017.7" y="493.6" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="1235.8" y="546.8" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1258.4" y="557.8" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="1300.2" y="491.2" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1322.8" y="502.2" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<text x="40.0" y="1110.0" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">Notação: PK chave primária; FK chave estrangeira (-&gt; tabela.coluna e regra ON DELETE); UK restrição de unicidade; IDX índice.</text>
+<text x="40.0" y="1130.0" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">NOT NULL: coluna obrigatória; NULL: aceita vazio. Tipos conforme mapeamento padrão do Prisma para PostgreSQL 17.</text>
+<text x="40.0" y="1150.0" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">(mín,máx) junto à tabela: quantas linhas dela se ligam a uma linha da outra. Ex.: (1,1) na filha = toda linha tem exatamente 1 pai; (0,N) no pai = pode ter 0 ou mais filhas; (0,1) = no máximo 1.</text>
+</svg>

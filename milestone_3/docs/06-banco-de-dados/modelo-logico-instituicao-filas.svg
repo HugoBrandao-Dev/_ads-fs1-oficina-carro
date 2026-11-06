@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3358 1616" width="3358" height="1616" role="img" aria-labelledby="t d">
+<title id="t">Modelo lógico: instituição e filas</title>
+<desc id="d">Tabelas de instituições, tipos de etapa, filas, mesas, QR Codes e flows.</desc>
+<rect x="0" y="0" width="3358" height="1616" fill="#ffffff"/>
+<text x="40" y="48" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2933">Modelo lógico: instituição e filas</text>
+<text x="40" y="74" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#52606d">Tabelas de instituições, tipos de etapa, filas, mesas, QR Codes e flows.</text>
+<line x1="727.0" y1="229.0" x2="877.0" y2="358.0" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="1714.0" y1="328.0" x2="1564.0" y2="358.0" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="2676.5" y1="219.0" x2="2498.2" y2="328.0" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="2963.3" y1="696.0" x2="2236.8" y2="536.0" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="1220.5" y1="696.0" x2="1220.5" y2="596.0" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="1994.3" y1="1072.0" x2="1335.0" y2="934.0" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="2217.9" y1="1072.0" x2="1975.4" y2="536.0" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="1220.5" y1="1072.0" x2="1106.0" y2="934.0" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="1564.0" y1="1150.7" x2="1770.7" y2="1170.7" stroke="#3e4c59" stroke-width="1.3"/>
+<line x1="1564.0" y1="1229.3" x2="1770.7" y2="1269.3" stroke="#3e4c59" stroke-width="1.3"/>
+<rect x="877.0" y="120" width="687.0" height="476.0" rx="6" fill="#f4f9f5" stroke="#4d7a5a" stroke-width="1.5"/>
+<path d="M877.0 126 a6 6 0 0 1 6 -6 h675.0 a6 6 0 0 1 6 6 v44 h-687.0 z" fill="#d9ebdd"/>
+<text x="889.0" y="142" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">instituicoes</text>
+<text x="889.0" y="159" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo Instituicao</text>
+<text x="889.0" y="192" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="921.0" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="1054.4" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1212.1" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="212" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">UK</text>
+<text x="921.0" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">nome</text>
+<text x="1054.4" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(180)</text>
+<text x="1212.1" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="232" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ativo</text>
+<text x="1054.4" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="1212.1" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="252" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">status</text>
+<text x="1054.4" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">StatusInstituicao</text>
+<text x="1212.1" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="272" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">cnpj</text>
+<text x="1054.4" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(18)</text>
+<text x="1212.1" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="292" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">email</text>
+<text x="1054.4" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(180)</text>
+<text x="1212.1" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="312" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">telefone</text>
+<text x="1054.4" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(32)</text>
+<text x="1212.1" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="332" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">responsavel</text>
+<text x="1054.4" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(180)</text>
+<text x="1212.1" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="352" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">endereco</text>
+<text x="1054.4" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1212.1" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="372" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="372" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">descricao</text>
+<text x="1054.4" y="372" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1212.1" y="372" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="392" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="392" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">contratoUrl</text>
+<text x="1054.4" y="392" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1212.1" y="392" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="412" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="412" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">motivoRejeicao</text>
+<text x="1054.4" y="412" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1212.1" y="412" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="432" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="432" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">aprovadoEm</text>
+<text x="1054.4" y="432" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1212.1" y="432" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="452" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="921.0" y="452" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">solicitanteId</text>
+<text x="1054.4" y="452" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1212.1" y="452" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="1296.9" y="452" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; users.id  ON DELETE SET NULL</text>
+<text x="889.0" y="472" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="921.0" y="472" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">aprovadoPorId</text>
+<text x="1054.4" y="472" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1212.1" y="472" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="1296.9" y="472" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; users.id  ON DELETE SET NULL</text>
+<text x="889.0" y="492" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="492" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">configuracoes</text>
+<text x="1054.4" y="492" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">jsonb</text>
+<text x="1212.1" y="492" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="512" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="512" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">createdAt</text>
+<text x="1054.4" y="512" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1212.1" y="512" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="532" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="532" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">updatedAt</text>
+<text x="1054.4" y="532" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1212.1" y="532" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<line x1="889.0" y1="540" x2="1552.0" y2="540" stroke="#4d7a5a" stroke-opacity="0.45"/>
+<text x="889.0" y="556" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (status)</text>
+<text x="889.0" y="574" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (ativo)</text>
+<rect x="40.0" y="120" width="687.0" height="218.0" rx="6" fill="#f4f9f5" stroke="#4d7a5a" stroke-width="1.5"/>
+<path d="M40.0 126 a6 6 0 0 1 6 -6 h675.0 a6 6 0 0 1 6 6 v44 h-687.0 z" fill="#d9ebdd"/>
+<text x="52.0" y="142" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">tipos_etapa</text>
+<text x="52.0" y="159" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo TipoEtapa</text>
+<text x="52.0" y="192" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="84.0" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="209.3" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="326.5" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="52.0" y="212" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">codigo</text>
+<text x="209.3" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(64)</text>
+<text x="326.5" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="52.0" y="232" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">nome</text>
+<text x="209.3" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(120)</text>
+<text x="326.5" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="52.0" y="252" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">cor</text>
+<text x="209.3" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(32)</text>
+<text x="326.5" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="52.0" y="272" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="84.0" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ativo</text>
+<text x="209.3" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="326.5" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="52.0" y="292" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="84.0" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">instituicaoId</text>
+<text x="209.3" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="326.5" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="411.3" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; instituicoes.id  ON DELETE CASCADE</text>
+<line x1="52.0" y1="300" x2="715.0" y2="300" stroke="#4d7a5a" stroke-opacity="0.45"/>
+<text x="52.0" y="316" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">UK (instituicaoId, codigo)</text>
+<rect x="1714.0" y="120" width="784.2" height="416.0" rx="6" fill="#f4f9f5" stroke="#4d7a5a" stroke-width="1.5"/>
+<path d="M1714.0 126 a6 6 0 0 1 6 -6 h772.2 a6 6 0 0 1 6 6 v44 h-784.2 z" fill="#d9ebdd"/>
+<text x="1726.0" y="142" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">filas</text>
+<text x="1726.0" y="159" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo Fila</text>
+<text x="1726.0" y="192" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="1758.0" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="1956.2" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="2097.7" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1726.0" y="212" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">nome</text>
+<text x="1956.2" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(180)</text>
+<text x="2097.7" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1726.0" y="232" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">tipoAtendimento</text>
+<text x="1956.2" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">TipoAtendimento</text>
+<text x="2097.7" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1726.0" y="252" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ativa</text>
+<text x="1956.2" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="2097.7" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1726.0" y="272" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">prioridadesHabilitadas</text>
+<text x="1956.2" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="2097.7" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1726.0" y="292" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">fidelidadeHabilitada</text>
+<text x="1956.2" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="2097.7" y="292" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1726.0" y="312" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">tempoMaximoAtendimento</text>
+<text x="1956.2" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">integer</text>
+<text x="2097.7" y="312" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="1726.0" y="332" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">modoQrCode</text>
+<text x="1956.2" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ModoQrCode</text>
+<text x="2097.7" y="332" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1726.0" y="352" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">tempoExibicaoMin</text>
+<text x="1956.2" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">integer</text>
+<text x="2097.7" y="352" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="1726.0" y="372" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="372" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">tempoExpiracaoMin</text>
+<text x="1956.2" y="372" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">integer</text>
+<text x="2097.7" y="372" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="1726.0" y="392" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="392" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">toleranciaMin</text>
+<text x="1956.2" y="392" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">integer</text>
+<text x="2097.7" y="392" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="1726.0" y="412" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="412" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">tempoAlertaSegundos</text>
+<text x="1956.2" y="412" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">integer</text>
+<text x="2097.7" y="412" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="1726.0" y="432" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="1758.0" y="432" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">instituicaoId</text>
+<text x="1956.2" y="432" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="2097.7" y="432" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2182.5" y="432" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; instituicoes.id  ON DELETE CASCADE</text>
+<text x="1726.0" y="452" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="452" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">createdAt</text>
+<text x="1956.2" y="452" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="2097.7" y="452" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1726.0" y="472" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1758.0" y="472" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">updatedAt</text>
+<text x="1956.2" y="472" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="2097.7" y="472" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<line x1="1726.0" y1="480" x2="2486.2" y2="480" stroke="#4d7a5a" stroke-opacity="0.45"/>
+<text x="1726.0" y="496" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (instituicaoId)</text>
+<text x="1726.0" y="514" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (instituicaoId, ativa)</text>
+<rect x="2676.5499999999997" y="120" width="573.6" height="198.0" rx="6" fill="#f4f9f5" stroke="#4d7a5a" stroke-width="1.5"/>
+<path d="M2676.5499999999997 126 a6 6 0 0 1 6 -6 h561.6 a6 6 0 0 1 6 6 v44 h-573.6 z" fill="#d9ebdd"/>
+<text x="2688.5499999999997" y="142" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">mesas</text>
+<text x="2688.5499999999997" y="159" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo Mesa</text>
+<text x="2688.5499999999997" y="192" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="2720.5499999999997" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="2789.1499999999996" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="2906.35" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2688.5499999999997" y="212" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="2720.5499999999997" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">numero</text>
+<text x="2789.1499999999996" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(32)</text>
+<text x="2906.35" y="212" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2688.5499999999997" y="232" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="2720.5499999999997" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">nome</text>
+<text x="2789.1499999999996" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(120)</text>
+<text x="2906.35" y="232" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="2688.5499999999997" y="252" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="2720.5499999999997" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ativa</text>
+<text x="2789.1499999999996" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="2906.35" y="252" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2688.5499999999997" y="272" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="2720.5499999999997" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">filaId</text>
+<text x="2789.1499999999996" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="2906.35" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2991.1499999999996" y="272" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; filas.id  ON DELETE CASCADE</text>
+<line x1="2688.5499999999997" y1="280" x2="3238.1499999999996" y2="280" stroke="#4d7a5a" stroke-opacity="0.45"/>
+<text x="2688.5499999999997" y="296" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">UK (filaId, numero)</text>
+<rect x="2648.2" y="696" width="630.3" height="276.0" rx="6" fill="#f4f9f5" stroke="#4d7a5a" stroke-width="1.5"/>
+<path d="M2648.2 702 a6 6 0 0 1 6 -6 h618.3 a6 6 0 0 1 6 6 v44 h-630.3 z" fill="#d9ebdd"/>
+<text x="2660.2" y="718" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">qr_codes</text>
+<text x="2660.2" y="735" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo QrCode</text>
+<text x="2660.2" y="768" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="2692.2" y="768" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="2817.5" y="768" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="2934.7" y="768" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2660.2" y="788" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">UK</text>
+<text x="2692.2" y="788" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">codigo</text>
+<text x="2817.5" y="788" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(64)</text>
+<text x="2934.7" y="788" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2660.2" y="808" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="2692.2" y="808" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">validoAte</text>
+<text x="2817.5" y="808" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="2934.7" y="808" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2660.2" y="828" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="2692.2" y="828" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">toleranciaAte</text>
+<text x="2817.5" y="828" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="2934.7" y="828" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2660.2" y="848" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="2692.2" y="848" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ativo</text>
+<text x="2817.5" y="848" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="2934.7" y="848" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2660.2" y="868" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="2692.2" y="868" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">filaId</text>
+<text x="2817.5" y="868" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="2934.7" y="868" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="3019.5" y="868" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; filas.id  ON DELETE CASCADE</text>
+<text x="2660.2" y="888" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="2692.2" y="888" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">createdAt</text>
+<text x="2817.5" y="888" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="2934.7" y="888" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2660.2" y="908" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="2692.2" y="908" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">updatedAt</text>
+<text x="2817.5" y="908" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="2934.7" y="908" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<line x1="2660.2" y1="916" x2="3266.5" y2="916" stroke="#4d7a5a" stroke-opacity="0.45"/>
+<text x="2660.2" y="932" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (filaId, ativo)</text>
+<text x="2660.2" y="950" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (validoAte)</text>
+<rect x="877.0" y="696" width="687.0" height="238.0" rx="6" fill="#f4f9f5" stroke="#4d7a5a" stroke-width="1.5"/>
+<path d="M877.0 702 a6 6 0 0 1 6 -6 h675.0 a6 6 0 0 1 6 6 v44 h-687.0 z" fill="#d9ebdd"/>
+<text x="889.0" y="718" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">flows</text>
+<text x="889.0" y="735" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo Flow</text>
+<text x="889.0" y="768" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="921.0" y="768" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="1046.3" y="768" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1163.5" y="768" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="788" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="788" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">nome</text>
+<text x="1046.3" y="788" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(180)</text>
+<text x="1163.5" y="788" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="808" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="808" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">descricao</text>
+<text x="1046.3" y="808" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">text</text>
+<text x="1163.5" y="808" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="828" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="828" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ativo</text>
+<text x="1046.3" y="828" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="1163.5" y="828" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="848" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="921.0" y="848" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">instituicaoId</text>
+<text x="1046.3" y="848" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1163.5" y="848" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1248.3" y="848" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; instituicoes.id  ON DELETE CASCADE</text>
+<text x="889.0" y="868" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="868" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">createdAt</text>
+<text x="1046.3" y="868" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1163.5" y="868" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="888" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="888" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">updatedAt</text>
+<text x="1046.3" y="888" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">timestamp(3)</text>
+<text x="1163.5" y="888" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<line x1="889.0" y1="896" x2="1552.0" y2="896" stroke="#4d7a5a" stroke-opacity="0.45"/>
+<text x="889.0" y="912" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (instituicaoId, ativo)</text>
+<rect x="1770.7" y="1072" width="670.8" height="296.0" rx="6" fill="#f4f9f5" stroke="#4d7a5a" stroke-width="1.5"/>
+<path d="M1770.7 1078 a6 6 0 0 1 6 -6 h658.8 a6 6 0 0 1 6 6 v44 h-670.8 z" fill="#d9ebdd"/>
+<text x="1782.7" y="1094" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">flow_steps</text>
+<text x="1782.7" y="1111" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo FlowStep</text>
+<text x="1782.7" y="1144" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="1814.7" y="1144" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="1972.4" y="1144" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="2089.6" y="1144" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1782.7" y="1164" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1814.7" y="1164" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">nome</text>
+<text x="1972.4" y="1164" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(180)</text>
+<text x="2089.6" y="1164" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1782.7" y="1184" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1814.7" y="1184" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ordem</text>
+<text x="1972.4" y="1184" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">integer</text>
+<text x="2089.6" y="1184" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1782.7" y="1204" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1814.7" y="1204" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">tipo</text>
+<text x="1972.4" y="1204" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(64)</text>
+<text x="2089.6" y="1204" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1782.7" y="1224" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1814.7" y="1224" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">tempoMedioMinutos</text>
+<text x="1972.4" y="1224" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">integer</text>
+<text x="2089.6" y="1224" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="1782.7" y="1244" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1814.7" y="1244" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">permiteBifurcacao</text>
+<text x="1972.4" y="1244" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="2089.6" y="1244" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1782.7" y="1264" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="1814.7" y="1264" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">ativo</text>
+<text x="1972.4" y="1264" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">boolean</text>
+<text x="2089.6" y="1264" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1782.7" y="1284" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="1814.7" y="1284" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">flowId</text>
+<text x="1972.4" y="1284" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="2089.6" y="1284" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2174.4" y="1284" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; flows.id  ON DELETE CASCADE</text>
+<text x="1782.7" y="1304" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="1814.7" y="1304" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">filaId</text>
+<text x="1972.4" y="1304" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="2089.6" y="1304" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="2174.4" y="1304" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; filas.id  ON DELETE RESTRICT</text>
+<line x1="1782.7" y1="1312" x2="2429.5" y2="1312" stroke="#4d7a5a" stroke-opacity="0.45"/>
+<text x="1782.7" y="1328" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">UK (flowId, ordem)</text>
+<text x="1782.7" y="1346" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (filaId)</text>
+<rect x="877.0" y="1072" width="687.0" height="236.0" rx="6" fill="#f4f9f5" stroke="#4d7a5a" stroke-width="1.5"/>
+<path d="M877.0 1078 a6 6 0 0 1 6 -6 h675.0 a6 6 0 0 1 6 6 v44 h-687.0 z" fill="#d9ebdd"/>
+<text x="889.0" y="1094" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1f2933">flow_transitions</text>
+<text x="889.0" y="1111" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">modelo FlowTransition</text>
+<text x="889.0" y="1144" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">PK</text>
+<text x="921.0" y="1144" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">id</text>
+<text x="1022.0" y="1144" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1179.7" y="1144" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="1164" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="1164" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">tipo</text>
+<text x="1022.0" y="1164" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">FlowTransicaoTipo</text>
+<text x="1179.7" y="1164" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="889.0" y="1184" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933"></text>
+<text x="921.0" y="1184" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">label</text>
+<text x="1022.0" y="1184" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">varchar(120)</text>
+<text x="1179.7" y="1184" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NULL</text>
+<text x="889.0" y="1204" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="921.0" y="1204" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">flowId</text>
+<text x="1022.0" y="1204" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1179.7" y="1204" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1264.5" y="1204" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; flows.id  ON DELETE CASCADE</text>
+<text x="889.0" y="1224" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="921.0" y="1224" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">fromStepId</text>
+<text x="1022.0" y="1224" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1179.7" y="1224" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1264.5" y="1224" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; flow_steps.id  ON DELETE CASCADE</text>
+<text x="889.0" y="1244" font-family="Helvetica, Arial, sans-serif" font-size="12" font-weight="bold" fill="#1f2933">FK</text>
+<text x="921.0" y="1244" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">toStepId</text>
+<text x="1022.0" y="1244" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#1f2933">uuid</text>
+<text x="1179.7" y="1244" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">NOT NULL</text>
+<text x="1264.5" y="1244" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="13" fill="#52606d">-&gt; flow_steps.id  ON DELETE CASCADE</text>
+<line x1="889.0" y1="1252" x2="1552.0" y2="1252" stroke="#4d7a5a" stroke-opacity="0.45"/>
+<text x="889.0" y="1268" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">UK (fromStepId, toStepId)</text>
+<text x="889.0" y="1286" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#52606d">IDX (flowId)</text>
+<rect x="735.5" y="248.7" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="758.1" y="259.7" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="823.3" y="324.3" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="845.9" y="335.3" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="1658.1" y="327.7" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1680.7" y="338.7" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="1574.7" y="344.3" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1597.3" y="355.3" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="2624.9" y="229.7" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="2647.5" y="240.7" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="2504.6" y="303.3" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="2527.2" y="314.3" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="2843.1" y="667.5" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="2865.7" y="678.5" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="2311.9" y="550.5" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="2334.5" y="561.5" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="1197.9" y="655.0" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1220.5" y="666.0" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="1197.9" y="623.0" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1220.5" y="634.0" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="1873.8" y="1044.5" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1896.4" y="1055.5" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="1410.3" y="947.5" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1432.9" y="958.5" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="2181.3" y="1034.0" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="2203.9" y="1045.0" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="1966.8" y="560.0" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1989.4" y="571.0" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="1176.2" y="1038.8" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1198.8" y="1049.8" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="1105.1" y="953.2" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1127.7" y="964.2" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="1575.2" y="1146.9" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1597.8" y="1157.9" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="1714.3" y="1160.4" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1736.9" y="1171.4" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<rect x="1574.8" y="1228.8" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1597.4" y="1239.8" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(1,1)</text>
+<rect x="1714.7" y="1255.9" width="45.2" height="18.0" rx="3" fill="#ffffff" fill-opacity="0.92"/>
+<text x="1737.3" y="1266.9" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" fill="#1f2933">(0,N)</text>
+<text x="40.0" y="1526.0" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">Notação: PK chave primária; FK chave estrangeira (-&gt; tabela.coluna e regra ON DELETE); UK restrição de unicidade; IDX índice.</text>
+<text x="40.0" y="1546.0" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">NOT NULL: coluna obrigatória; NULL: aceita vazio. Tipos conforme mapeamento padrão do Prisma para PostgreSQL 17.</text>
+<text x="40.0" y="1566.0" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#52606d">(mín,máx) junto à tabela: quantas linhas dela se ligam a uma linha da outra. Ex.: (1,1) na filha = toda linha tem exatamente 1 pai; (0,N) no pai = pode ter 0 ou mais filhas; (0,1) = no máximo 1.</text>
+</svg>

@@ -1,0 +1,289 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1720 1120" width="1720" height="1120" role="img" aria-labelledby="titulo descricao">
+  <title id="titulo">Diagrama de classes de domínio (apoio) do FilaCidadã</title>
+  <desc id="descricao">Classes de apoio ao núcleo: fluxos (Fluxo, EtapaFluxo, TransicaoFluxo, RastreioFluxo, HistoricoFluxo), ChatMensagem, Notificacao, Auditoria e LandingPage, com enumerações TipoTransicao, StatusRastreio e TipoNotificacao. Instituicao, Fila, Senha e Usuario aparecem tracejadas como referências ao núcleo (classes.svg). As ligações de Notificacao e Auditoria com Instituicao estão no README por falta de espaço sem cruzamentos.</desc>
+  <style>
+    text { font-family: sans-serif; fill: #1d1d1f; }
+    .nome { font-size: 15px; font-weight: bold; }
+    .est { font-size: 12px; font-style: italic; fill: #444444; }
+    .at { font-size: 13px; }
+    .ml { font-size: 12px; }
+    .rl { font-size: 12px; font-style: italic; fill: #1f4e8c; }
+    .cl { fill: #ffffff; stroke: #4a5b70; stroke-width: 1.2; }
+    .ch { fill: #e6edf6; stroke: #4a5b70; stroke-width: 1.2; }
+    .sb { fill: #f5f5f5; stroke: #7a7a7a; stroke-width: 1.2; stroke-dasharray: 6 4; }
+    .en { fill: #ffffff; stroke: #7a7a7a; stroke-width: 1.2; }
+    .eh { fill: #ededed; stroke: #7a7a7a; stroke-width: 1.2; }
+    .ln { fill: none; stroke: #4a5b70; stroke-width: 1.3; }
+    .sp { stroke: #4a5b70; stroke-width: 1; }
+    .cp { fill: #4a5b70; stroke: #4a5b70; stroke-width: 1; }
+  </style>
+  <rect x="0" y="0" width="1720" height="1120" fill="#ffffff"/>
+
+  <!-- Referencias ao nucleo (tracejadas) -->
+  <g id="ref-Instituicao">
+    <rect class="sb" x="40" y="60" width="220" height="46"/>
+    <text class="nome" x="150" y="80" text-anchor="middle">Instituicao</text>
+    <text class="est" x="150" y="96" text-anchor="middle">(classes.svg)</text>
+  </g>
+  <g id="ref-Fila">
+    <rect class="sb" x="40" y="300" width="220" height="46"/>
+    <text class="nome" x="150" y="320" text-anchor="middle">Fila</text>
+    <text class="est" x="150" y="336" text-anchor="middle">(classes.svg)</text>
+  </g>
+  <g id="ref-Senha">
+    <rect class="sb" x="1100" y="320" width="260" height="46"/>
+    <text class="nome" x="1230" y="340" text-anchor="middle">Senha</text>
+    <text class="est" x="1230" y="356" text-anchor="middle">(classes.svg)</text>
+  </g>
+  <g id="ref-Usuario">
+    <rect class="sb" x="1100" y="800" width="260" height="46"/>
+    <text class="nome" x="1230" y="820" text-anchor="middle">Usuario</text>
+    <text class="est" x="1230" y="836" text-anchor="middle">(classes.svg)</text>
+  </g>
+
+  <!-- Classe: Fluxo -->
+  <g id="Fluxo">
+    <rect class="cl" x="340" y="60" width="280" height="196"/>
+    <rect class="ch" x="340" y="60" width="280" height="34"/>
+    <text class="nome" x="480" y="82" text-anchor="middle">Fluxo</text>
+    <line class="sp" x1="340" y1="94" x2="620" y2="94"/>
+    <text class="at" x="350" y="111">-nome: Texto</text>
+    <text class="at" x="350" y="129">-descricao: Texto?</text>
+    <text class="at" x="350" y="147">-ativo: Booleano</text>
+    <line class="sp" x1="340" y1="154" x2="620" y2="154"/>
+    <text class="at" x="350" y="171">+ingressar(senha)</text>
+    <text class="at" x="350" y="189">+encaminhar(senha, etapa)</text>
+    <text class="at" x="350" y="207">+darAlta(senha)</text>
+    <text class="at" x="350" y="225">+transicoesDisponiveis(senha)</text>
+    <text class="at" x="350" y="243">+desativar()</text>
+  </g>
+
+  <!-- Classe: EtapaFluxo -->
+  <g id="EtapaFluxo">
+    <rect class="cl" x="340" y="300" width="280" height="154"/>
+    <rect class="ch" x="340" y="300" width="280" height="34"/>
+    <text class="nome" x="480" y="322" text-anchor="middle">EtapaFluxo</text>
+    <line class="sp" x1="340" y1="334" x2="620" y2="334"/>
+    <text class="at" x="350" y="351">-nome: Texto</text>
+    <text class="at" x="350" y="369">-ordem: Inteiro</text>
+    <text class="at" x="350" y="387">-tipo: Texto</text>
+    <text class="at" x="350" y="405">-tempoMedioMinutos: Inteiro?</text>
+    <text class="at" x="350" y="423">-permiteBifurcacao: Booleano</text>
+    <text class="at" x="350" y="441">-ativa: Booleano</text>
+  </g>
+
+  <!-- Classe: TransicaoFluxo -->
+  <g id="TransicaoFluxo">
+    <rect class="cl" x="340" y="560" width="280" height="82"/>
+    <rect class="ch" x="340" y="560" width="280" height="34"/>
+    <text class="nome" x="480" y="582" text-anchor="middle">TransicaoFluxo</text>
+    <line class="sp" x1="340" y1="594" x2="620" y2="594"/>
+    <text class="at" x="350" y="611">-tipo: TipoTransicao</text>
+    <text class="at" x="350" y="629">-rotulo: Texto?</text>
+  </g>
+
+  <!-- Classe: RastreioFluxo -->
+  <g id="RastreioFluxo">
+    <rect class="cl" x="720" y="300" width="280" height="160"/>
+    <rect class="ch" x="720" y="300" width="280" height="34"/>
+    <text class="nome" x="860" y="322" text-anchor="middle">RastreioFluxo</text>
+    <line class="sp" x1="720" y1="334" x2="1000" y2="334"/>
+    <text class="at" x="730" y="351">-status: StatusRastreio</text>
+    <text class="at" x="730" y="369">-iniciadoEm: DataHora</text>
+    <text class="at" x="730" y="387">-etapaAtual: EtapaFluxo?</text>
+    <line class="sp" x1="720" y1="394" x2="1000" y2="394"/>
+    <text class="at" x="730" y="411">+concluir()</text>
+    <text class="at" x="730" y="429">+cancelar()</text>
+    <text class="at" x="730" y="447">+registrarEntrada(etapa)</text>
+  </g>
+
+  <!-- Classe: HistoricoFluxo -->
+  <g id="HistoricoFluxo">
+    <rect class="cl" x="720" y="540" width="280" height="178"/>
+    <rect class="ch" x="720" y="540" width="280" height="34"/>
+    <text class="nome" x="860" y="562" text-anchor="middle">HistoricoFluxo</text>
+    <line class="sp" x1="720" y1="574" x2="1000" y2="574"/>
+    <text class="at" x="730" y="591">-nomeEtapa: Texto</text>
+    <text class="at" x="730" y="609">-filaSnapshot: Texto</text>
+    <text class="at" x="730" y="627">-entradaEm: DataHora</text>
+    <text class="at" x="730" y="645">-saidaEm: DataHora?</text>
+    <text class="at" x="730" y="663">-resultado: Texto?</text>
+    <text class="at" x="730" y="681">-observacao: Texto?</text>
+    <line class="sp" x1="720" y1="688" x2="1000" y2="688"/>
+    <text class="at" x="730" y="705">+registrarSaida(resultado, observacao)</text>
+  </g>
+
+  <!-- Classe: ChatMensagem -->
+  <g id="ChatMensagem">
+    <rect class="cl" x="1100" y="540" width="260" height="100"/>
+    <rect class="ch" x="1100" y="540" width="260" height="34"/>
+    <text class="nome" x="1230" y="562" text-anchor="middle">ChatMensagem</text>
+    <line class="sp" x1="1100" y1="574" x2="1360" y2="574"/>
+    <text class="at" x="1110" y="591">-texto: Texto</text>
+    <text class="at" x="1110" y="609">-nomeAutor: Texto</text>
+    <text class="at" x="1110" y="627">-criadaEm: DataHora</text>
+  </g>
+
+  <!-- Classe: Notificacao -->
+  <g id="Notificacao">
+    <rect class="cl" x="720" y="780" width="280" height="160"/>
+    <rect class="ch" x="720" y="780" width="280" height="34"/>
+    <text class="nome" x="860" y="802" text-anchor="middle">Notificacao</text>
+    <line class="sp" x1="720" y1="814" x2="1000" y2="814"/>
+    <text class="at" x="730" y="831">-tipo: TipoNotificacao</text>
+    <text class="at" x="730" y="849">-titulo: Texto</text>
+    <text class="at" x="730" y="867">-mensagem: Texto</text>
+    <text class="at" x="730" y="885">-lida: Booleano</text>
+    <text class="at" x="730" y="903">-dados: JSON?</text>
+    <line class="sp" x1="720" y1="910" x2="1000" y2="910"/>
+    <text class="at" x="730" y="927">+marcarComoLida()</text>
+  </g>
+
+  <!-- Classe: Auditoria -->
+  <g id="Auditoria">
+    <rect class="cl" x="40" y="900" width="260" height="160"/>
+    <rect class="ch" x="40" y="900" width="260" height="34"/>
+    <text class="nome" x="170" y="922" text-anchor="middle">Auditoria</text>
+    <line class="sp" x1="40" y1="934" x2="300" y2="934"/>
+    <text class="at" x="50" y="951">-acao: Texto</text>
+    <text class="at" x="50" y="969">-entidade: Texto</text>
+    <text class="at" x="50" y="987">-entidadeId: UUID?</text>
+    <text class="at" x="50" y="1005">-dados: JSON?</text>
+    <text class="at" x="50" y="1023">-registradaEm: DataHora</text>
+    <line class="sp" x1="40" y1="1030" x2="300" y2="1030"/>
+    <text class="at" x="50" y="1047">+registrar(acao, entidade)</text>
+  </g>
+
+  <!-- Classe: LandingPage -->
+  <g id="LandingPage">
+    <rect class="cl" x="1420" y="470" width="260" height="124"/>
+    <rect class="ch" x="1420" y="470" width="260" height="34"/>
+    <text class="nome" x="1550" y="492" text-anchor="middle">LandingPage</text>
+    <line class="sp" x1="1420" y1="504" x2="1680" y2="504"/>
+    <text class="at" x="1430" y="521">-chave: Texto</text>
+    <text class="at" x="1430" y="539">-conteudo: JSON</text>
+    <line class="sp" x1="1420" y1="546" x2="1680" y2="546"/>
+    <text class="at" x="1430" y="563">+atualizar(dados)</text>
+    <text class="at" x="1430" y="581">+dadosPadrao()</text>
+  </g>
+
+  <!-- Enumeracoes -->
+  <g id="TipoTransicao">
+    <rect class="en" x="1100" y="60" width="260" height="110"/>
+    <rect class="eh" x="1100" y="60" width="260" height="44"/>
+    <text class="est" x="1230" y="77" text-anchor="middle">&#171;enumeração&#187;</text>
+    <text class="nome" x="1230" y="96" text-anchor="middle">TipoTransicao</text>
+    <line class="sp" x1="1100" y1="104" x2="1360" y2="104"/>
+    <text class="at" x="1110" y="121">SEQUENCIAL</text>
+    <text class="at" x="1110" y="139">CONDICIONAL</text>
+    <text class="at" x="1110" y="157">ALTA</text>
+  </g>
+  <g id="StatusRastreio">
+    <rect class="en" x="1100" y="190" width="260" height="110"/>
+    <rect class="eh" x="1100" y="190" width="260" height="44"/>
+    <text class="est" x="1230" y="207" text-anchor="middle">&#171;enumeração&#187;</text>
+    <text class="nome" x="1230" y="226" text-anchor="middle">StatusRastreio</text>
+    <line class="sp" x1="1100" y1="234" x2="1360" y2="234"/>
+    <text class="at" x="1110" y="251">EM_ANDAMENTO</text>
+    <text class="at" x="1110" y="269">CONCLUIDO</text>
+    <text class="at" x="1110" y="287">CANCELADO</text>
+  </g>
+  <g id="TipoNotificacao">
+    <rect class="en" x="1420" y="60" width="260" height="344"/>
+    <rect class="eh" x="1420" y="60" width="260" height="44"/>
+    <text class="est" x="1550" y="77" text-anchor="middle">&#171;enumeração&#187;</text>
+    <text class="nome" x="1550" y="96" text-anchor="middle">TipoNotificacao</text>
+    <line class="sp" x1="1420" y1="104" x2="1680" y2="104"/>
+    <text class="at" x="1430" y="121">SENHA_CHAMADA</text>
+    <text class="at" x="1430" y="139">SENHA_FINALIZADA</text>
+    <text class="at" x="1430" y="157">SENHA_CANCELADA</text>
+    <text class="at" x="1430" y="175">SENHA_PROXIMA</text>
+    <text class="at" x="1430" y="193">SENHA_NOVA_NA_FILA</text>
+    <text class="at" x="1430" y="211">SENHA_TRANSFERIDA</text>
+    <text class="at" x="1430" y="229">SENHA_ENCAMINHADA_FLOW</text>
+    <text class="at" x="1430" y="247">SENHA_MOVIDA_FILA</text>
+    <text class="at" x="1430" y="265">FILA_CRIADA</text>
+    <text class="at" x="1430" y="283">FILA_REMOVIDA</text>
+    <text class="at" x="1430" y="301">FILA_ATUALIZADA</text>
+    <text class="at" x="1430" y="319">SOLICITACAO_INSTITUICAO</text>
+    <text class="at" x="1430" y="337">INSTITUICAO_APROVADA</text>
+    <text class="at" x="1430" y="355">INSTITUICAO_REJEITADA</text>
+    <text class="at" x="1430" y="373">USUARIO_CRIADO</text>
+    <text class="at" x="1430" y="391">SISTEMA</text>
+  </g>
+
+  <!-- Associacoes -->
+  <!-- Instituicao 1 para 0..* Fluxo -->
+  <line class="ln" x1="260" y1="83" x2="340" y2="83"/>
+  <text class="ml" x="266" y="76">1</text>
+  <text class="ml" x="334" y="76" text-anchor="end">0..*</text>
+
+  <!-- Fila 1 para 0..* EtapaFluxo -->
+  <line class="ln" x1="260" y1="323" x2="340" y2="323"/>
+  <text class="ml" x="266" y="316">1</text>
+  <text class="ml" x="334" y="316" text-anchor="end">0..*</text>
+
+  <!-- Fluxo 1 composicao 1..* EtapaFluxo -->
+  <line class="ln" x1="480" y1="256" x2="480" y2="300"/>
+  <polygon class="cp" points="480,256 486,262 480,268 474,262"/>
+  <text class="ml" x="490" y="274">1</text>
+  <text class="ml" x="490" y="296">1..*</text>
+
+  <!-- Fluxo 1 composicao 0..* TransicaoFluxo -->
+  <polyline class="ln" points="620,200 680,200 680,600 620,600"/>
+  <polygon class="cp" points="620,200 626,194 632,200 626,206"/>
+  <text class="ml" x="638" y="192">1</text>
+  <text class="ml" x="686" y="592">0..*</text>
+
+  <!-- TransicaoFluxo 0..* origem 1 EtapaFluxo -->
+  <line class="ln" x1="420" y1="454" x2="420" y2="560"/>
+  <text class="ml" x="426" y="470">1</text>
+  <text class="ml" x="426" y="552">0..*</text>
+  <text class="ml" x="426" y="508">origem</text>
+
+  <!-- TransicaoFluxo 0..* destino 1 EtapaFluxo -->
+  <line class="ln" x1="540" y1="454" x2="540" y2="560"/>
+  <text class="ml" x="546" y="470">1</text>
+  <text class="ml" x="546" y="552">0..*</text>
+  <text class="ml" x="546" y="508">destino</text>
+
+  <!-- Fluxo 1 para 0..* RastreioFluxo -->
+  <polyline class="ln" points="620,120 760,120 760,300"/>
+  <text class="ml" x="626" y="112">1</text>
+  <text class="ml" x="766" y="290">0..*</text>
+
+  <!-- RastreioFluxo 0..1 para 1 Senha -->
+  <line class="ln" x1="1000" y1="343" x2="1100" y2="343"/>
+  <text class="ml" x="1006" y="336">0..1</text>
+  <text class="ml" x="1094" y="336" text-anchor="end">1</text>
+
+  <!-- RastreioFluxo 1 composicao 0..* HistoricoFluxo -->
+  <line class="ln" x1="860" y1="460" x2="860" y2="540"/>
+  <polygon class="cp" points="860,460 866,466 860,472 854,466"/>
+  <text class="ml" x="870" y="478">1</text>
+  <text class="ml" x="866" y="530">0..*</text>
+
+  <!-- Senha 1 para 0..* ChatMensagem -->
+  <line class="ln" x1="1230" y1="366" x2="1230" y2="540"/>
+  <text class="ml" x="1236" y="382">1</text>
+  <text class="ml" x="1236" y="530">0..*</text>
+
+  <!-- Usuario 1 para 0..* ChatMensagem -->
+  <line class="ln" x1="1230" y1="640" x2="1230" y2="800"/>
+  <text class="ml" x="1236" y="654">0..*</text>
+  <text class="ml" x="1236" y="790">1</text>
+
+  <!-- Usuario 1 para 0..* Notificacao -->
+  <line class="ln" x1="1000" y1="823" x2="1100" y2="823"/>
+  <text class="ml" x="1006" y="816">0..*</text>
+  <text class="ml" x="1094" y="816" text-anchor="end">1</text>
+
+  <!-- Usuario 0..1 para 0..* Auditoria -->
+  <polyline class="ln" points="1230,846 1230,1010 300,1010"/>
+  <text class="ml" x="1236" y="866">0..1</text>
+  <text class="ml" x="306" y="1002">0..*</text>
+
+  <!-- Legenda -->
+  <text class="ml" x="40" y="1085">Visibilidade: - privado, + público. Multiplicidade junto a cada classe: quantas instâncias daquela classe se ligam a uma instância da outra.</text>
+  <text class="ml" x="40" y="1105">Losango preenchido = composição. Classes tracejadas são referências ao núcleo (classes.svg). LandingPage é isolada: uma linha por chave.</text>
+</svg>

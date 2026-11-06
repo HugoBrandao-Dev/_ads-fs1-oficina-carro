@@ -1,0 +1,25 @@
+id,titulo,label,criado,iniciado,fechado,responsavel
+1,"UC-01 Modelar autenticacao: cadastro, login e logout",modelagem;UC-01,2026-08-03,2026-08-04,2026-08-07,Ana
+2,UC-01 Implementar cadastro e login com BetterAuth,backend;UC-01,2026-08-03,2026-08-10,2026-08-17,Bruno
+3,UC-01 Telas de cadastro e login,frontend;UC-01,2026-08-03,2026-08-17,2026-08-21,Carla
+4,UC-02 Gerenciar perfil: consulta e edicao,backend;UC-02,2026-08-03,2026-08-11,2026-08-14,Diego
+5,UC-02 Tela de perfil e troca de senha,frontend;UC-02,2026-08-03,2026-08-18,2026-08-25,Carla
+6,UC-03 Modelar solicitacao de cadastro de instituicao,modelagem;UC-03,2026-08-03,2026-08-05,2026-08-06,Ana
+7,UC-03 Endpoint e validacao da solicitacao de instituicao,backend;UC-03,2026-08-06,2026-08-12,2026-08-19,Bruno
+8,UC-03 Formulario de solicitacao de instituicao,frontend;UC-03,2026-08-06,2026-08-19,2026-08-26,Diego
+9,"UC-04 Avaliar solicitacao: aprovar, rejeitar e reconsiderar",backend;UC-04,2026-08-10,2026-08-20,2026-08-28,Bruno
+10,UC-04 Painel de avaliacao pelo administrador da plataforma,frontend;UC-04,2026-08-10,2026-08-24,2026-09-01,Carla
+11,UC-05 Modelar papeis e atribuicao de usuarios,modelagem;UC-05,2026-08-17,2026-08-24,2026-08-26,Ana
+12,UC-05 Endpoints de usuarios e papeis por instituicao,backend;UC-05,2026-08-17,2026-08-27,2026-09-03,Bruno
+13,UC-05 Tela de gestao de usuarios,frontend;UC-05,2026-08-17,2026-09-01,2026-09-08,Diego
+14,"UC-06 Modelar filas, mesas e estados",modelagem;UC-06,2026-08-24,2026-08-31,2026-09-02,Ana
+15,UC-06 CRUD de filas e mesas,backend;UC-06,2026-08-24,2026-09-02,2026-09-09,Bruno
+16,UC-06 Tela de filas,frontend;UC-06,2026-08-31,2026-09-08,2026-09-14,Carla
+17,UC-07 Configurar tipos de etapa,backend;UC-07,2026-08-31,2026-09-03,2026-09-07,Diego
+18,UC-07 Tela de tipos de etapa,frontend;UC-07,2026-09-01,2026-09-09,2026-09-15,Carla
+19,UC-08 Modelar emissao online e numeracao de senha,modelagem;UC-08,2026-09-01,2026-09-07,2026-09-08,Ana
+20,UC-08 Endpoint de emissao de senha online,backend;UC-08,2026-09-01,2026-09-10,2026-09-16,Bruno
+21,UC-08 Tela de emissao de senha online,frontend;UC-08,2026-09-07,2026-09-14,2026-09-18,Diego
+22,UC-06 Testes de integracao de filas,teste;UC-06,2026-09-03,2026-09-11,2026-09-15,Ana
+23,UC-01 Testes de autenticacao e sessao,teste;UC-01,2026-08-10,2026-08-24,2026-08-28,Ana
+24,Documentar API da milestone 2,docs,2026-09-10,2026-09-14,2026-09-18,Bruno
