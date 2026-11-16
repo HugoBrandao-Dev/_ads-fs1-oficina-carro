@@ -2,93 +2,94 @@
 
 Milestone 1 · Fábrica de Software I · Unidade de requisitos
 
-Esta pasta registra o levantamento de requisitos do FilaCidadã, a API de filas de atendimento. Os requisitos funcionais foram derivados do código real do repositório (commit `38b55c7`), das regras de negócio documentadas em `documentacao/` e de entrevistas. As entrevistas deste projeto são **fictícias**: servem de exemplo didático do método, não registram conversas reais.
+Esta pasta registra o levantamento de requisitos do Bancada, o sistema de gestão de oficina mecânica da RFP 2 (cliente Antônio Júnior). A fonte oficial dos requisitos são as issues do GitLab do projeto ([projeto2](https://gitlab.fslab.dev/fabrica-de-software-i-2026/projeto2)). Os documentos desta pasta consolidam essas issues, apontam onde cada regra aparece no banco do Milestone 2 (`milestone_2/ddl.sql`) e registram as divergências encontradas.
 
 ## Técnicas de elicitação
 
 | Técnica | Fonte | O que produziu |
 |---|---|---|
-| Análise documental | `README.md`, `documentacao/03-papeis-e-regras.md`, `06-autenticacao.md`, `08-tempo-real.md` | Papéis, regras de estado, códigos de erro, eventos de tempo real |
-| Engenharia reversa do código | `src/routes/`, `src/middlewares/`, `src/services/`, `prisma/schema.prisma`, `src/graphql/` | Inventário das rotas REST e operações GraphQL, guardas de acesso, mensagens de negócio |
-| Entrevistas (fictícias) | Quatro perfis, uma sessão cada, roteiro semiestruturado | Necessidades por ator e prioridades percebidas |
-| Oficina de priorização | Sessão com os quatro atores | Classificação MoSCoW das funcionalidades |
-| Validação com o cliente (fictícia) | Sessão de revisão por caso de uso | Aceites, ajustes e decisões registradas |
+| Análise documental | RFP 2 apresentada pelo professor ([rfp.md](../01-visao/rfp.md)) | Necessidades N01 a N12, usuários e restrições |
+| Reunião com o cliente | Reunião de levantamento de 26/08/2026, gravada em áudio; ata na issue [#2](https://gitlab.fslab.dev/fabrica-de-software-i-2026/projeto2/-/issues/2) | Fluxo da OS, perfis de usuário, regras de estoque e de retirada do veículo |
+| PM Canvas | Issue [#3](https://gitlab.fslab.dev/fabrica-de-software-i-2026/projeto2/-/issues/3) e [pm-canvas.md](../01-visao/pm-canvas.md) | Problema, objetivos e partes interessadas |
+| Prototipação | Arquivo do Figma "Gestão de Oficina Mecânica" (telas de 1440 × 900) | Validação visual do fluxo de balcão, orçamento, OS, boxes, estoque e histórico do veículo |
+| Modelagem do banco | `milestone_2/ddl.sql` | Restrições que confirmam ou contradizem os requisitos (unicidade, status, gatilhos) |
 
-## Entrevistas (fictícias)
+## Reunião com o cliente
 
-| Data | Entrevistado (fictício) | Ator | Principais achados |
-|---|---|---|---|
-| 2026-08-11 | Coordenadora de atendimento de uma prefeitura | ACT-03 Administrador da Instituição | Precisa cadastrar operadores, abrir filas e acompanhar senhas por período; quer assumir um atendimento quando o operador se ausenta |
-| 2026-08-13 | Operador de guichê | ACT-02 Operador | Emite senha para quem não tem celular; chama, rechama e finaliza; precisa encaminhar o cidadão para outra etapa |
-| 2026-08-18 | Cidadã que usa a fila semanalmente | ACT-01 Cidadão | Quer retirar senha pelo QR Code da fila, acompanhar a posição, receber aviso quando for chamada e cancelar se desistir |
-| 2026-08-20 | Administradora da plataforma | ACT-04 Administrador da Plataforma | Aprova ou rejeita instituições com motivo, pode reconsiderar uma rejeição, precisa de dashboard geral e de auditoria |
+| Data | Participantes | Principais achados |
+|---|---|---|
+| 26/08/2026, 20h40 às 20h55 | Equipe de desenvolvimento (conforme a ata) | Fluxo completo da OS: atendimento pela secretária, diagnóstico e orçamento pelo mecânico, autorização do cliente, execução, pagamento e entrega |
+| | | Estoque próprio controlado pelo código da peça; peças trazidas pelo cliente cobram apenas a mão de obra, com garantia restrita ao serviço |
+| | | Perfis citados: Secretária, Mecânico, Almoxarifado e Gerente/Financeiro; só a gerência e o financeiro alteram a tabela de preços dos serviços |
+| | | O veículo só pode ser retirado pela mesma pessoa que o entregou; a plataforma principal é web |
 
-## Oficina de priorização
+Parte desses achados ainda não virou requisito. Os itens pendentes estão em [Divergências](requisitos-funcionais.md#divergências).
 
-Data: 2026-08-25 (fictícia). Participaram os quatro atores representados nas entrevistas. Cada funcionalidade recebeu uma classe MoSCoW:
+## Priorização
 
-- **Must**: sem ela o fluxo principal (cadastrar, emitir senha, chamar, finalizar) não funciona.
-- **Should**: agrega valor forte, mas o fluxo principal funciona sem ela.
-- **Could**: desejável, entra se houver tempo.
-- **Won't**: fora desta entrega (não há itens nesta classe no levantamento atual).
+O grupo prioriza no GitLab com a label `prio::`. Para seguir o modelo da disciplina, a label foi convertida em MoSCoW:
+
+| Label no GitLab | MoSCoW | Significado |
+|---|---|---|
+| `prio::P1` | Must | Sem o item, o fluxo principal (balcão, orçamento, OS) não funciona |
+| `prio::P2` | Should | Agrega valor forte, mas o fluxo principal funciona sem ele |
+| `prio::P3` | Could | Desejável; entra se houver tempo |
+| (sem label) | A definir | Item sem prioridade registrada no GitLab |
+
+O tamanho usa a label `size::` (S, M, L), copiada sem alteração.
 
 ## Validação com o cliente
 
-Data: 2026-09-08 (fictícia). Método: revisão, caso de uso a caso de uso (UC-01 a UC-15), do texto de cada requisito, com o cliente lendo a tabela de RF e confirmando o comportamento esperado.
-
-Resultado (fictício):
-
-- Aceitos sem alteração: a maior parte dos RF.
-- Ajustados: RF-010 (mensagem de nome duplicado), RF-037 (prioridade só quando a fila a habilita), RF-040 (rechamar apenas pelo operador responsável), RF-060 (cancelamento só enquanto aguardando) e RF-064 (notificações exibidas também ao administrador).
-- Incluídos: nenhum requisito novo nesta rodada.
-- Divergências entre código e documentação levantadas na sessão: listadas no fim de [requisitos-funcionais.md](requisitos-funcionais.md).
+A validação acontece nas apresentações de cada milestone, com o cliente e o professor (15/09, 20/10 e 08/12/2026). As perguntas que ainda dependem do cliente estão na seção 12 da [RFP](../01-visao/rfp.md#12-perguntas-em-aberto-ao-cliente). Enquanto não houver resposta, os documentos desta pasta registram a premissa adotada.
 
 ## Método de análise
 
-1. Inventário: listar todas as rotas REST e operações GraphQL com método, caminho e middleware de acesso.
-2. Agrupamento: atribuir cada rota a um caso de uso do catálogo (UC-01 a UC-15). Quando nenhum UC cobre a rota, atribuir ao mais próximo e registrar em Divergências.
-3. Redação verificável: cada RF traz ator, comportamento observável e, quando a regra existe no código, o código de resposta de erro (400, 403, 409 etc.).
-4. Priorização: MoSCoW pela oficina. Para o campo Milestone, usamos o critério Must = M1, Should = M2, Could = M3.
-5. Rastreabilidade: cada RF aponta para um UC; a tabela de mapeamento UC para RF no fim de `requisitos-funcionais.md` alimenta as demais entregas.
-6. Conferência: todos os RF foram comparados, item a item, com a rota correspondente em `src/routes/`.
+1. **Inventário.** Todas as issues de requisito (RF, RNF) e de história (US) do GitLab foram lidas, com labels, milestone e texto completo.
+2. **Agrupamento.** Cada história foi ligada ao RF citado no seu título. Cada caso de uso foi ligado à história citada no título da issue de UC (padrão `UC-0YY - US-0XX - <nome>`).
+3. **Conferência com o banco.** Cada regra verificável foi procurada em `milestone_2/ddl.sql`. Quando a regra existe, o documento cita a tabela, a coluna ou a restrição.
+4. **Redação verificável.** O texto das issues foi preservado, com correção ortográfica. As regras de cada RF foram reescritas como itens verificáveis, sem mudar o sentido.
+5. **Critérios de aceite.** Histórias sem critério de aceite, ou com critério fora do padrão `Dado` / `Quando` / `Então` / `E`, receberam um cenário marcado como `@proposta`, para revisão da equipe.
+6. **Rastreabilidade.** As tabelas de mapeamento RF → US → UC alimentam o [backlog](backlog.md), o [diagrama de rastreabilidade](rastreabilidade-requisitos.svg) e a [matriz](../07-rastreabilidade/matriz.md).
 
 ## Convenções de identificação
 
+Os identificadores são os das issues do GitLab, para manter a rastreabilidade entre os artefatos.
+
 | Prefixo | Significado | Exemplo |
 |---|---|---|
-| `UC-NN` | Caso de uso (catálogo fixo) | UC-08 Emitir senha online |
-| `RF-NNN` | Requisito funcional, agrupado por UC | RF-034 |
-| `RNF-NNN` | Requisito não funcional | RNF-001 |
-| `US-NNN` | História de usuário | US-001 |
-| `ACT-NN` | Ator | ACT-02 Operador |
-| `T-<perfil>-NN` | Tela (wireframe) | T-CID-01 |
+| `RF-NN` | Requisito funcional (agrupa histórias) | RF-02 Orçamento e aprovação do serviço |
+| `RNF-NN` | Requisito não funcional | RNF-02 Segurança |
+| `US-NNN` | História de usuário | US-016 Montar o orçamento da OS |
+| `UC-NNN` | Caso de uso | UC-006 Cadastrar orçamento |
+| `DS-NNN`, `DA-NNN`, `DE-NNN` | Diagramas de sequência, atividades e estados | DS-003, DA-004, DE-001 |
+| `ACT-NN` | Ator | ACT-01 Secretária |
+| `#N` | Número da issue no GitLab | #13 |
+
+Algumas histórias estão fora do padrão `US-0XX` no GitLab (US-26, US-27, US-28, "US -20" e "US - 030"). Nesta pasta elas aparecem como US-026, US-027, US-028 e US-030; a "US -20" é citada pela issue (#42), porque o número 020 já pertence a outra história. A correção sugerida está em [Divergências](historias-de-usuario.md#divergências).
 
 ## Atores
 
-| ID | Ator | Papel no sistema (`src/constants/roles.js`) |
+| ID | Ator | Papel no sistema |
 |---|---|---|
-| ACT-01 | Cidadão | `USUARIO_FINAL` |
-| ACT-02 | Operador | `OPERADOR` |
-| ACT-03 | Administrador da Instituição | `ADMIN_INSTITUICAO` |
-| ACT-04 | Administrador da Plataforma | `ADMIN_PLATAFORMA` |
+| ACT-01 | Secretária | Único perfil com login no Milestone 1 (`funcionario.func_login`). Realiza todos os casos de uso do catálogo |
+| ACT-02 | Mecânico | Aparece nas histórias US-016 e #42. Sem login no Milestone 1; é gravado na OS (`ordem_servico.meca_id`) |
+| ACT-03 | Gestor da oficina | Aparece nas histórias US-018 e US-027. Sem login no Milestone 1 |
 
-Visitante é quem não está autenticado. Não é ator do catálogo; aparece no texto dos requisitos como "visitante (sem login)".
+As histórias também citam "funcionário de estoque", "funcionário de atendimento" e "vendedora", e os casos de uso citam "Estoquista" e "Gerente". Pela premissa do Milestone 1, todos esses papéis são exercidos pela secretária (ACT-01). A ata da reunião cita ainda Almoxarifado e Gerente/Financeiro como perfis futuros.
 
 ## Arquivos desta pasta
 
-- [requisitos-funcionais.md](requisitos-funcionais.md): RF-001 a RF-065, mapeamento UC para RF e divergências.
-- `requisitos-nao-funcionais.md`: RNF (frente de requisitos não funcionais).
-- `historias-de-usuario.md`: US derivadas dos UC.
-- `backlog.md`: ordenação dos itens por prioridade e milestone.
-- `rastreabilidade-requisitos.svg`: diagrama de rastreabilidade entre UC, RF e US.
+- [requisitos-funcionais.md](requisitos-funcionais.md): RF-01 a RF-07, regras verificáveis, mapeamento RF → US → UC e divergências.
+- [requisitos-nao-funcionais.md](requisitos-nao-funcionais.md): RNF-01 a RNF-05, com métrica proposta e evidência.
+- [historias-de-usuario.md](historias-de-usuario.md): as 30 histórias do GitLab, com critérios de aceite em Gherkin.
+- [backlog.md](backlog.md): itens ordenados por prioridade, com o estado de cada artefato.
+- [rastreabilidade-requisitos.svg](rastreabilidade-requisitos.svg): diagrama de rastreabilidade entre RF, US e UC.
 
 ## Veja também
 
 - [Visão do produto](../01-visao/README.md)
+- [RFP do cliente](../01-visao/rfp.md)
+- [Glossário](../01-visao/glossario.md)
 - [Casos de uso](../05-modelagem/casos-de-uso/README.md)
 - [Protótipo e telas](../04-prototipo/README.md)
 - [Matriz de rastreabilidade](../07-rastreabilidade/matriz.md)
-- [Requisitos funcionais](requisitos-funcionais.md)
-- [Requisitos não funcionais](requisitos-nao-funcionais.md)
-- [Histórias de usuário](historias-de-usuario.md)
-- [Backlog](backlog.md)

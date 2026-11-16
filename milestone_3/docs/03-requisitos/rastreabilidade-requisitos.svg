@@ -1,197 +1,195 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 800" width="1080" height="800" role="img" font-family="sans-serif">
-  <title>Rastreabilidade de requisitos: RF, US, UC e classe de dominio</title>
-  <desc>Diagrama em quatro colunas. Cada linha liga um grupo de requisitos funcionais (RF) às suas histórias de usuário (US), ao caso de uso (UC) que as realiza e às classes de domínio que o caso de uso manipula. Os RF seguem a tabela de mapeamento de requisitos-funcionais.md. As US são provisórias até a publicação de historias-de-usuario.md.</desc>
-  <defs>
-    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#6b6b6b"/>
-    </marker>
-  </defs>
-  <rect x="0" y="0" width="1080" height="800" fill="#ffffff"/>
-  <text x="20" y="32" font-size="18" font-weight="bold" fill="#1a1a1a">Rastreabilidade de requisitos: RF, US, UC e classe</text>
-  <text x="20" y="54" font-size="13" fill="#4a4a4a">Cada linha liga um grupo de RF às suas histórias, ao caso de uso e às classes que ele manipula. RF conforme requisitos-funcionais.md; US provisórias.</text>
-  <text x="100.0" y="88" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Requisito funcional</text>
-  <line x1="20" y1="96" x2="180" y2="96" stroke="#1f5fbf" stroke-width="2"/>
-  <text x="300.0" y="88" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">História de usuário</text>
-  <line x1="220" y1="96" x2="380" y2="96" stroke="#1f5fbf" stroke-width="2"/>
-  <text x="565.0" y="88" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Caso de uso</text>
-  <line x1="420" y1="96" x2="710" y2="96" stroke="#1f5fbf" stroke-width="2"/>
-  <text x="905.0" y="88" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Classe de domínio</text>
-  <line x1="750" y1="96" x2="1060" y2="96" stroke="#1f5fbf" stroke-width="2"/>
-  <rect x="10" y="92.0" width="1060" height="40" fill="#f5f5f5"/>
-  <rect x="10" y="180.0" width="1060" height="40" fill="#f5f5f5"/>
-  <rect x="10" y="268.0" width="1060" height="40" fill="#f5f5f5"/>
-  <rect x="10" y="356.0" width="1060" height="40" fill="#f5f5f5"/>
-  <rect x="10" y="444.0" width="1060" height="40" fill="#f5f5f5"/>
-  <rect x="10" y="532.0" width="1060" height="40" fill="#f5f5f5"/>
-  <rect x="10" y="620.0" width="1060" height="40" fill="#f5f5f5"/>
-  <rect x="10" y="708.0" width="1060" height="40" fill="#f5f5f5"/>
-  <rect x="20" y="97.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="117" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-001 a RF-004</text>
-  <rect x="220" y="97.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="117" font-size="13" fill="#1a1a1a" text-anchor="middle">US-001 a US-002</text>
-  <rect x="420" y="97.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="117" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-01</tspan> Autenticar-se</text>
-  <rect x="750" y="97.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="117" font-size="13" fill="#1a1a1a" text-anchor="middle">Usuario, Sessao, Conta</text>
-  <line x1="182" y1="112" x2="218" y2="112" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="112" x2="418" y2="112" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="112" x2="748" y2="112" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="141.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="161" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-005 a RF-008</text>
-  <rect x="220" y="141.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="161" font-size="13" fill="#1a1a1a" text-anchor="middle">US-003</text>
-  <rect x="420" y="141.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="161" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-02</tspan> Gerenciar perfil</text>
-  <rect x="750" y="141.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="161" font-size="13" fill="#1a1a1a" text-anchor="middle">Usuario</text>
-  <line x1="182" y1="156" x2="218" y2="156" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="156" x2="418" y2="156" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="156" x2="748" y2="156" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="185.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="205" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-009 a RF-011</text>
-  <rect x="220" y="185.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="205" font-size="13" fill="#1a1a1a" text-anchor="middle">US-004</text>
-  <rect x="420" y="185.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="205" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-03</tspan> Solicitar cadastro de instituição</text>
-  <rect x="750" y="185.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="205" font-size="13" fill="#1a1a1a" text-anchor="middle">Instituicao, Usuario</text>
-  <line x1="182" y1="200" x2="218" y2="200" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="200" x2="418" y2="200" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="200" x2="748" y2="200" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="229.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="249" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-012 a RF-019</text>
-  <rect x="220" y="229.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="249" font-size="13" fill="#1a1a1a" text-anchor="middle">US-005 a US-006</text>
-  <rect x="420" y="229.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="249" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-04</tspan> Avaliar solicitação de instituição</text>
-  <rect x="750" y="229.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="249" font-size="13" fill="#1a1a1a" text-anchor="middle">Instituicao, Auditoria</text>
-  <line x1="182" y1="244" x2="218" y2="244" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="244" x2="418" y2="244" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="244" x2="748" y2="244" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="273.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="293" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-020 a RF-024</text>
-  <rect x="220" y="273.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="293" font-size="13" fill="#1a1a1a" text-anchor="middle">US-007 a US-008</text>
-  <rect x="420" y="273.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="293" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-05</tspan> Gerenciar usuários e papéis</text>
-  <rect x="750" y="273.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="293" font-size="13" fill="#1a1a1a" text-anchor="middle">Usuario, Papel, Auditoria</text>
-  <line x1="182" y1="288" x2="218" y2="288" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="288" x2="418" y2="288" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="288" x2="748" y2="288" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="317.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="337" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-025 a RF-031</text>
-  <rect x="220" y="317.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="337" font-size="13" fill="#1a1a1a" text-anchor="middle">US-009 a US-010</text>
-  <rect x="420" y="317.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="337" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-06</tspan> Gerenciar filas</text>
-  <rect x="750" y="317.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="337" font-size="13" fill="#1a1a1a" text-anchor="middle">Fila, Flow, Auditoria</text>
-  <line x1="182" y1="332" x2="218" y2="332" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="332" x2="418" y2="332" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="332" x2="748" y2="332" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="361.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="381" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-032 a RF-033</text>
-  <rect x="220" y="361.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="381" font-size="13" fill="#1a1a1a" text-anchor="middle">US-011</text>
-  <rect x="420" y="361.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="381" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-07</tspan> Configurar tipos de etapa</text>
-  <rect x="750" y="361.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="381" font-size="13" fill="#1a1a1a" text-anchor="middle">TipoEtapa</text>
-  <line x1="182" y1="376" x2="218" y2="376" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="376" x2="418" y2="376" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="376" x2="748" y2="376" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="405.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="425" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-034 a RF-037</text>
-  <rect x="220" y="405.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="425" font-size="13" fill="#1a1a1a" text-anchor="middle">US-012</text>
-  <rect x="420" y="405.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="425" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-08</tspan> Emitir senha online</text>
-  <rect x="750" y="405.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="425" font-size="13" fill="#1a1a1a" text-anchor="middle">Senha, Fila, QrCode</text>
-  <line x1="182" y1="420" x2="218" y2="420" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="420" x2="418" y2="420" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="420" x2="748" y2="420" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="449.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="469" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-038</text>
-  <rect x="220" y="449.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="469" font-size="13" fill="#1a1a1a" text-anchor="middle">US-013</text>
-  <rect x="420" y="449.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="469" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-09</tspan> Emitir senha presencial</text>
-  <rect x="750" y="449.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="469" font-size="13" fill="#1a1a1a" text-anchor="middle">Senha, Fila</text>
-  <line x1="182" y1="464" x2="218" y2="464" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="464" x2="418" y2="464" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="464" x2="748" y2="464" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="493.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="513" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-039 a RF-044</text>
-  <rect x="220" y="493.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="513" font-size="13" fill="#1a1a1a" text-anchor="middle">US-014 a US-015</text>
-  <rect x="420" y="493.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="513" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-10</tspan> Chamar, rechamar e assumir senha</text>
-  <rect x="750" y="493.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="513" font-size="13" fill="#1a1a1a" text-anchor="middle">Senha, Mesa, Flow</text>
-  <line x1="182" y1="508" x2="218" y2="508" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="508" x2="418" y2="508" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="508" x2="748" y2="508" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="537.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="557" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-045 a RF-047</text>
-  <rect x="220" y="537.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="557" font-size="13" fill="#1a1a1a" text-anchor="middle">US-016</text>
-  <rect x="420" y="537.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="557" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-11</tspan> Finalizar ou cancelar atendimento</text>
-  <rect x="750" y="537.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="557" font-size="13" fill="#1a1a1a" text-anchor="middle">Senha, Mesa</text>
-  <line x1="182" y1="552" x2="218" y2="552" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="552" x2="418" y2="552" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="552" x2="748" y2="552" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="581.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="601" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-048 a RF-051</text>
-  <rect x="220" y="581.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="601" font-size="13" fill="#1a1a1a" text-anchor="middle">US-017</text>
-  <rect x="420" y="581.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="601" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-12</tspan> Gerenciar QR Codes</text>
-  <rect x="750" y="581.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="601" font-size="13" fill="#1a1a1a" text-anchor="middle">QrCode, Fila</text>
-  <line x1="182" y1="596" x2="218" y2="596" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="596" x2="418" y2="596" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="596" x2="748" y2="596" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="625.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="645" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-052 a RF-055</text>
-  <rect x="220" y="625.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="645" font-size="13" fill="#1a1a1a" text-anchor="middle">US-018</text>
-  <rect x="420" y="625.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="645" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-13</tspan> Consultar dashboard e estatísticas</text>
-  <rect x="750" y="625.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="645" font-size="13" fill="#1a1a1a" text-anchor="middle">Senha, Fila, Mesa</text>
-  <line x1="182" y1="640" x2="218" y2="640" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="640" x2="418" y2="640" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="640" x2="748" y2="640" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="669.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="689" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-056 a RF-057</text>
-  <rect x="220" y="669.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="689" font-size="13" fill="#1a1a1a" text-anchor="middle">US-019</text>
-  <rect x="420" y="669.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="689" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-14</tspan> Consultar auditoria</text>
-  <rect x="750" y="669.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="689" font-size="13" fill="#1a1a1a" text-anchor="middle">Auditoria</text>
-  <line x1="182" y1="684" x2="218" y2="684" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="684" x2="418" y2="684" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="684" x2="748" y2="684" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="713.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="100.0" y="733" font-size="13" fill="#1a1a1a" text-anchor="middle">RF-058 a RF-065</text>
-  <rect x="220" y="713.0" width="160" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="300.0" y="733" font-size="13" fill="#1a1a1a" text-anchor="middle">US-020</text>
-  <rect x="420" y="713.0" width="290" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
-  <text x="565.0" y="733" font-size="13" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-15</tspan> Acompanhar minha senha</text>
-  <rect x="750" y="713.0" width="310" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
-  <text x="905.0" y="733" font-size="13" fill="#1a1a1a" text-anchor="middle">Senha, Notificacao, ChatMensagem</text>
-  <line x1="182" y1="728" x2="218" y2="728" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="382" y1="728" x2="418" y2="728" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <line x1="712" y1="728" x2="748" y2="728" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <rect x="20" y="766" width="18" height="12" rx="2" fill="#e8f0fb" stroke="#1f5fbf"/>
-  <text x="46" y="776" font-size="12" fill="#4a4a4a">Caso de uso (UC-01 a UC-15, catálogo fixo)</text>
-  <line x1="360" y1="772" x2="400" y2="772" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
-  <text x="410" y="776" font-size="12" fill="#4a4a4a">Ligação de rastreabilidade</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170 810" width="1170" height="810" role="img" font-family="sans-serif">
+  <title>Rastreabilidade de requisitos do Bancada: RF, US, UC e tabela do banco</title>
+  <desc>Diagrama em quatro colunas. Cada linha liga um requisito funcional (RF) às histórias de usuário (US) do GitLab, aos casos de uso (UC) do catálogo e às tabelas do banco do Milestone 2 que guardam os dados. Caixas tracejadas indicam lacuna: história sem caso de uso ou caso de uso sem história.</desc>
+  <defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b6b6b"/></marker></defs>
+  <rect x="0" y="0" width="1170" height="810" fill="#ffffff"/>
+  <text x="20" y="32" font-size="18" font-weight="bold" fill="#1a1a1a">Rastreabilidade de requisitos: RF, US, UC e tabela do banco</text>
+  <text x="20" y="54" font-size="13" fill="#4a4a4a">Bancada · issues do GitLab (projeto2) e milestone_2/ddl.sql · situação em 15/11/2026</text>
+  <text x="65.0" y="84" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Requisito</text>
+  <line x1="20" y1="92" x2="110" y2="92" stroke="#1f5fbf" stroke-width="2"/>
+  <text x="290.0" y="84" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">História de usuário</text>
+  <line x1="140" y1="92" x2="440" y2="92" stroke="#1f5fbf" stroke-width="2"/>
+  <text x="630.0" y="84" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Caso de uso</text>
+  <line x1="470" y1="92" x2="790" y2="92" stroke="#1f5fbf" stroke-width="2"/>
+  <text x="985.0" y="84" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Tabela do banco</text>
+  <line x1="820" y1="92" x2="1150" y2="92" stroke="#1f5fbf" stroke-width="2"/>
+  <rect x="10" y="97" width="1150" height="40" fill="#f5f5f5"/>
+  <rect x="10" y="137" width="1150" height="40" fill="#f5f5f5"/>
+  <rect x="10" y="177" width="1150" height="40" fill="#f5f5f5"/>
+  <rect x="10" y="217" width="1150" height="40" fill="#f5f5f5"/>
+  <rect x="10" y="257" width="1150" height="40" fill="#f5f5f5"/>
+  <rect x="10" y="297" width="1150" height="40" fill="#f5f5f5"/>
+  <rect x="10" y="457" width="1150" height="40" fill="#f5f5f5"/>
+  <rect x="10" y="537" width="1150" height="40" fill="#f5f5f5"/>
+  <rect x="10" y="577" width="1150" height="40" fill="#f5f5f5"/>
+  <rect x="10" y="657" width="1150" height="40" fill="#f5f5f5"/>
+  <rect x="20" y="100" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="120" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-01</tspan></text>
+  <rect x="140" y="100" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="120" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-001</text>
+  <rect x="470" y="100" width="320" height="30" rx="4" fill="#fff8e6" stroke="#b7791f" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="630.0" y="120" font-size="12.5" fill="#1a1a1a" text-anchor="middle">Sem UC (Autenticar é incluído em todos)</text>
+  <rect x="820" y="100" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="120" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">funcionario, funcao</tspan></text>
+  <line x1="112" y1="115" x2="138" y2="115" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="115" x2="468" y2="115" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="115" x2="818" y2="115" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="140" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="160" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-01</tspan></text>
+  <rect x="140" y="140" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="160" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-003, US-004</text>
+  <rect x="470" y="140" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="160" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-001, UC-002</tspan> Cliente</text>
+  <rect x="820" y="140" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="160" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">pessoa</tspan></text>
+  <line x1="112" y1="155" x2="138" y2="155" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="155" x2="468" y2="155" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="155" x2="818" y2="155" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="180" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="200" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-01</tspan></text>
+  <rect x="140" y="180" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="200" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-006, US-007</text>
+  <rect x="470" y="180" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="200" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-004, UC-005</tspan> Veículo</text>
+  <rect x="820" y="180" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="200" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">veiculo, carro_modelo</tspan></text>
+  <line x1="112" y1="195" x2="138" y2="195" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="195" x2="468" y2="195" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="195" x2="818" y2="195" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="220" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="240" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-01</tspan></text>
+  <rect x="140" y="220" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="240" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-010, US-011, US-013, US-014</text>
+  <rect x="470" y="220" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="240" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-003, UC-008, UC-011, UC-012</tspan> Consultas</text>
+  <rect x="820" y="220" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="240" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">pessoa, veiculo</tspan></text>
+  <line x1="112" y1="235" x2="138" y2="235" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="235" x2="468" y2="235" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="235" x2="818" y2="235" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="260" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="280" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-01</tspan></text>
+  <rect x="140" y="260" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="280" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-002</text>
+  <rect x="470" y="260" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="280" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-013</tspan> Retirada e conclusão da OS</text>
+  <rect x="820" y="260" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="280" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">ordem_servico</tspan></text>
+  <line x1="112" y1="275" x2="138" y2="275" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="275" x2="468" y2="275" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="275" x2="818" y2="275" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="300" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="320" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-01</tspan></text>
+  <rect x="140" y="300" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="320" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-005, US-008, US-009, US-012, US-015</text>
+  <rect x="470" y="300" width="320" height="30" rx="4" fill="#fff8e6" stroke="#b7791f" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="630.0" y="320" font-size="12.5" fill="#1a1a1a" text-anchor="middle">Sem caso de uso no catálogo</text>
+  <rect x="820" y="300" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="320" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">pessoa, ordem_servico</tspan></text>
+  <line x1="112" y1="315" x2="138" y2="315" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="315" x2="468" y2="315" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="315" x2="818" y2="315" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="340" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="360" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-02</tspan></text>
+  <rect x="140" y="340" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="360" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-016</text>
+  <rect x="470" y="340" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="360" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-006</tspan> Cadastrar orçamento</text>
+  <rect x="820" y="340" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="360" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">orcamento, orcamento_peca, orcamento_servico</tspan></text>
+  <line x1="112" y1="355" x2="138" y2="355" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="355" x2="468" y2="355" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="355" x2="818" y2="355" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="380" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="400" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-02</tspan></text>
+  <rect x="140" y="380" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="400" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-017</text>
+  <rect x="470" y="380" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="400" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-009, UC-010</tspan> Recusar e aprovar *</text>
+  <rect x="820" y="380" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="400" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">orcamento, orcamento_historico</tspan></text>
+  <line x1="112" y1="395" x2="138" y2="395" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="395" x2="468" y2="395" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="395" x2="818" y2="395" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="420" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="440" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-02</tspan></text>
+  <rect x="140" y="420" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="440" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-018, US-026</text>
+  <rect x="470" y="420" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="440" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-007</tspan> Lista de orçamentos</text>
+  <rect x="820" y="420" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="440" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">orcamento, orcamento_historico</tspan></text>
+  <line x1="112" y1="435" x2="138" y2="435" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="435" x2="468" y2="435" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="435" x2="818" y2="435" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="460" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="480" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-03</tspan></text>
+  <rect x="140" y="460" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="480" font-size="12.5" fill="#1a1a1a" text-anchor="middle">#42 (agenda de boxes)</text>
+  <rect x="470" y="460" width="320" height="30" rx="4" fill="#fff8e6" stroke="#b7791f" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="630.0" y="480" font-size="12.5" fill="#1a1a1a" text-anchor="middle">Sem caso de uso no catálogo</text>
+  <rect x="820" y="460" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="480" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">box, ordem_servico</tspan></text>
+  <line x1="112" y1="475" x2="138" y2="475" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="475" x2="468" y2="475" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="475" x2="818" y2="475" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="500" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="520" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-04</tspan></text>
+  <rect x="140" y="500" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="520" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-029, US-030</text>
+  <rect x="470" y="500" width="320" height="30" rx="4" fill="#fff8e6" stroke="#b7791f" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="630.0" y="520" font-size="12.5" fill="#1a1a1a" text-anchor="middle">Sem caso de uso no catálogo</text>
+  <rect x="820" y="500" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="520" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">veiculo, orcamento, ordem_servico</tspan></text>
+  <line x1="112" y1="515" x2="138" y2="515" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="515" x2="468" y2="515" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="515" x2="818" y2="515" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="540" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="560" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-05</tspan></text>
+  <rect x="140" y="540" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="560" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-019 a US-024</text>
+  <rect x="470" y="540" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="560" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-017, UC-020 a UC-022</tspan> Peças</text>
+  <rect x="820" y="540" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="560" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">peca</tspan></text>
+  <line x1="112" y1="555" x2="138" y2="555" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="555" x2="468" y2="555" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="555" x2="818" y2="555" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="580" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="600" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-05</tspan></text>
+  <rect x="140" y="580" width="300" height="30" rx="4" fill="#fff8e6" stroke="#b7791f" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="290.0" y="600" font-size="12.5" fill="#1a1a1a" text-anchor="middle">Sem história</text>
+  <rect x="470" y="580" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="600" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-015, UC-016, UC-018, UC-019</tspan> Distribuidora</text>
+  <rect x="820" y="580" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="600" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">distribuidora, peca_distribuidora</tspan></text>
+  <line x1="112" y1="595" x2="138" y2="595" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="595" x2="468" y2="595" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="595" x2="818" y2="595" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="620" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="640" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-06</tspan></text>
+  <rect x="140" y="620" width="300" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="290.0" y="640" font-size="12.5" fill="#1a1a1a" text-anchor="middle">US-027, US-028</text>
+  <rect x="470" y="620" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="640" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-013, UC-014</tspan> Ordem de serviço</text>
+  <rect x="820" y="620" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="640" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">ordem_servico, ordem_servico_historico</tspan></text>
+  <line x1="112" y1="635" x2="138" y2="635" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="635" x2="468" y2="635" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="635" x2="818" y2="635" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="660" width="90" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="65.0" y="680" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">RF-07</tspan></text>
+  <rect x="140" y="660" width="300" height="30" rx="4" fill="#fff8e6" stroke="#b7791f" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="290.0" y="680" font-size="12.5" fill="#1a1a1a" text-anchor="middle">Sem história</text>
+  <rect x="470" y="660" width="320" height="30" rx="4" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/>
+  <text x="630.0" y="680" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-weight="bold">UC-023</tspan> Relatórios</text>
+  <rect x="820" y="660" width="330" height="30" rx="4" fill="#ffffff" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="985.0" y="680" font-size="12.5" fill="#1a1a1a" text-anchor="middle"><tspan font-family="monospace" font-size="11.5">ordem_servico, orcamento, pessoa</tspan></text>
+  <line x1="112" y1="675" x2="138" y2="675" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="442" y1="675" x2="468" y2="675" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <line x1="792" y1="675" x2="818" y2="675" stroke="#6b6b6b" stroke-width="1.2" marker-end="url(#seta)"/>
+  <rect x="20" y="722" width="26" height="16" rx="3" fill="#e8f0fb" stroke="#1f5fbf" stroke-width="1.5"/><text x="54" y="734" font-size="12" fill="#1a1a1a">Caso de uso do catálogo</text>
+  <rect x="230" y="722" width="26" height="16" rx="3" fill="#fff8e6" stroke="#b7791f" stroke-width="1.2" stroke-dasharray="5 3"/><text x="264" y="734" font-size="12" fill="#1a1a1a">Lacuna: história sem UC ou UC sem história</text>
+  <text x="20" y="764" font-size="12" fill="#4a4a4a">* UC-009 e UC-010 aparecem ligados à US-017 conforme a correção sugerida; no GitLab, eles apontam para a US-028 (requisitos-funcionais.md, divergência 8).</text>
+  <text x="20" y="784" font-size="12" fill="#4a4a4a">Totais: 7 RF, 30 histórias e 23 casos de uso. Fonte das tabelas: milestone_2/ddl.sql.</text>
 </svg>
