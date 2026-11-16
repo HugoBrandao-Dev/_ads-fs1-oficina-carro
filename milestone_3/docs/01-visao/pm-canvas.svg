@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 980" width="1600" height="980" font-family="Arial, Helvetica, sans-serif">
-  <title>PM Canvas do FilaCidadã</title>
-  <desc>Canvas de gerenciamento de projeto em grade de 4 colunas e 3 linhas, com 11 blocos: Justificativas, Objetivos, Benefícios, Stakeholders, Produto, Requisitos, Premissas, Restrições, Riscos, Linha do tempo e Custos. A linha do tempo ocupa duas colunas na última linha.</desc>
+  <title>PM Canvas do Bancada</title>
+  <desc>Canvas de gerenciamento de projeto do Bancada, sistema de gestão de oficina mecânica de carros, em grade de 4 colunas e 3 linhas, com 11 blocos: Justificativas, Objetivos, Benefícios, Stakeholders, Produto, Requisitos, Premissas, Restrições, Riscos, Linha do tempo e Custos. A linha do tempo ocupa duas colunas na última linha.</desc>
 
   <rect x="0" y="0" width="1600" height="980" fill="#ffffff"/>
 
   <!-- Cabeçalho -->
-  <text x="20" y="50" font-size="26" font-weight="bold" fill="#111111">PM Canvas: FilaCidadã</text>
-  <text x="20" y="80" font-size="14" fill="#555555">Fábrica de Software I · Milestone 1 · situação em 06/11/2026</text>
-  <text x="1580" y="50" font-size="14" text-anchor="end" fill="#555555">Patrocinador: Município de Exemplo (fictício)</text>
+  <text x="20" y="50" font-size="26" font-weight="bold" fill="#111111">PM Canvas: Bancada — Gestão de Oficina Mecânica</text>
+  <text x="20" y="80" font-size="14" fill="#555555">Fábrica de Software I · Milestone 1 · situação em 13/11/2026</text>
+  <text x="1580" y="50" font-size="14" text-anchor="end" fill="#555555">Cliente: Antônio Júnior</text>
   <rect x="20" y="98" width="1560" height="3" fill="#1f5fbf"/>
 
   <!-- Linha A -->
@@ -16,46 +16,54 @@
   <rect x="20" y="120" width="375" height="36" fill="#f2f2f2"/>
   <text x="34" y="144" font-size="15" font-weight="bold" fill="#1f5fbf">Justificativas</text>
   <g font-size="13" fill="#333333">
-    <text x="34" y="180">• Cidadão espera sem saber quando será chamado</text>
-    <text x="34" y="202">• Instituição não registra quem foi atendido</text>
-    <text x="34" y="224">• Filas online e presenciais em um só lugar</text>
-    <text x="34" y="246">• Base de API já existente para web e mobile</text>
+    <text x="34" y="180">• Cliente precisa de um sistema moderno</text>
+    <text x="44" y="202">para gerir a oficina mecânica</text>
+    <text x="34" y="224">• Pouco controle da ociosidade de</text>
+    <text x="44" y="246">funcionários e boxes</text>
+    <text x="34" y="268">• Pouco controle do estoque de peças</text>
+    <text x="34" y="290">• Orçamento e OS sem registro e histórico</text>
   </g>
 
   <rect x="415" y="120" width="375" height="270" rx="4" fill="#ffffff" stroke="#8a8a8a"/>
   <rect x="415" y="120" width="375" height="36" fill="#f2f2f2"/>
   <text x="429" y="144" font-size="15" font-weight="bold" fill="#1f5fbf">Objetivos</text>
   <g font-size="13" fill="#333333">
-    <text x="429" y="180">OBJ-01 Emitir senha online e presencial</text>
-    <text x="429" y="202">OBJ-02 Chamar e finalizar atendimentos</text>
-    <text x="429" y="224">OBJ-03 Configurar filas, mesas e QR Codes</text>
-    <text x="429" y="246">OBJ-04 Painel e trilha de auditoria</text>
-    <text x="429" y="268">OBJ-05 Cadastro, papéis e aprovação</text>
+    <text x="429" y="178">OBJ-01 Acesso da secretária (RF-01)</text>
+    <text x="429" y="199">OBJ-02 Balcão, clientes e veículos (RF-01)</text>
+    <text x="429" y="220">OBJ-03 Orçamento antes do serviço (RF-02)</text>
+    <text x="429" y="241">OBJ-04 OS e histórico de status (RF-06)</text>
+    <text x="429" y="262">OBJ-05 Boxes e mecânicos (RF-03)</text>
+    <text x="429" y="283">OBJ-06 Estoque de peças (RF-05)</text>
+    <text x="429" y="304">OBJ-07 Histórico do veículo (RF-04)</text>
+    <text x="429" y="325">OBJ-08 Relatório da OS (RF-07)</text>
+    <text x="429" y="350" font-weight="bold">Metas: M1 15/09 · M2 20/10 · M3 08/12</text>
   </g>
-  <text x="429" y="290" font-size="12" fill="#555555">Casos de uso de cada objetivo: pm-canvas.md</text>
+  <text x="429" y="376" font-size="12" fill="#555555">Detalhe de cada objetivo: pm-canvas.md</text>
 
   <rect x="810" y="120" width="375" height="270" rx="4" fill="#ffffff" stroke="#8a8a8a"/>
   <rect x="810" y="120" width="375" height="36" fill="#f2f2f2"/>
   <text x="824" y="144" font-size="15" font-weight="bold" fill="#1f5fbf">Benefícios</text>
   <g font-size="13" fill="#333333">
-    <text x="824" y="180">• Cidadão acompanha a posição sem ir ao balcão</text>
-    <text x="824" y="202">• Atendente chama a próxima senha sem papel</text>
-    <text x="824" y="224">• Gestor vê volume e tempos no painel</text>
-    <text x="824" y="246">• Cada ação administrativa fica registrada</text>
-    <text x="824" y="268">• Web, mobile e GraphQL com a mesma regra</text>
+    <text x="824" y="180">• Interface moderna de gestão da oficina</text>
+    <text x="824" y="202">• Controle da ociosidade de funcionários</text>
+    <text x="834" y="224">e boxes</text>
+    <text x="824" y="246">• Controle do estoque, com aviso de mínimo</text>
+    <text x="824" y="268">• Histórico de orçamentos e OS</text>
+    <text x="824" y="290">• Tempo de permanência do veículo (RF-03)</text>
   </g>
 
   <rect x="1205" y="120" width="375" height="270" rx="4" fill="#ffffff" stroke="#8a8a8a"/>
   <rect x="1205" y="120" width="375" height="36" fill="#f2f2f2"/>
   <text x="1219" y="144" font-size="15" font-weight="bold" fill="#1f5fbf">Stakeholders</text>
   <g font-size="13" fill="#333333">
-    <text x="1219" y="180">Cidadão (ACT-01)</text>
-    <text x="1219" y="202">Operador (ACT-02)</text>
-    <text x="1219" y="224">Administrador da instituição (ACT-03)</text>
-    <text x="1219" y="246">Administrador da plataforma (ACT-04)</text>
-    <text x="1219" y="268">Cliente patrocinador (órgão fictício)</text>
-    <text x="1219" y="290">Equipe de desenvolvimento (alunos)</text>
-    <text x="1219" y="312">Professor avaliador</text>
+    <text x="1219" y="180">Antônio Júnior (cliente)</text>
+    <text x="1219" y="202">Secretária (ACT-01)</text>
+    <text x="1219" y="224">Mecânico (ACT-02)</text>
+    <text x="1219" y="246">Gestor da oficina (ACT-03)</text>
+    <text x="1219" y="268">Clientes da oficina</text>
+    <text x="1219" y="290">Equipe: Hugo Brandão, Vitor Blan,</text>
+    <text x="1219" y="312">Cauã Rodrigo e João Andrade</text>
+    <text x="1219" y="334">Professor avaliador</text>
   </g>
 
   <!-- Linha B -->
@@ -63,45 +71,53 @@
   <rect x="20" y="406" width="375" height="36" fill="#f2f2f2"/>
   <text x="34" y="430" font-size="15" font-weight="bold" fill="#1f5fbf">Produto</text>
   <g font-size="13" fill="#333333">
-    <text x="34" y="466">• API FilaCidadã: REST, GraphQL e Socket.IO</text>
-    <text x="34" y="488">• Login e sessão pelo BetterAuth</text>
-    <text x="34" y="510">• PostgreSQL 17 com Prisma 6</text>
-    <text x="34" y="532">• Clientes: site e aplicativo móvel</text>
-    <text x="34" y="554">• Documentação e wireframes por perfil</text>
+    <text x="34" y="466">• Bancada: sistema web de gestão de</text>
+    <text x="44" y="488">oficina mecânica de carros</text>
+    <text x="34" y="510">• Protótipo navegável no Figma</text>
+    <text x="34" y="532">• Banco MySQL (ddl.sql) e DER</text>
+    <text x="34" y="554">• Diagramas UML e IFML no Figma</text>
+    <text x="34" y="576">• Issues e milestones no GitLab</text>
+    <text x="34" y="598">• Documentação em Markdown</text>
   </g>
 
   <rect x="415" y="406" width="375" height="270" rx="4" fill="#ffffff" stroke="#8a8a8a"/>
   <rect x="415" y="406" width="375" height="36" fill="#f2f2f2"/>
   <text x="429" y="430" font-size="15" font-weight="bold" fill="#1f5fbf">Requisitos (macro)</text>
-  <g font-size="13" fill="#333333">
-    <text x="429" y="466">Autenticação e perfil: UC-01, UC-02</text>
-    <text x="429" y="488">Instituições e usuários: UC-03 a UC-05</text>
-    <text x="429" y="510">Filas e atendimento: UC-06 a UC-11, UC-15</text>
-    <text x="429" y="532">QR Code, painel e auditoria: UC-12 a UC-14</text>
-    <text x="429" y="562" font-weight="bold">Sem caso de uso no catálogo:</text>
-    <text x="429" y="584">flows, chat, notificações e landing page</text>
+  <g font-size="12" fill="#333333">
+    <text x="429" y="466"><tspan font-weight="bold">RF-01</tspan> Atendimento: login, clientes, veículos, retirada</text>
+    <text x="429" y="486"><tspan font-weight="bold">RF-02</tspan> Orçamento: montagem, aprovação ou recusa</text>
+    <text x="429" y="506"><tspan font-weight="bold">RF-03</tspan> Distribuição entre boxes e mecânicos</text>
+    <text x="429" y="526"><tspan font-weight="bold">RF-04</tspan> Histórico do veículo pela placa</text>
+    <text x="429" y="546"><tspan font-weight="bold">RF-05</tspan> Estoque de peças, com aviso de mínimo</text>
+    <text x="429" y="566"><tspan font-weight="bold">RF-06</tspan> Ordem de serviço e histórico de status</text>
+    <text x="429" y="586"><tspan font-weight="bold">RF-07</tspan> Relatório da ordem de serviço</text>
+    <text x="429" y="606"><tspan font-weight="bold">RNF-01 a 05</tspan> usabilidade, segurança, desempenho,</text>
+    <text x="439" y="626">disponibilidade e integridade dos dados</text>
   </g>
 
   <rect x="810" y="406" width="375" height="270" rx="4" fill="#ffffff" stroke="#8a8a8a"/>
   <rect x="810" y="406" width="375" height="36" fill="#f2f2f2"/>
   <text x="824" y="430" font-size="15" font-weight="bold" fill="#1f5fbf">Premissas</text>
   <g font-size="13" fill="#333333">
-    <text x="824" y="466">• Balcão consegue exibir ou imprimir QR Code</text>
-    <text x="824" y="488">• Cidadão tem celular com navegador ou app</text>
-    <text x="824" y="510">• Aula roda com Docker e PostgreSQL 17</text>
-    <text x="824" y="532">• NPaaS pode ficar desligado nas aulas</text>
-    <text x="824" y="554">• Cliente responde as perguntas da RFP</text>
+    <text x="824" y="466">• O cliente pode pedir novas funções</text>
+    <text x="824" y="488">• O cliente pode pedir mudanças no que</text>
+    <text x="834" y="510">já está pronto</text>
+    <text x="824" y="532">• O orçamento vem antes da OS</text>
+    <text x="824" y="554">• Só a secretária tem login na M1</text>
+    <text x="824" y="576">• Cliente responde as perguntas da RFP</text>
   </g>
 
   <rect x="1205" y="406" width="375" height="270" rx="4" fill="#ffffff" stroke="#8a8a8a"/>
   <rect x="1205" y="406" width="375" height="36" fill="#f2f2f2"/>
   <text x="1219" y="430" font-size="15" font-weight="bold" fill="#1f5fbf">Restrições</text>
   <g font-size="13" fill="#333333">
-    <text x="1219" y="466">• Node 22, Express 5 e Prisma 6 fixados</text>
-    <text x="1219" y="488">• E-mail só pelo NPaaS, sem SMTP</text>
-    <text x="1219" y="510">• Formato da resposta e código 498 mantidos</text>
-    <text x="1219" y="532">• Prazo da disciplina: datas a definir</text>
-    <text x="1219" y="554">• Fora: pagamento, agendamento, prontuário</text>
+    <text x="1219" y="466">• Prazo: calendário da disciplina</text>
+    <text x="1219" y="488">• Gestão no GitLab com Kanban</text>
+    <text x="1229" y="510">coletivo e métricas obrigatórias</text>
+    <text x="1219" y="532">• Ferramentas sem licença paga</text>
+    <text x="1229" y="554">(GitLab, Figma Education, MySQL)</text>
+    <text x="1219" y="576">• Banco relacional MySQL</text>
+    <text x="1219" y="598">• Equipe fixa de quatro integrantes</text>
   </g>
 
   <!-- Linha C -->
@@ -109,52 +125,59 @@
   <rect x="20" y="692" width="375" height="36" fill="#f2f2f2"/>
   <text x="34" y="716" font-size="15" font-weight="bold" fill="#1f5fbf">Riscos</text>
   <g font-size="13" fill="#333333">
-    <text x="34" y="752">• NPaaS fora do ar: e-mail e push não saem</text>
-    <text x="34" y="774">• LGPD: ainda sem tratamento no código</text>
-    <text x="34" y="796">• Escopo cresce: flows, chat e painel</text>
-    <text x="34" y="818">• Helmet desligado: CSP sem revisão</text>
-    <text x="34" y="840">• Dados de exemplo não mostram o pico</text>
+    <text x="34" y="750">• Desistência de um integrante</text>
+    <text x="34" y="770">• Desistência do cliente do curso</text>
+    <text x="44" y="790">e, portanto, do projeto</text>
+    <text x="34" y="810">• Mudanças de escopo pedidas pelo cliente</text>
+    <text x="34" y="830">• Indisponibilidade do cliente para reuniões</text>
+    <text x="34" y="850">• Inexperiência da equipe com as ferramentas</text>
+    <text x="34" y="870">• Falta de luz ou água no IFRO</text>
+    <text x="34" y="890">• Banco maior que os requisitos</text>
+    <text x="44" y="910">(pagamento, distribuidoras)</text>
+    <text x="34" y="930">• Dados de exemplo divergentes no protótipo</text>
   </g>
 
   <rect x="415" y="692" width="770" height="270" rx="4" fill="#ffffff" stroke="#8a8a8a"/>
   <rect x="415" y="692" width="770" height="36" fill="#f2f2f2"/>
   <text x="429" y="716" font-size="15" font-weight="bold" fill="#1f5fbf">Linha do tempo</text>
-  <line x1="480" y1="822" x2="1120" y2="822" stroke="#8a8a8a" stroke-width="2"/>
+  <line x1="470" y1="822" x2="1120" y2="822" stroke="#8a8a8a" stroke-width="2"/>
   <g font-size="12" font-weight="bold" fill="#111111" text-anchor="middle">
-    <text x="510" y="800">2026/1</text>
-    <text x="655" y="800">29/07/2026</text>
-    <text x="800" y="800">30/09/2026</text>
-    <text x="945" y="800">14/10/2026</text>
-    <text x="1090" y="800">A definir</text>
+    <text x="485" y="800">08/09/2026</text>
+    <text x="605" y="800">15/09/2026</text>
+    <text x="725" y="800">13/10/2026</text>
+    <text x="865" y="800">20/10/2026</text>
+    <text x="985" y="800">01/12/2026</text>
+    <text x="1105" y="800">08/12/2026</text>
   </g>
-  <circle cx="510" cy="822" r="6" fill="#1f5fbf"/>
-  <circle cx="655" cy="822" r="6" fill="#1f5fbf"/>
-  <circle cx="800" cy="822" r="6" fill="#1f5fbf"/>
-  <circle cx="945" cy="822" r="6" fill="#1f5fbf"/>
-  <circle cx="1090" cy="822" r="6" fill="#ffffff" stroke="#1f5fbf" stroke-width="2"/>
+  <circle cx="485" cy="822" r="6" fill="#1f5fbf"/>
+  <circle cx="605" cy="822" r="6" fill="#1f5fbf"/>
+  <circle cx="725" cy="822" r="6" fill="#1f5fbf"/>
+  <circle cx="865" cy="822" r="6" fill="#1f5fbf"/>
+  <circle cx="985" cy="822" r="6" fill="#ffffff" stroke="#1f5fbf" stroke-width="2"/>
+  <circle cx="1105" cy="822" r="6" fill="#ffffff" stroke="#1f5fbf" stroke-width="2"/>
   <g font-size="12" fill="#333333" text-anchor="middle">
-    <text x="510" y="848">Versão Mongo + JWT</text>
-    <text x="510" y="866">(legado)</text>
-    <text x="655" y="848">Migração para SQL</text>
-    <text x="655" y="866">e BetterAuth</text>
-    <text x="800" y="848">GraphQL e documentação</text>
-    <text x="800" y="866">em Markdown</text>
-    <text x="945" y="848">Coleções Postman</text>
-    <text x="945" y="866">do GraphQL</text>
-    <text x="1090" y="848">Milestones 1 a 3</text>
-    <text x="1090" y="866">datas a definir</text>
+    <text x="485" y="848">M1 · monitoria</text>
+    <text x="605" y="848">M1 · apresentação</text>
+    <text x="725" y="848">M2 · monitoria</text>
+    <text x="865" y="848">M2 · apresentação</text>
+    <text x="985" y="848">M3 · monitoria</text>
+    <text x="1105" y="848">M3 · apresentação</text>
   </g>
-  <text x="429" y="934" font-size="12" fill="#555555">Fontes: git log do repositório e documentacao/12-historico.md</text>
+  <g font-size="11" fill="#555555" text-anchor="middle">
+    <text x="545" y="884">Requisitos, PM Canvas, Site Map</text>
+    <text x="795" y="884">Casos de uso, sequência, DER, IFML</text>
+    <text x="1045" y="884">Atividades, estados, documentação</text>
+  </g>
+  <text x="429" y="942" font-size="12" fill="#555555">Fonte: calendário da disciplina e milestones do GitLab · círculo vazio = ainda não aconteceu (situação em 13/11/2026)</text>
 
   <rect x="1205" y="692" width="375" height="270" rx="4" fill="#ffffff" stroke="#8a8a8a"/>
   <rect x="1205" y="692" width="375" height="36" fill="#f2f2f2"/>
   <text x="1219" y="716" font-size="15" font-weight="bold" fill="#1f5fbf">Custos</text>
   <g font-size="13" fill="#333333">
-    <text x="1219" y="752">• Infraestrutura de aula: Docker local</text>
-    <text x="1219" y="774">• PostgreSQL 17 em contêiner</text>
-    <text x="1219" y="796">• NPaaS (e-mail e push): a definir</text>
-    <text x="1219" y="818">• Armazenamento S3 (opcional): a definir</text>
-    <text x="1219" y="840">• Esforço da equipe: a estimar</text>
+    <text x="1219" y="752">• Estimativa total: R$ 5 mil</text>
+    <text x="1219" y="774">• GitLab, Figma (Education) e MySQL</text>
+    <text x="1229" y="796">sem custo de licença</text>
+    <text x="1219" y="818">• Composição do valor (horas, infra,</text>
+    <text x="1229" y="840">hospedagem): a detalhar</text>
   </g>
-  <text x="1219" y="862" font-size="12" fill="#555555">Valores ainda não estão no repositório</text>
 </svg>

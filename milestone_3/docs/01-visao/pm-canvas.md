@@ -1,122 +1,132 @@
-# PM Canvas do FilaCidadã
+# PM Canvas do Bancada
 
-Fábrica de Software I · Milestone 1 · situação em 06/11/2026
+Fábrica de Software I · Milestone 1 · situação em 13/11/2026
 
-O PM Canvas resume o projeto em uma página. A versão em grade está em [pm-canvas.svg](pm-canvas.svg). Este texto traz o que está em cada bloco, com as referências a casos de uso e a fonte de cada fato.
+O PM Canvas resume o projeto em uma página. A versão em grade está em [pm-canvas.svg](pm-canvas.svg). Este texto traz o que está em cada bloco, com as referências a requisitos e casos de uso e a fonte de cada fato. A primeira versão do canvas, apresentada no Milestone 1, está em `milestone_1/gestao-de-oficina-mecanica-de-carros.html`.
 
-![PM Canvas do FilaCidadã em grade de 11 blocos](pm-canvas.svg)
+![PM Canvas do Bancada em grade de 11 blocos](pm-canvas.svg)
 
 ## Justificativas
 
 Por que fazer:
 
-- Quem espera numa fila física não sabe quando será chamado, e tende a ficar no balcão.
-- A instituição não registra quem foi atendido, por quem e em quanto tempo.
-- Filas online e presenciais são operadas separadamente. O sistema precisa atender os dois modos na mesma fila.
-- A API já existe em parte (REST, GraphQL, Socket.IO) e serve de base para web e mobile.
+- O cliente precisa de um sistema moderno para gerir a oficina mecânica.
+- Há pouco controle da ociosidade de funcionários e boxes.
+- Há pouco controle do estoque de peças.
+- Orçamentos e ordens de serviço ficam em papel e planilhas, sem registro de quem aprovou e sem histórico por veículo.
 
 ## Objetivos
 
-| Código | Objetivo | Casos de uso |
-|---|---|---|
-| OBJ-01 | Emitir senha online e presencial | UC-08, UC-09 |
-| OBJ-02 | Chamar, rechamar, assumir e finalizar atendimentos | UC-10, UC-11 |
-| OBJ-03 | Configurar filas, mesas, tipos de etapa e QR Codes | UC-06, UC-07, UC-12 |
-| OBJ-04 | Acompanhar o atendimento e consultar painel e auditoria | UC-13, UC-14, UC-15 |
-| OBJ-05 | Controlar acesso: cadastro, papéis e aprovação de instituições | UC-01 a UC-05 |
+| Código | Objetivo                                                | Requisitos    | Casos de uso                            |
+| ------ | ------------------------------------------------------- | ------------- | --------------------------------------- |
+| OBJ-01 | Controlar o acesso da secretária                        | RF-01, RNF-02 | Sem UC no catálogo                      |
+| OBJ-02 | Atender no balcão e cadastrar clientes e veículos       | RF-01         | UC-001 a UC-005, UC-008, UC-011, UC-012 |
+| OBJ-03 | Orçar antes do serviço e registrar a decisão do cliente | RF-02         | UC-006, UC-007, UC-009, UC-010          |
+| OBJ-04 | Acompanhar a OS e o histórico de status                 | RF-06         | UC-013, UC-014                          |
+| OBJ-05 | Distribuir o trabalho entre boxes e mecânicos           | RF-03         | Sem UC no catálogo                      |
+| OBJ-06 | Controlar o estoque de peças                            | RF-05         | UC-015 a UC-022                         |
+| OBJ-07 | Manter o histórico do veículo pela placa                | RF-04         | Sem UC no catálogo                      |
+| OBJ-08 | Emitir o relatório da OS                                | RF-07         | UC-023                                  |
 
-As metas numéricas (tempo de espera, volume por dia, prazo de resposta) ainda não foram definidas. Estão na lista de perguntas da [RFP](rfp.md).
+Metas de prazo: Milestone 1 em 15/09/2026, Milestone 2 em 20/10/2026 e Milestone 3 em 08/12/2026. As metas numéricas do produto (tempo de resposta, disponibilidade) ainda não foram definidas e estão na lista de perguntas da [RFP](rfp.md).
 
 ## Benefícios
 
-- O cidadão acompanha a própria posição sem ficar no balcão.
-- O atendente chama a próxima senha pelo sistema, sem controle em papel.
-- O administrador da instituição vê volume e tempos no painel.
-- Cada ação administrativa fica registrada na auditoria.
-- Web, mobile e GraphQL usam a mesma regra de negócio, porque os resolvers chamam os mesmos services.
+- Interface moderna de gestão da oficina.
+- Controle da ociosidade de funcionários e boxes (RF-03).
+- Controle do estoque, com aviso quando a peça atinge o mínimo (RF-05).
+- Histórico de orçamentos e OS, com autor e data/hora de cada mudança (RF-02, RF-06).
+- Tempo de permanência do veículo na oficina, calculado pelo início e pela conclusão do serviço (RF-03).
 
 ## Produto
 
-- API FilaCidadã: REST (`/api`), GraphQL (`POST /graphql`) e Socket.IO no mesmo servidor HTTP.
-- Autenticação por sessão do BetterAuth, com papéis lidos do banco.
-- Banco relacional PostgreSQL 17 com Prisma 6.
-- Clientes consumidores: site e aplicativo móvel.
-- Documentação em Markdown, wireframes por perfil e modelagem em UML.
+- Bancada: sistema web de gestão de oficina mecânica de carros.
+- Protótipo navegável no Figma (arquivo "Gestão de Oficina Mecânica").
+- Banco relacional MySQL: script `milestone_2/ddl.sql` e DER em `milestone_2/ddl_der.mwb`.
+- Modelagem UML (casos de uso, sequência, atividades e estados) e IFML no Figma.
+- Issues, milestones e quadro Kanban no GitLab.
+- Documentação em Markdown nesta pasta `docs/`.
 
 ## Requisitos (macro)
 
-O detalhamento (RF e RNF, histórias e critérios) fica em [03-requisitos](../03-requisitos/README.md). Aqui, a cobertura por caso de uso:
+O detalhamento (histórias e critérios de aceite em Gherkin) está nas issues do GitLab e em [03-requisitos](../03-requisitos/README.md). Aqui, a cobertura por requisito:
 
-- Autenticação e perfil: UC-01, UC-02.
-- Instituições e usuários: UC-03 a UC-05.
-- Filas e atendimento: UC-06 a UC-11, UC-15.
-- QR Code, painel e auditoria: UC-12 a UC-14.
-
-Sem caso de uso no catálogo fixo: flows (encaminhamento de senha entre filas, `/flows`, `/senhas/:id/flow/*`), chat (`/senhas/:id/chat`), notificações (`/notificacoes`) e landing page (`GET /landing-page`). Ver [Divergências](README.md#divergências).
+| Requisito                                  | Conteúdo                                                                    | Histórias                     |
+| ------------------------------------------ | --------------------------------------------------------------------------- | ----------------------------- |
+| RF-01 Atendimento                          | Login da secretária, balcão, clientes, veículos e retirada                  | US-001 a US-015               |
+| RF-02 Orçamento e aprovação do serviço     | Montagem item a item, aprovação ou recusa, meio da resposta                 | US-016, US-017, US-018, US-26 |
+| RF-03 Distribuição entre boxes e mecânicos | Designação, um veículo por box, início e conclusão                          | US-20                         |
+| RF-04 Histórico do veículo                 | Consulta das OS anteriores pela placa                                       | US-029, US-030                |
+| RF-05 Controle de estoque de peças         | Cadastro, consulta, edição, exclusão, filtro e aviso de mínimo              | US-019 a US-024               |
+| RF-06 Ordem de serviço                     | Ciclo de status e histórico de cada mudança                                 | US-27, US-28                  |
+| RF-07 Relatório da OS                      | Cliente, funcionário, mecânico, valor total e datas                         | Sem história                  |
+| RNF-01 a RNF-05                            | Usabilidade, segurança, desempenho, disponibilidade e integridade dos dados | Sem história                  |
 
 ## Stakeholders
 
-| Quem | Papel no projeto |
-|---|---|
-| Cidadão (ACT-01, papel `USUARIO_FINAL`) | Retira, acompanha e cancela as próprias senhas |
-| Operador (ACT-02, papel `OPERADOR`) | Atende, chama e finaliza senhas da própria instituição |
-| Administrador da instituição (ACT-03, `ADMIN_INSTITUICAO`) | Configura filas, mesas, usuários e QR Codes da instituição; também atende |
-| Administrador da plataforma (ACT-04, `ADMIN_PLATAFORMA`) | Aprova instituições e gerencia usuários de todas elas |
-| Cliente patrocinador | Órgão fictício da [RFP](rfp.md) que encomenda o sistema |
-| Equipe de desenvolvimento | Grupo de alunos que produz os artefatos e o código |
-| Professor avaliador | Valida os artefatos pelas milestones |
-| Times de web e mobile | Consomem a API e precisam de contrato estável |
+| Quem                       | Papel no projeto                                                        |
+| -------------------------- | ----------------------------------------------------------------------- |
+| Antônio Júnior             | Cliente; define as regras de negócio e valida as entregas               |
+| Secretária (ACT-01)        | Único perfil com login no Milestone 1; atende no balcão e registra tudo |
+| Mecânico (ACT-02)          | Monta o orçamento e executa a OS no box designado                       |
+| Gestor da oficina (ACT-03) | Acompanha o status das OS e o uso dos boxes                             |
+| Clientes da oficina        | Donos dos veículos; aprovam ou recusam o orçamento                      |
+| Equipe de desenvolvimento  | Hugo Brandão, Vitor Blan, Cauã Rodrigo e João Andrade                   |
+| Professor avaliador        | Valida os artefatos pelas milestones                                    |
 
 ## Riscos
 
-| Risco | Resposta prevista |
-|---|---|
-| O NPaaS (e-mail e push) fica indisponível. Pelo código, o e-mail não sai sem ele, porque não há fallback SMTP | Notificação persistida continua disponível na API; o aviso por e-mail fica em log. Aceitar e documentar |
-| LGPD: não há tratamento de dados pessoais no código nem na documentação | Incluir o tema nos requisitos não funcionais e na RFP. Pergunta em aberto |
-| O escopo cresce com flows, chat e painel, que não têm caso de uso no catálogo | Fixar o que entra na milestone. Registrar o que sai no backlog |
-| Helmet está comentado em `app.js` (CSP padrão bloqueava o Swagger UI). A introspecção do GraphQL está ligada | Tratar antes de uso real. Não é pendência da milestone 1, mas precisa constar nas restrições |
-| Dados de exemplo (seeds) não representam um dia de pico | Criar um cenário de carga com volume próximo do real, se a milestone pedir |
+| Risco                                                     | Resposta prevista                                                                                     |
+| --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Desistência de um integrante                              | Cada artefato tem responsável registrado na issue; o restante da equipe redistribui as issues abertas |
+| Desistência do cliente do curso e, portanto, do projeto   | Registrar as decisões já tomadas nas issues, para que o projeto continue com base nelas               |
+| Mudanças de escopo pedidas pelo cliente                   | Registrar cada pedido como issue e decidir com o cliente em qual milestone entra                      |
+| Indisponibilidade do cliente para reuniões                | Levar as perguntas em aberto por escrito e registrar a premissa adotada até a resposta                |
+| Inexperiência da equipe com as ferramentas                | Dividir o trabalho em issues pequenas e revisar entre os integrantes antes de fechar                  |
+| Falta de luz ou água no IFRO                              | Manter os artefatos no GitLab e no Figma, acessíveis fora do campus                                   |
+| Banco maior que os requisitos (pagamento, distribuidoras) | Levar a decisão ao cliente; ver a [RFP](rfp.md), seção 12                                             |
+| Dados de exemplo divergentes no protótipo                 | Revisar o protótipo contra o banco e os requisitos antes da apresentação                              |
 
 ## Premissas
 
-- Cada balcão consegue exibir ou imprimir o QR Code da fila presencial.
-- O cidadão tem celular com navegador ou com o aplicativo.
-- A aula roda com Docker e PostgreSQL 17 (`docker-compose.yml`).
-- O NPaaS pode ficar desligado nas aulas (`NPAAS_HABILITADO=false`). O sistema não quebra sem ele.
+- O cliente pode pedir novas funcionalidades ao longo do projeto.
+- O cliente pode pedir mudanças em funcionalidades já prontas.
+- O orçamento vem antes da OS: a OS só nasce de um orçamento aprovado.
+- No Milestone 1, só a secretária tem login no sistema.
 - O cliente responde as perguntas da RFP até o início da modelagem.
 
 ## Restrições
 
-- Versões fixadas: Node 22 (`.nvmrc`), Express 5, Prisma 6, BetterAuth.
-- E-mail transacional só pelo NPaaS, sem SMTP (decisão registrada em `documentacao/12-historico.md`).
-- Clientes existentes continuam funcionando: o formato `{ message, data, errors }` e o código 498 para sessão inválida são mantidos.
-- Prazo: a disciplina define as datas das milestones.
-- Fora do escopo: pagamento, agendamento com data futura e prontuário ou cadastro de cidadão de outros órgãos.
+- Prazo: calendário da disciplina.
+- Gestão no GitLab com Kanban coletivo e métricas obrigatórias.
+- Ferramentas sem licença paga: GitLab institucional, Figma (Education) e MySQL.
+- Banco relacional MySQL, definido no Milestone 2.
+- Equipe fixa de quatro integrantes.
 
 ## Linha do tempo
 
-| Quando | O quê | Fonte |
-|---|---|---|
-| 2026/1 | Versão original em MongoDB com JWT duplo (legado, em `_legado-mongo/`) | `documentacao/12-historico.md` |
-| 29/07/2026 | API migrada para SGBD relacional com Prisma e BetterAuth | `git log` |
-| 30/09/2026 | GraphQL (Apollo Server 5) ao lado do REST; documentação convertida para Markdown | `git log` |
-| 14/10/2026 | Coleções Postman das requisições GraphQL | `git log` |
-| A definir | Milestones 1 a 3 | Calendário da disciplina |
+| Quando     | O quê                                                                                        | Fonte                                                  |
+| ---------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| 08/09/2026 | Milestone 1, monitoria                                                                       | Calendário da disciplina                               |
+| 15/09/2026 | Milestone 1, apresentação: PM Canvas, requisitos e histórias, métricas, Site Map             | Calendário · milestone "Milestone 1" no GitLab         |
+| 13/10/2026 | Milestone 2, monitoria                                                                       | Calendário da disciplina                               |
+| 20/10/2026 | Milestone 2, apresentação: DER, casos de uso, diagramas de sequência e IFML                  | Calendário · milestone "Milestone 2" no GitLab         |
+| 06/11/2026 | Modelo de documentação do professor incluído no repositório                                  | `git log`                                              |
+| 01/12/2026 | Milestone 3, monitoria                                                                       | Calendário da disciplina                               |
+| 08/12/2026 | Milestone 3, apresentação final: diagramas de atividades e estados e documentação do projeto | Calendário · milestone "Milestone 3 (Final)" no GitLab |
+
+O canvas do Milestone 1 planejava wireframes, protótipo e Site Map no Milestone 2 e o DER no Milestone 3. A tabela acima segue o que foi registrado nas milestones do GitLab.
 
 ## Custos
 
-O repositório não traz valores. Os itens abaixo são o que precisa de preço ou de estimativa:
-
-- Infraestrutura de aula: Docker na máquina do aluno, sem custo extra.
-- PostgreSQL 17 em contêiner: sem custo de licença.
-- NPaaS (e-mail e push): a definir, depende do contrato do serviço.
-- Armazenamento S3 compatível (Garage), opcional: a definir. Sem configuração, os uploads caem no disco local.
-- Esforço da equipe: a estimar na fase de planejamento, em horas por milestone.
+- Estimativa total: R$ 5 mil (canvas do Milestone 1).
+- GitLab, Figma (Education) e MySQL: sem custo de licença.
+- Composição do valor (horas da equipe, infraestrutura, hospedagem): a detalhar.
 
 ## Veja também
 
 - [Visão do produto](README.md)
-- [RFP fictícia do cliente](rfp.md)
+- [RFP do cliente](rfp.md)
 - [Glossário](glossario.md)
 - [Processo](../02-processo/README.md)
 - [Requisitos funcionais](../03-requisitos/requisitos-funcionais.md)

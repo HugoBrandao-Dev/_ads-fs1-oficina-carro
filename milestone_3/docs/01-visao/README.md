@@ -2,91 +2,102 @@
 
 Fábrica de Software I · Milestone 1 · visão, problema, objetivos e partes interessadas
 
-Esta pasta parte da RFP fictícia do cliente e chega à visão do FilaCidadã. Ela define o problema, os objetivos, o escopo e quem participa. Não traz requisitos: esses saem da RFP e são detalhados em [03-requisitos](../03-requisitos/README.md).
+Esta pasta parte da RFP 2 da disciplina (Gestão de Oficinas Mecânicas, cliente Antônio Júnior) e chega à visão do Bancada. Ela define o problema, os objetivos, o escopo e quem participa. Não traz requisitos: esses estão registrados como issues no GitLab do projeto e são detalhados em [03-requisitos](../03-requisitos/README.md).
 
 ## Problema
 
-Quem precisa de atendimento em órgão público, hospital ou cartório enfrenta uma fila física. Não sabe quanto vai esperar, precisa ficar no balcão e, às vezes, perde a vez sem aviso. A instituição, por sua vez, não sabe quem foi atendido, por quem nem em quanto tempo, e controla a fila de improviso.
+A oficina controla clientes, veículos, orçamentos e ordens de serviço em papel e em planilhas soltas. Não há registro confiável de quem aprovou um orçamento, nem de quando e por qual meio a aprovação chegou. Consultar o histórico de um veículo que já passou pela oficina é difícil. Também falta controle sobre a ocupação dos boxes, a ociosidade dos mecânicos e o estoque de peças.
 
 ## Visão do produto
 
-O FilaCidadã é uma plataforma multi-instituição para filas de atendimento. Cada instituição é isolada das outras e tem suas filas, mesas, operadores e QR Codes. O cidadão entra na fila pelo aplicativo ou pelo QR Code do balcão, acompanha a própria posição e é avisado quando for chamado. O operador chama, atende e finaliza. Os eventos chegam em tempo real aos clientes web e mobile.
+O Bancada é um sistema web de gestão de oficina mecânica de carros. A secretária autenticada recebe o cliente no balcão, verifica se ele veio trazer ou buscar um veículo e mantém o cadastro de clientes e veículos. O mecânico analisa o veículo e monta o orçamento; somente depois da aprovação do dono do veículo o orçamento vira uma ordem de serviço (OS), designada a um box e a um mecânico. Cada mudança de status do orçamento e da OS fica registrada com data, hora e autor, o que forma o histórico do veículo. O estoque de peças avisa quando uma peça atinge o nível mínimo definido pela oficina.
 
 ## Objetivos
 
-Os objetivos são qualitativos. As metas numéricas (tempo de espera, volume, prazo) ainda estão na lista de perguntas da [RFP](rfp.md), seção 12.
+Os objetivos são qualitativos. As metas numéricas (tempo de resposta, volume de atendimentos, horário de disponibilidade) ainda estão na lista de perguntas da [RFP](rfp.md), seção 12.
 
-| Código | Objetivo | Casos de uso |
-|---|---|---|
-| OBJ-01 | Permitir emitir senha online e presencialmente | UC-08, UC-09 |
-| OBJ-02 | Organizar o atendimento: chamar, rechamar, assumir e finalizar | UC-10, UC-11 |
-| OBJ-03 | Permitir que cada instituição configure filas, mesas, etapas e QR Codes | UC-06, UC-07, UC-12 |
-| OBJ-04 | Dar à instituição visão do atendimento e rastro das ações | UC-13, UC-14, UC-15 |
-| OBJ-05 | Controlar acesso: cadastro, papéis e aprovação de instituições | UC-01 a UC-05 |
-| OBJ-06 | Servir a mesma regra de negócio a web e mobile, por REST, GraphQL e tempo real | Transversal |
+| Código | Objetivo                                                           | Requisitos    | Casos de uso                                           |
+| ------ | ------------------------------------------------------------------ | ------------- | ------------------------------------------------------ |
+| OBJ-01 | Controlar o acesso da secretária ao sistema                        | RF-01, RNF-02 | Sem UC no catálogo (ver [Divergências](#divergências)) |
+| OBJ-02 | Atender no balcão e manter o cadastro de clientes e veículos       | RF-01         | UC-001 a UC-005, UC-008, UC-011, UC-012                |
+| OBJ-03 | Orçar o serviço e registrar a decisão do cliente antes da execução | RF-02         | UC-006, UC-007, UC-009, UC-010                         |
+| OBJ-04 | Acompanhar a OS e o histórico de status                            | RF-06         | UC-013, UC-014                                         |
+| OBJ-05 | Distribuir o trabalho entre boxes e mecânicos                      | RF-03         | Sem UC no catálogo                                     |
+| OBJ-06 | Controlar o estoque de peças e seus fornecedores                   | RF-05         | UC-015 a UC-022                                        |
+| OBJ-07 | Manter o histórico do veículo, consultado pela placa               | RF-04         | Sem UC no catálogo                                     |
+| OBJ-08 | Emitir o relatório da ordem de serviço                             | RF-07         | UC-023                                                 |
 
 ## Escopo
 
-**Dentro do escopo:** o que está no catálogo de casos de uso (UC-01 a UC-15) e os objetivos acima.
+**Dentro do escopo:** os requisitos RF-01 a RF-07 e RNF-01 a RNF-05 registrados no GitLab, o catálogo de casos de uso (UC-001 a UC-023) e os objetivos acima.
 
-**Fora do escopo:** pagamento de taxas, agendamento com data futura e integração com prontuário ou cadastro de outros órgãos. Nada disso existe no código hoje.
+**Fora do escopo:** nenhuma exclusão foi formalizada com o cliente até esta versão. O banco do Milestone 2 (`milestone_2/ddl.sql`) traz as tabelas `pagamento` e `pagamento_parcelas`, que não correspondem a nenhum requisito; a decisão sobre elas está na [RFP](rfp.md), seção 12.
 
 ## Partes interessadas
 
-| Quem | Código | Papel no sistema | Interesse principal |
-|---|---|---|---|
-| Cidadão | ACT-01 | `USUARIO_FINAL` | Retirar senha e acompanhar a posição sem ficar no balcão |
-| Operador | ACT-02 | `OPERADOR` | Chamar e finalizar atendimentos com o mínimo de cliques |
-| Administrador da instituição | ACT-03 | `ADMIN_INSTITUICAO` | Configurar a própria instituição e acompanhar o painel |
-| Administrador da plataforma | ACT-04 | `ADMIN_PLATAFORMA` | Aprovar instituições e manter a plataforma isolada entre elas |
-| Cliente patrocinador | | | Órgão fictício da RFP; define o que deve funcionar |
-| Equipe de desenvolvimento | | | Produz os artefatos e o código |
-| Professor avaliador | | | Valida os artefatos a cada milestone |
-| Times de web e mobile | | | Consomem a API e precisam de contrato estável |
-
-Os atores ACT-01 a ACT-04 e seus papéis conferem com `src/constants/roles.js`.
+| Quem                      | Código | Papel no sistema                                        | Interesse principal                                                          |
+| ------------------------- | ------ | ------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Secretária                | ACT-01 | Único perfil com login no Milestone 1                   | Atender no balcão e registrar orçamentos, OS e estoque sem papel             |
+| Mecânico                  | ACT-02 | Aparece nas histórias (US-20); sem login no Milestone 1 | Saber qual OS e qual box estão designados a ele                              |
+| Gestor da oficina         | ACT-03 | Aparece nas histórias (US-27); sem login no Milestone 1 | Acompanhar o status das OS e o uso dos boxes                                 |
+| Antônio Júnior            |        |                                                         | Cliente do projeto; define as regras de negócio e valida as entregas         |
+| Clientes da oficina       |        |                                                         | Donos dos veículos; aprovam ou recusam o orçamento                           |
+| Equipe de desenvolvimento |        |                                                         | Hugo Brandão, Vitor Blan, Cauã Rodrigo e João Andrade; produzem os artefatos |
+| Professor avaliador       |        |                                                         | Valida os artefatos a cada milestone                                         |
 
 ## Casos de uso do catálogo
 
-| Código | Caso de uso | Ator principal |
-|---|---|---|
-| UC-01 | Autenticar-se (cadastro, login, logout) | Todos |
-| UC-02 | Gerenciar perfil | Usuário logado |
-| UC-03 | Solicitar cadastro de instituição | Qualquer usuário autenticado (ACT-01 na prática) |
-| UC-04 | Avaliar solicitação de instituição (aprovar, rejeitar, reconsiderar) | ACT-04 |
-| UC-05 | Gerenciar usuários e papéis | ACT-03, ACT-04 |
-| UC-06 | Gerenciar filas | ACT-03, ACT-02 |
-| UC-07 | Configurar tipos de etapa | ACT-03, ACT-04 |
-| UC-08 | Emitir senha online | ACT-01 |
-| UC-09 | Emitir senha presencial | ACT-02, ACT-03 |
-| UC-10 | Chamar, rechamar e assumir senha | ACT-02, ACT-03 |
-| UC-11 | Finalizar ou cancelar atendimento (finalizar: ACT-02, ACT-03; cancelar: também ACT-01 e ACT-04) | ACT-02, ACT-03 |
-| UC-12 | Gerenciar QR Codes | ACT-02, ACT-03 |
-| UC-13 | Consultar dashboard e estatísticas | ACT-02, ACT-03, ACT-04 |
-| UC-14 | Consultar auditoria | ACT-03, ACT-04 |
-| UC-15 | Acompanhar minha senha | ACT-01 |
+Os títulos seguem as issues do GitLab, que são a referência de rastreabilidade do grupo (padrão `UC-0YY - US-0XX - <nome>`). No Milestone 1, todos os casos de uso são realizados pela secretária (ACT-01).
 
-Os atores de cada caso de uso seguem o que as rotas exigem em `src/routes/` e `src/services/`. Quando o catálogo e o código divergem, a seção [Divergências](#divergências) registra.
+| Código | Caso de uso                               | História de origem | Ator principal |
+| ------ | ----------------------------------------- | ------------------ | -------------- |
+| UC-001 | Cadastro de cliente                       | US-003             | ACT-01         |
+| UC-002 | Atualizar informações do cliente          | US-004             | ACT-01         |
+| UC-003 | Visualizar lista de clientes cadastrados  | US-010             | ACT-01         |
+| UC-004 | Cadastro um veículo                       | US-006             | ACT-01         |
+| UC-005 | Atualização informações do veículo        | US-007             | ACT-01         |
+| UC-006 | Cadastrar orçamento                       | US-016             | ACT-01         |
+| UC-007 | Visualizar lista de orçamentos feitos     | US-000             | ACT-01         |
+| UC-008 | Visualizar lista de veículos cadastrados  | US-011             | ACT-01         |
+| UC-009 | Mudar o status do orçamento para recusado | US-028             | ACT-01         |
+| UC-010 | Mudar o status do orçamento para aprovado | US-028             | ACT-01         |
+| UC-011 | Visualizar perfil do cliente              | US-013             | ACT-01         |
+| UC-012 | Visualizar informações do veículo         | US-014             | ACT-01         |
+| UC-013 | Mudar status de uma OS para concluída     | US-002             | ACT-01         |
+| UC-014 | Criar OS                                  | US-028             | ACT-01         |
+| UC-015 | Cadastrar distribuidora                   | US-000             | ACT-01         |
+| UC-016 | Atualizar informações da distribuidora    | US-000             | ACT-01         |
+| UC-017 | Cadastrar peça                            | US-019             | ACT-01         |
+| UC-018 | Visualizar lista de distribuidoras        | US-000             | ACT-01         |
+| UC-019 | Visualizar informações da distribuidora   | US-000             | ACT-01         |
+| UC-020 | Visualizar lista de peças                 | US-000             | ACT-01         |
+| UC-021 | Visualizar informações da peça            | US-020             | ACT-01         |
+| UC-022 | Atualizar informações da peça             | US-021             | ACT-01         |
+| UC-023 | Visualizar lista de relatórios            | US-000             | ACT-01         |
+
+`US-000` indica caso de uso ainda sem história vinculada.
 
 ## Documentos desta pasta
 
 - [PM Canvas](pm-canvas.md), com o desenho em grade em [pm-canvas.svg](pm-canvas.svg).
-- [RFP fictícia do cliente](rfp.md), ponto de partida, sem requisitos prontos.
+- [RFP do cliente](rfp.md), ponto de partida, sem requisitos prontos.
 - [Glossário](glossario.md), termos do domínio em ordem alfabética.
 
 ## Divergências
 
-Diferenças entre o catálogo da disciplina e o código. Vale o código; a frente responsável deve decidir o ajuste.
+Diferenças entre os requisitos registrados no GitLab e o banco do Milestone 2 (`milestone_2/ddl.sql`). A frente responsável deve decidir o ajuste.
 
-1. **Flows, chat, notificações e landing page sem caso de uso.** O código tem `/flows…`, `/senhas/:id/flow/*`, `/senhas/:id/chat`, `/notificacoes…` e `GET /landing-page`. O catálogo fixo (UC-01 a UC-15) não cobre nenhum deles. A frente de requisitos precisa decidir se entram em um UC existente ou em um novo ID.
-2. **Classe `Usuario` do catálogo.** O model no Prisma se chama `User`, mapeado para a tabela `users`. A frente de classes deve escolher entre `Usuario` (nome do catálogo) e `User` (nome do schema). Esta pasta usa "Usuário" no glossário, com a referência ao model.
-3. **Classe `Papel`.** No schema, `Papel` é um enum. A ligação usuário-papel é o model `UsuarioPapel`, tabela `usuario_papeis`. Não há classe `Papel` própria.
-4. **Contexto da disciplina.** O enunciado fala em Fábrica de Software I. O `documentacao/README.md` do projeto diz que o sistema é o exemplo da disciplina de Web Services (CST em ADS, IFRO, 2026/2). Os dois podem coexistir, mas o cabeçalho dos documentos desta pasta usa o nome do enunciado.
+1. **Ciclo de status da OS.** A issue RF-06 descreve o ciclo `Aprovada → em execução → concluída`. O banco (`ck_os_status`) usa `aberta`, `em execução` e `concluída`, e a regra decidida pelo grupo é que `aprovado` pertence ao orçamento, não à OS. O texto da RF-06 precisa ser atualizado.
+2. **Meio da resposta do cliente.** A RF-02 exige registrar o meio pelo qual a aprovação chegou (presencial, telefone ou mensagem). O banco não tem coluna com esse nome; a coluna `orca_formato` pode cumprir esse papel, mas não tem restrição de valores. Confirmar com o responsável pelo banco.
+3. **Distribuidora e pagamento sem requisito.** O banco tem `distribuidora`, `peca_distribuidora`, `pagamento` e `pagamento_parcelas`. A RF-05 cita apenas "fornecedor" da peça, e os casos de uso de distribuidora (UC-015, UC-016, UC-018 e UC-019) apontam para `US-000`. Pagamento não aparece em nenhum requisito.
+4. **Autenticação sem caso de uso.** A RF-01 e a US-001 tratam da autenticação da secretária, mas o catálogo não tem UC de login. A RNF-02 fala em "matrícula e senha", e o banco guarda o acesso em `func_login` e `func_senha`.
+5. **Atores sem login.** Mecânico (US-20) e gestor da oficina (US-27) aparecem nas histórias, mas a premissa do Milestone 1 é que só a secretária acessa o sistema. Os códigos ACT-02 e ACT-03 identificam partes interessadas, não perfis de acesso.
+6. **Numeração das histórias.** Há histórias fora do padrão `US-0XX` (US-26, US-27, US-28, "US -20" e "US - 030"). A "US -20" (agenda de boxes) usa o mesmo número da US-020 (detalhes da peça), e a US-018 e a US-27 têm o mesmo título.
 
 ## Veja também
 
 - [PM Canvas](pm-canvas.md)
-- [RFP fictícia do cliente](rfp.md)
+- [RFP do cliente](rfp.md)
 - [Glossário](glossario.md)
 - [Processo](../02-processo/README.md)
 - [Requisitos](../03-requisitos/README.md)

@@ -1,113 +1,127 @@
-# RFP: sistema de filas para atendimento público
+# RFP 2: gestão de oficinas mecânicas
 
 Fábrica de Software I · Milestone 1 · documento de partida
 
-> **Documento fictício, para fins didáticos.** O órgão, as pessoas, os números e os prazos são inventados para o exercício. Este texto traz necessidades, não requisitos prontos. Cabe ao grupo transformar cada necessidade em requisitos, casos de uso e histórias de usuário.
+> **Documento de partida da disciplina.** A RFP 2 foi apresentada pelo professor, com o cliente Antônio Júnior. Este texto consolida o contexto e as necessidades como o grupo as registrou no PM Canvas do Milestone 1 e nas issues do GitLab. Ele traz necessidades, não requisitos prontos: cada necessidade é transformada em requisitos, casos de uso e histórias de usuário no GitLab.
 
-## 1. Órgão solicitante
+## 1. Solicitante
 
-Município de Exemplo (fictício), por meio de sua Secretaria de Atendimento ao Cidadão (fictícia). A secretaria atende em três unidades: protocolo de documentos, emissão de certidões e atendimento a benefícios. Cada unidade tem balcões e, hoje, controla a fila em papel.
+Antônio Júnior, cliente do projeto, em nome de uma oficina mecânica de carros. A oficina atende clientes no balcão, distribui o trabalho entre boxes e mecânicos e mantém um estoque de peças.
 
 ## 2. Contexto
 
-Nos dias de maior movimento, as filas chegam a algumas dezenas de pessoas. O cidadão não sabe quanto vai esperar e não tem como saber se ainda vale ficar. O servidor não tem registro de quem foi atendido, por quem nem em quanto tempo. A secretaria quer reduzir a espera no balcão e passar a ter números para planejar o atendimento.
+A oficina controla ordens de serviço em papel e em planilhas soltas. Não há registro de quem autorizou cada serviço, o que dificulta comprovar que o cliente aprovou o gasto. Consultar o histórico de um veículo que já passou pela oficina é difícil. A oficina também não acompanha a ociosidade dos funcionários e dos boxes, nem o estoque de peças.
 
-A secretaria também quer aceitar retirada de senha pelo celular, sem obrigar o cidadão a estar fisicamente na fila para entrar nela.
+O cliente quer um sistema moderno de gestão que registre o atendimento do balcão até a entrega do veículo.
 
 ## 3. Objeto da contratação
 
-Um sistema web e uma API para:
+Um sistema web para:
 
-- emitir senha pela internet e no balcão;
-- acompanhar a posição na fila;
-- chamar, rechamar, transferir e finalizar atendimentos;
-- configurar, por unidade, filas, mesas, etapas e QR Codes;
-- consultar painéis e a trilha de auditoria.
-
-A plataforma deve atender mais de um órgão. Os dados de cada órgão ficam isolados dos demais.
+- atender o cliente no balcão e manter o cadastro de clientes e veículos;
+- montar o orçamento e registrar a decisão do dono do veículo;
+- abrir e acompanhar a ordem de serviço até a conclusão;
+- distribuir o trabalho entre boxes e mecânicos;
+- consultar o histórico de cada veículo pela placa;
+- controlar o estoque de peças;
+- consultar o relatório das ordens de serviço.
 
 ## 4. Necessidades do cliente
 
-As necessidades estão em linguagem de negócio. Cada uma deve virar um ou mais requisitos.
+As necessidades estão em linguagem de negócio. A coluna "Registrado como" indica o requisito que o grupo abriu no GitLab para cada uma.
 
-| Código | Necessidade |
-|---|---|
-| N01 | O cidadão retira senha pelo celular e vê a própria posição na fila. |
-| N02 | O atendente emite senha no balcão para quem não tem conta. |
-| N03 | Em fila presencial, o cidadão prova que está no local com o QR Code do balcão. O código troca e expira. |
-| N04 | O cidadão é avisado quando for chamado e quando for o próximo. |
-| N05 | O atendente chama, rechama, assume o atendimento de outro colega e finaliza ou cancela. |
-| N06 | Há prioridades legais e prioridade por fidelidade, configuráveis por fila. |
-| N07 | O administrador da unidade cria filas, mesas, tipos de etapa, QR Codes e usuários da própria unidade. |
-| N08 | O administrador geral aprova ou rejeita pedidos de cadastro de órgão e gerencia usuários de todos. |
-| N09 | Um atendimento pode passar por mais de uma etapa (por exemplo, triagem, atendimento e entrega), com histórico. |
-| N10 | Cidadão e atendente conversam pelo sistema enquanto o atendimento está em andamento. |
-| N11 | A unidade tem um painel com volume e tempos, e toda ação administrativa fica registrada. |
-| N12 | Site e aplicativo móvel funcionam com a mesma regra de negócio. |
+| Código | Necessidade                                                                                                      | Registrado como                |
+| ------ | ---------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| N01    | Só pessoas autorizadas operam o sistema, e cada registro identifica quem o fez.                                  | RF-01, RNF-02                  |
+| N02    | A secretária recebe o cliente, verifica se ele veio trazer ou buscar um veículo e registra a retirada.           | RF-01                          |
+| N03    | Os dados de clientes e veículos ficam cadastrados e podem ser atualizados.                                       | RF-01                          |
+| N04    | O orçamento separa peças e mão de obra, e o serviço só começa depois que o dono do veículo aprova.               | RF-02                          |
+| N05    | A oficina consegue comprovar quando e por qual meio o cliente aprovou ou recusou o orçamento.                    | RF-02                          |
+| N06    | Cada OS aprovada vai para um box e um mecânico, e um box atende um veículo por vez.                              | RF-03                          |
+| N07    | A oficina sabe quanto tempo cada veículo ficou parado.                                                           | RF-03                          |
+| N08    | Qualquer funcionário autorizado consulta o que já foi feito em um veículo, pela placa.                           | RF-04                          |
+| N09    | A oficina sabe o que tem em estoque e é avisada quando uma peça atinge o mínimo.                                 | RF-05                          |
+| N10    | A OS percorre um ciclo de status claro, com histórico de cada mudança.                                           | RF-06                          |
+| N11    | A oficina consulta um relatório das ordens de serviço, com cliente, funcionário, mecânico, valor e datas.        | RF-07                          |
+| N12    | O sistema é simples para a secretária, responde rápido, fica disponível no horário da oficina e não perde dados. | RNF-01, RNF-03, RNF-04, RNF-05 |
 
 ## 5. Usuários
 
-| Perfil | Quem é | O que faz no sistema |
-|---|---|---|
-| Cidadão | Pessoa que precisa do serviço | Retira senha, acompanha, cancela a própria senha |
-| Operador | Servidor no balcão | Emite senha presencial, chama, atende e finaliza |
-| Administrador da unidade | Chefe da unidade | Configura a unidade, seus usuários e seus QR Codes; também atende |
-| Administrador geral | Equipe da secretaria que cuida da plataforma | Aprova órgãos e administra usuários de todos |
+| Perfil            | Quem é                                       | O que faz no sistema                                                              |
+| ----------------- | -------------------------------------------- | --------------------------------------------------------------------------------- |
+| Secretária        | Funcionária do balcão, com cadastro especial | Atende o cliente, cadastra clientes e veículos, registra orçamentos, OS e estoque |
+| Mecânico          | Funcionário que executa o serviço            | Analisa o veículo e monta o orçamento; executa a OS no box designado              |
+| Gestor da oficina | Responsável pela oficina                     | Acompanha o status das OS e o uso dos boxes                                       |
+
+No Milestone 1, apenas a secretária tem login no sistema.
 
 ## 6. Restrições
 
-- **Dados pessoais:** o tratamento segue a LGPD. Pede-se finalidade declarada, coleta mínima e possibilidade de o cidadão ver os próprios dados.
-- **Acessibilidade:** as telas públicas seguem a WCAG 2.1 no nível AA.
-- **Integrações:** e-mail e notificações push passam por um serviço externo já contratado pela secretaria. Não há SMTP próprio.
-- **Software:** sem licença paga de software de base. Serviços externos, se houver, têm custo informado na proposta.
 - **Prazo:** as entregas seguem o calendário da disciplina (ver seção 10).
+- **Gestão do projeto:** issues, milestones e quadro Kanban no GitLab da disciplina, com gestão coletiva do quadro e as métricas Cycle Time, Lead Time, Throughput, WIP e Rework Rate.
+- **Software:** sem licença paga. O grupo usa GitLab institucional, Figma no plano Education e MySQL.
 
 ## 7. Fora do escopo
 
-- Pagamento de taxas.
-- Agendamento de atendimento para data futura.
-- Integração com prontuários ou com cadastros de cidadãos de outros órgãos.
+Nenhuma exclusão foi formalizada com o cliente até esta versão. Os itens com decisão pendente estão na seção 12.
 
 ## 8. Critérios de aceitação gerais
 
-- Um operador chama a senha seguinte sem recarregar a tela.
-- Nenhuma ação administrativa acontece sem registro na auditoria.
-- Um administrador de um órgão não vê dados de outro órgão.
-- Um cidadão não consegue retirar senha em uma fila presencial sem o QR Code válido.
-- Os valores e prazos dos critérios específicos são definidos na análise, com base nas respostas da seção 12.
+- Nenhuma OS é criada a partir de um orçamento que não esteja aprovado.
+- Toda mudança de status de orçamento e de OS fica registrada com data, hora e autor.
+- Um box com OS em execução não recebe outra designação.
+- A consulta pela placa mostra o histórico das OS do veículo, ou indica que é a primeira visita.
+- Os valores de desempenho e disponibilidade são definidos com o cliente, com base nas respostas da seção 12.
 
 ## 9. Entregáveis esperados
 
 - Visão do produto, PM Canvas e glossário.
-- Requisitos funcionais, não funcionais, histórias de usuário e backlog.
-- Protótipo de telas (wireframes) por perfil e mapa do site.
-- Modelagem: casos de uso, classes, sequência, atividades e estados.
-- Modelo de dados (conceitual, lógico, dicionário e script de criação).
-- API implementada, testada e documentada.
-- Matriz de rastreabilidade entre visão, requisitos, modelos e código.
+- Requisitos funcionais, não funcionais, histórias de usuário e métricas do processo.
+- Wireframes, protótipo navegável e mapa do site.
+- Modelagem: casos de uso, sequência, atividades, estados e classes, além do IFML.
+- Modelo de dados (DER e script de criação).
+- Matriz de rastreabilidade entre visão, requisitos e modelos.
 
 ## 10. Calendário
 
-Datas definidas pelo professor da disciplina, por milestone. Não há data neste documento.
+| Data       | Evento                          |
+| ---------- | ------------------------------- |
+| 08/09/2026 | Milestone 1, monitoria          |
+| 15/09/2026 | Milestone 1, apresentação       |
+| 13/10/2026 | Milestone 2, monitoria          |
+| 20/10/2026 | Milestone 2, apresentação       |
+| 01/12/2026 | Milestone 3, monitoria          |
+| 08/12/2026 | Milestone 3, apresentação final |
+
+Fonte: PM Canvas do Milestone 1 (`milestone_1/gestao-de-oficina-mecanica-de-carros.html`) e milestones do grupo no GitLab.
 
 ## 11. Como o grupo será avaliado
 
-- Aderência das entregas às necessidades N01 a N12.
-- Consistência entre os artefatos: cada requisito deve chegar a um caso de uso, a uma história e a um trecho de código.
-- Clareza da documentação e das decisões registradas.
+Checklist de entrega do Milestone 3, conforme o modelo de issue do GitLab:
+
+| Item                        | Pontos |
+| --------------------------- | ------ |
+| Modelagem do banco de dados | 10     |
+| Diagramas UML               | 20     |
+| Processos                   | 5      |
+| Documentação do projeto     | 40     |
+| Apresentação                | 15     |
+| Autoavaliação               | 5      |
+| Nota do cliente             | 5      |
 
 ## 12. Perguntas em aberto ao cliente
 
-Estas perguntas devem ser respondidas antes da análise. Enquanto não houver resposta, a equipe registra a premissa adotada.
+Enquanto não houver resposta, a equipe registra a premissa adotada.
 
-1. Quanto tempo uma senha online vale antes de expirar, se é que expira?
-2. Quais prioridades legais a unidade atende, e quem comprova a elegibilidade?
-3. Filas online dispensam o QR Code? Filas presenciais exigem sempre?
-4. Por quais canais o cidadão quer ser avisado: no sistema, por e-mail, por notificação push, ou todos?
-5. Quem pode cancelar uma senha? Só o próprio cidadão, ou também o atendente?
-6. Quantas unidades e balcões cada órgão tem, em média e no pico?
-7. Por quanto tempo a auditoria deve ser guardada?
-8. Quais metas de tempo de espera a secretaria quer atingir?
+1. Qual tempo de resposta é aceitável nas consultas de histórico, estoque e relatórios (RNF-03)?
+2. Qual é o horário de funcionamento da oficina que define a disponibilidade exigida (RNF-04)?
+3. Quantos boxes e quantos mecânicos a oficina tem hoje?
+4. O nível mínimo de estoque é definido por peça ou por categoria, e quem o altera?
+5. Por quais meios o cliente responde ao orçamento, além de presencial, telefone e mensagem?
+6. O pagamento do serviço (inclusive parcelado) entra no sistema?
+7. O cadastro de distribuidoras é necessário, ou basta o nome do fornecedor na peça?
+8. Mecânico e gestor da oficina terão login em uma etapa futura?
+9. Por quanto tempo o histórico do veículo e das OS deve ser guardado?
 
 ## Veja também
 
