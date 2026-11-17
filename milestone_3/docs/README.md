@@ -1,6 +1,6 @@
 # Bancada: índice da documentação do projeto
-
-Milestones 1, 2 e 3 · Fábrica de Software I · Engenharia de Software · IFRO, Campus Vilhena · 2026/2
+s
+MMilestones 1, 2 e 3 · Fábrica de Software I · Engenharia de Software · IFRO, Campus Vilhena · 2026/2
 
 Este é o ponto de entrada da documentação do projeto. Aqui ficam o contexto do projeto, a equipe, o cliente, os catálogos de identificadores e o mapa de todos os artefatos. Os artefatos dos milestones anteriores ficam na raiz do repositório: o PM Canvas do Milestone 1 em `milestone_1/` e o banco do Milestone 2 em `milestone_2/` (`ddl.sql` e o modelo do MySQL Workbench).
 
