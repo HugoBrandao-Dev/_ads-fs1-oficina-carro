@@ -1,8 +1,6 @@
 # PM Canvas do Bancada
 
-Fábrica de Software I · Milestone 1 · situação em 13/11/2026
-
-O PM Canvas resume o projeto em uma página. A versão em grade está em [pm-canvas.svg](pm-canvas.svg). Este texto traz o que está em cada bloco, com as referências a requisitos e casos de uso e a fonte de cada fato. A primeira versão do canvas, apresentada no Milestone 1, está em `milestone_1/gestao-de-oficina-mecanica-de-carros.html`.
+O PM Canvas resume o projeto em uma página. A versão em grade está em [pm-canvas.svg](pm-canvas.svg). Este texto traz o que está em cada bloco, com as referências a requisitos e casos de uso e a fonte de cada fato.
 
 ![PM Canvas do Bancada em grade de 11 blocos](pm-canvas.svg)
 

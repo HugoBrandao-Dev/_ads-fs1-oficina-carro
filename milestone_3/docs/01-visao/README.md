@@ -6,7 +6,7 @@ Esta pasta parte da RFP 2 da disciplina (Gestão de Oficinas Mecânicas, cliente
 
 ## Problema
 
-A oficina controla clientes, veículos, orçamentos e ordens de serviço em papel e em planilhas soltas. Não há registro confiável de quem aprovou um orçamento, nem de quando e por qual meio a aprovação chegou. Consultar o histórico de um veículo que já passou pela oficina é difícil. Também falta controle sobre a ocupação dos boxes, a ociosidade dos mecânicos e o estoque de peças.
+Uma oficina faz todo o controla clientes, veículos, orçamentos e ordens de serviço em papel e em planilhas soltas. Não há registro confiável de quem aprovou um orçamento, nem de quando e por qual meio a aprovação chegou. Consultar o histórico de um veículo que já passou pela oficina é difícil. Também falta controle sobre a ocupação dos boxes, a ociosidade dos mecânicos e o estoque de peças.
 
 ## Visão do produto
 
