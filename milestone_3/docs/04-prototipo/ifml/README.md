@@ -145,13 +145,13 @@ Fluxos:
 3. Em "alterar status", a ação `Alterar status` registra a transição e recarrega a Leitura, e o histórico passa a mostrar o novo registro.
 4. Em "montar orçamento", a navegação leva à página Orçamento do IFML-05, com o `OID OS`.
 5. Em "editar" e "salvar", `Atualizar OS` volta à Leitura com `ok`. Com `ko`, a Edição permanece aberta: descrição do problema vazia, ou o carro já tem uma OS registrada.
-6. Em "nova OS", o número e o status inicial são gerados pelo sistema. `Abrir OS` leva à OS criada com `ok` (`OID OS nova`), ou mantém o formulário com `ko` (descrição do problema vazia).
+6. Em "nova OS", o número e o status inicial ("aberta") são gerados pelo sistema. `Abrir OS` leva à OS criada com `ok` (`OID OS nova`), ou mantém o formulário com `ko` (descrição do problema vazia).
 
 Pendências:
 
 - O filtro da lista não tem história no GitLab.
 - A US-002 (registro de retirada) ainda não foi modelada.
-- O status inicial da OS aparece como "a definir" na ação `Abrir OS`. Ver a divergência [I-02](#divergências-com-o-backlog).
+- O status inicial da OS foi fixado em "aberta", mas o texto da US-008 ainda diz "em andamento". Ver a correção [I-02](#correções-de-rastreabilidade).
 
 ## IFML-05: Orçamentos
 
@@ -253,14 +253,14 @@ Pendência: as US-019 a US-024 não têm critérios em Gherkin no GitLab. Os ram
 | OID orçamento    | Linha de uma aba do histórico ou Adicionar item (`ok`)             | Página Orçamento                            | 05         |
 | OID peça         | Linha das listas de peças ou Atualizar peça (`ok`)                 | Detalhe da peça                             | 07         |
 
-## Divergências com o backlog
+## Correções de rastreabilidade
 
-Os rodapés de dois diagramas foram desenhados antes da revisão das histórias na [pasta de requisitos](../../03-requisitos/historias-de-usuario.md). As tabelas deste documento já seguem o backlog atual; os rodapés no Figma devem ser corrigidos e os SVGs exportados de novo.
+Os rodapés do IFML-04 e do IFML-05 foram desenhados antes da revisão das histórias na [pasta de requisitos](../../03-requisitos/historias-de-usuario.md) e foram corrigidos no Figma em 17/11/2026.
 
-| ID   | Diagrama          | O que o diagrama diz                                                                                                             | Situação no backlog                                                                                                                       | Correção                                                                                                                                     |
-| ---- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| I-01 | IFML-04 e IFML-05 | O histórico de status da OS cita a US-018, a US-027 aparece como duplicada da US-018, e o Histórico de orçamentos aparece sem US | A US-018 trata do histórico de status do orçamento e é a tela principal de Orçamentos; a US-027 trata do histórico de status da OS (D-02) | No IFML-04, trocar US-018 por US-027 e retirar a pendência de duplicidade. No IFML-05, vincular o Histórico de orçamentos às US-018 e US-026 |
-| I-02 | IFML-04           | O status inicial da OS está "a definir" (US-008 diz "em andamento"; US-016 a US-018 dizem "Aberta")                              | O ciclo decidido para a OS é aberta → em execução → concluída; Orçada, Aprovada e Recusada pertencem ao orçamento                         | Fixar "aberta" como status inicial em `Abrir OS` e ajustar o texto da US-008                                                                 |
+| ID   | Diagrama          | Antes                                                                                                                              | Depois                                                                                               | Situação                                                                             |
+| ---- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| I-01 | IFML-04 e IFML-05 | O histórico de status da OS citava a US-018; a US-027 aparecia como duplicada da US-018; o Histórico de orçamentos aparecia sem US | O histórico de status da OS cita a US-027; o Histórico de orçamentos cita a US-018 e a US-026 (D-02) | Corrigido                                                                            |
+| I-02 | IFML-04           | O status inicial da OS estava "a definir"                                                                                          | A ação `Abrir OS` grava o status inicial "aberta", conforme o ciclo aberta → em execução → concluída | Corrigido no diagrama; falta ajustar o texto da US-008, que ainda diz "em andamento" |
 
 ## Limites do modelo
 
@@ -276,99 +276,3 @@ Os rodapés de dois diagramas foram desenhados antes da revisão das histórias 
 - [Wireframes](../wireframes/README.md) e [índice das telas](<../wireframes/Meuprojetooficina/0 - Índice.md>)
 - [Histórias de usuário](../../03-requisitos/historias-de-usuario.md)
 - [Matriz de rastreabilidade](../../07-rastreabilidade/matriz.md)
-
-# IFML: emissão e chamado de senha
-
-Fábrica de Software I · Protótipo do sistema (UC-08 a UC-11) · Milestones 2 e 3
-
-Este diretório traz dois modelos IFML (Interaction Flow Modeling Language) das interações centrais do FilaCidadã. Cada modelo tem duas páginas (ViewContainers). Eles descrevem como o usuário passa de uma tela para outra, quais ações chamam a API e quais parâmetros viajam entre as telas. As telas referenciadas são as do [inventário do protótipo](../README.md), e os endpoints vêm de `src/routes`.
-
-## Notação usada
-
-| Elemento IFML     | Representação no SVG                                    | Uso neste protótipo                                                              |
-| ----------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| ViewContainer     | Retângulo grande, borda forte, rótulo «ViewContainer»   | Página da aplicação (uma tela do inventário, ou tela com seções)                 |
-| ViewComponent     | Retângulo branco, rótulo «ViewComponent»                | Bloco de dados ou lista dentro da página, com a fonte (endpoint GET)             |
-| Event             | Círculo azul sobre a borda de um componente, com rótulo | Ação do usuário: clique, seleção ou botão                                        |
-| Action            | Retângulo arredondado cinza, rótulo «Action»            | Operação no servidor, com o endpoint que executa                                 |
-| NavigationFlow    | Seta contínua                                           | Muda de página ou de bloco; pode ter condição entre colchetes                    |
-| DataFlow          | Seta tracejada                                          | Passa dados sem mudar de página (atualização de componente)                      |
-| Parameter binding | Rótulo sobre a seta, com o nome do parâmetro            | Valor que sai de um elemento e entra em outro (`filaId`, `senhaId`)              |
-| Guard             | Texto entre colchetes                                   | Condição para habilitar o fluxo (`[status = AGUARDANDO]`, `[ADMIN_INSTITUICAO]`) |
-
-Os modelos são feitos à mão em SVG, sem biblioteca, e seguem a legenda incluída em cada arquivo.
-
-## Modelo 1: emissão de senha online
-
-![IFML da emissão de senha online](ifml-emitir-senha.svg)
-
-Arquivo: [ifml-emitir-senha.svg](ifml-emitir-senha.svg). Páginas: A (Fila e emissão, telas T-CID-01 e T-CID-02) e B (Minha senha, tela T-CID-04).
-
-| Elemento                | Tipo IFML     | Página | Tela     | Endpoint                   |
-| ----------------------- | ------------- | ------ | -------- | -------------------------- |
-| Lista de filas          | ViewComponent | A      | T-CID-01 | GET /filas                 |
-| Detalhe da fila         | ViewComponent | A      | T-CID-02 | GET /filas/:id             |
-| Emitir senha (clique)   | Event         | A      | T-CID-02 | n/a                        |
-| EmitirSenhaOnline       | Action        | A      | T-CID-02 | POST /filas/:filaId/senhas |
-| Detalhe da senha        | ViewComponent | B      | T-CID-04 | GET /senhas/:id            |
-| Cancelar senha (clique) | Event         | B      | T-CID-04 | n/a                        |
-| CancelarSenha           | Action        | B      | T-CID-04 | POST /senhas/:id/cancelar  |
-
-Fluxos:
-
-1. O cidadão escolhe uma fila na lista. O `filaId` da fila selecionada vai por DataFlow ao detalhe da fila (`T-CID-01` para `T-CID-02`).
-2. Em "emitir senha", a ação `EmitirSenhaOnline` envia o `filaId`. Com sucesso, a navegação leva à página B e passa o `senhaId` da senha criada para o detalhe (`T-CID-04`).
-3. Em "cancelar senha", a ação só fica habilitada com `[status = AGUARDANDO]`. Depois de cancelar, a navegação volta à lista de filas (página A).
-4. Se a ação falhar, a página permanece como está e mostra a mensagem devolvida pela API. O modelo não desenha esse ramo para não poluir o diagrama.
-
-Variante presencial: a emissão feita pelo operador (UC-09, `T-OPE-05`) segue a mesma estrutura, com a ação `EmitirSenhaPresencial` (`POST /filas/:filaId/senhas/presencial`) no lugar de `EmitirSenhaOnline`, sem página do cidadão. Ela não foi desenhada aqui para manter o modelo em duas páginas.
-
-## Modelo 2: chamado e atendimento de senha
-
-![IFML do chamado e atendimento de senha](ifml-chamar-senha.svg)
-
-Arquivo: [ifml-chamar-senha.svg](ifml-chamar-senha.svg). Páginas: A (Painel e fila, telas T-OPE-01 e T-OPE-02) e B (Atendimento da senha, telas T-OPE-03 e T-OPE-04).
-
-| Elemento                 | Tipo IFML     | Página | Tela     | Endpoint                                       |
-| ------------------------ | ------------- | ------ | -------- | ---------------------------------------------- |
-| Painel do operador       | ViewComponent | A      | T-OPE-01 | GET /senhas/meu-atendimento                    |
-| Fila (senhas aguardando) | ViewComponent | A      | T-OPE-02 | GET /senhas                                    |
-| Chamar próxima (clique)  | Event         | A      | T-OPE-02 | n/a                                            |
-| ChamarSenha              | Action        | A      | T-OPE-02 | POST /senhas/:id/chamar                        |
-| Rechamar (clique)        | Event         | A      | T-OPE-01 | n/a                                            |
-| RechamarSenha            | Action        | A      | T-OPE-01 | POST /senhas/:id/rechamar                      |
-| Detalhe da senha         | ViewComponent | B      | T-OPE-03 | GET /senhas/:id                                |
-| AssumirSenha             | Action        | B      | T-OPE-03 | POST /senhas/:id/assumir `[ADMIN_INSTITUICAO]` |
-| FinalizarSenha           | Action        | B      | T-OPE-04 | POST /senhas/:id/finalizar                     |
-| CancelarSenha            | Action        | B      | T-OPE-04 | POST /senhas/:id/cancelar                      |
-
-Fluxos:
-
-1. O operador chama a próxima senha da fila. `ChamarSenha` tem sucesso, e a navegação leva à página B com o `senhaId`.
-2. Na página A, "rechamar" aciona `RechamarSenha` sem mudar de página. A senha continua na mesma tela.
-3. Na página B, "assumir" só é habilitado para o administrador da instituição (`[ADMIN_INSTITUICAO]`, conforme `authorize` em `senhaRoutes.js`). A ação atualiza o detalhe por DataFlow, sem mudar de página.
-4. "Finalizar" e "cancelar" encerram o atendimento e a navegação volta à fila (página A).
-
-Fora deste modelo: o encaminhamento e a alta no fluxo da senha (`T-OPE-06`, UC-10 e UC-11) têm endpoints próprios (`/flows/:id/senhas/:senhaId/encaminhar` e `/alta`). Não cabem nas duas páginas e ficam para um terceiro modelo, se a disciplina pedir.
-
-## Parâmetros
-
-| Parâmetro | Origem                                     | Destino                             | Modelo |
-| --------- | ------------------------------------------ | ----------------------------------- | ------ |
-| filaId    | Fila selecionada (lista)                   | Detalhe da fila e EmitirSenhaOnline | 1      |
-| senhaId   | EmitirSenhaOnline (sucesso)                | Detalhe da senha (página B)         | 1      |
-| senhaId   | Clique em "chamar próxima" (linha da fila) | Detalhe da senha (página B)         | 2      |
-
-## Limites do modelo
-
-- Os modelos mostram o caminho feliz e as ações de cancelamento. Os ramos de erro são descritos no texto.
-- Não há modelagem de autenticação. Assume-se sessão válida; sessão expirada segue para `T-PUB-05` (código 498).
-- Os nomes de ações (`EmitirSenhaOnline`, `ChamarSenha`) são os nomes de caso de uso da API, não de classes do domínio.
-
-## Veja também
-
-- [Protótipo: índice e inventário de telas](../README.md)
-- [Mapa do site](../site-map.md)
-- [Casos de uso](../../05-modelagem/casos-de-uso/README.md)
-- [Sequência de emissão e atendimento de senha](../../05-modelagem/sequencia/README.md)
-- [Estados da senha](../../05-modelagem/estados/README.md)
