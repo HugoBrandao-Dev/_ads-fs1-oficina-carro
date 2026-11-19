@@ -2,7 +2,7 @@
 
 Milestone 2 · Modelagem do domínio (Fábrica de Software I)
 
-O diagrama modela o domínio do FilaCidadã: as classes que o negócio reconhece, seus atributos, operações e associações. Não é diagrama de tabelas, controllers ou DAO. O mapeamento para o banco está em [dicionário de dados](../../06-banco-de-dados/dicionario-de-dados.md).
+O diagrama modela o domínio da Gestão de Oficina Mecânica de Carros: as classes que o negócio reconhece, seus atributos, operações e associações. Não é diagrama de tabelas, controllers ou DAO. O mapeamento para o banco está em [dicionário de dados](../../06-banco-de-dados/dicionario-de-dados.md).
 
 ## Arquivos
 
@@ -11,30 +11,29 @@ O diagrama modela o domínio do FilaCidadã: as classes que o negócio reconhece
 
 ![Diagrama de classes do núcleo do domínio](classes.svg)
 
-![Diagrama de classes de apoio: fluxos, chat, notificações, auditoria e landing page](classes-apoio.svg)
-
 ## Lista oficial de classes
 
 Nomes oficiais. OCL, estados e sequência usam estes mesmos nomes. Telas são citadas por perfil (CID, OPE, ADI, ADP, PUB); os IDs finais dos wireframes são da frente de protótipo.
 
 | Classe | Responsabilidade | Telas (perfil) | Tabela |
 |---|---|---|---|
-| Usuario | Pessoa com acesso ao sistema. Acumula papéis e pode estar vinculada a uma instituição. | PUB (login, cadastro), CID (perfil), ADI e ADP (usuários) | `users` (papéis em `usuario_papeis`) |
-| Instituicao | Órgão atendido. Passa pelo ciclo PENDENTE, APROVADA ou REJEITADA. | PUB (solicitação), ADP (avaliação), ADI (dados) | `instituicoes` |
-| TipoEtapa | Vocabulário de etapas que a instituição configura. | ADI (tipos de etapa) | `tipos_etapa` |
-| Fila | Serviço de atendimento. Define regras de emissão, prioridade e QR Code. | CID (escolher fila), OPE e ADI (filas) | `filas` |
-| Mesa | Estação de atendimento de uma fila, identificada por número. | OPE (chamada), ADI (mesas) | `mesas` |
-| QrCode | Código que autoriza a emissão presencial. Rotativo ou fixo, com validade e tolerância. | OPE e ADI (QR Codes) | `qr_codes` |
-| Senha | Ficha de atendimento e seu ciclo de vida (AGUARDANDO, EM_ATENDIMENTO, FINALIZADA, CANCELADA). | CID (emitir, minha senha), OPE (chamar, finalizar) | `senhas` |
-| Fluxo | Sequência de etapas em filas diferentes, pela qual uma senha passa. | ADI (flows), OPE (encaminhar), CID (status) | `flows` |
-| EtapaFluxo | Passo de um fluxo, associado a uma fila. | ADI (flows) | `flow_steps` |
-| TransicaoFluxo | Caminho permitido entre duas etapas. | ADI (flows) | `flow_transitions` |
-| RastreioFluxo | Andamento de uma senha dentro de um fluxo. Uma senha tem no máximo um rastreio ativo. | OPE (encaminhar), CID (acompanhar) | `senha_flow_trackings` |
-| HistoricoFluxo | Registro de cada passagem da senha por uma etapa. | OPE e CID (histórico do fluxo) | `senha_flow_historicos` |
-| ChatMensagem | Mensagem trocada entre cidadão e operador sobre uma senha. | CID (minha senha), OPE (atendimento) | `chat_mensagens` |
-| Notificacao | Aviso entregue a um usuário (chamada, finalização, aprovação etc.). | Cabeçalho de todas as telas autenticadas | `notificacoes` |
-| Auditoria | Registro de ação sensível, com ator, entidade e dados. | ADP e ADI (auditoria) | `auditorias` |
-| LandingPage | Conteúdo editável da página pública, uma linha por chave. | PUB (página inicial), ADP (edição) | `landing_pages` |
+| Pessoa | Pessoa com ou sem acesso ao sistema. Pode estar vinculada a um Cliente ou Funcionário. | Secretária login, cadastros, listagens, atualizações, visualiações. Estoquista: login, cadastros, listagens, atualizações, visualiações, Gerente: visualizações | `pessoa` (papéis em `funcionario`) |
+| Endereço | Informação de localização do cliente | Secretária (cadastro, listagem, atualização e visualização) | papéis em `pessoa` |
+| Cliente | Pessoa que traz o veículo para fazer o orçamento. |  ||
+| Veículo | Veículo do cliente. Se víncula ao Orçamento | Secretária (cadastro, listagem, atualização e visualização) | `veiculo` |
+| Orçamento | Orçamento feito para o Veículo. Passa pelo ciclo EM ABERTA, ORÇADA, APROVADA e RECUSADO | Secretária (cadastro, listagem, atualização e visualização) | `orcamento ` |
+| OrdemServico | Valor e detalhes do serviço a ser executado no veículo. Possa pelo ciclo APROVADO, EM EXECUÇÃO e CONCLUÍDO| Secretária (cadastro, listagem, atualização e visualização) | `ordem_servico` |
+| Box | Local onde será executada a Ordem de Serviço. Passa pelo ciclo LIVRE e EM EXECUÇÃO | Secretária: (seleção) | `box` |
+| Servico | Tipo de servico a ser realizado no veículo. | Secretária (seleção) | `servico ` |
+| Funcao | Função desemplenhada pelo funcionário e é, também, o __NÍVEL DE ACESSO__ ao sistema. | DBA | `funcao` |
+| Peca | Peças presentes no estoque e que podem compor o Orçamento do veículo. | Estoquista (cadastro, listagem, atualização e visualização), Secretária (seleção) | `peca` |
+| CarroMarca | Marca do veículo do cliente, mas é vínculado ao Modelo. | Secretária (seleção) | `carro_marca` |
+| CarroModelo | Modelo do carro do cliente. | Secretária (seleção) | `carro_modelo` |
+| ItemOrcamentoPeca | Classe associativa que vincula Peça ao Orçamento. | Secretária (orçamento) | `orcamento_peca` |
+| Distribuidora | Reponsável pela venda da peça à oficina. | Estoquista (cadastro, listagem, atualização e visualização) | `distribuidora ` |
+| PecaDistribuidora | Classe associativa que vincula Peça a Distribuidora | Estoquista (seleção) | `peca_distribuidora` |
+| Compatibilidade | Classe associativa entre Peça e Modelo do carro | Estoquista (visualização), Secretária (seleção) | `peca_modelo` |
+| HistoricoStatusOS | Guarda as informações do histórico de status da Ordem de Serviço | Gerente (relatório ) | `ordem_servico_historico` |
 
 ## Associações e multiplicidades
 
