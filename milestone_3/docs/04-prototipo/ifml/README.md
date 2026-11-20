@@ -4,7 +4,7 @@ Fábrica de Software I · Protótipo do sistema · Milestones 2 e 3
 
 Este diretório reúne os sete modelos IFML (Interaction Flow Modeling Language) do Bancada, o sistema de gestão de oficina mecânica da RFP 2. Cada modelo cobre uma área do menu lateral e descreve como a secretária passa de uma página para outra, quais eventos disparam ações no sistema, quais parâmetros viajam entre os elementos e o que acontece quando uma ação falha.
 
-Os diagramas foram desenhados na página "02 · IFML" do arquivo do Figma "[Gestão de Oficina Mecânica](https://www.figma.com/design/EHj0Js5KtOJ88TRQd5fTJI/Gest%C3%A3o-de-Oficina-Mec%C3%A2nica?node-id=3-36)" e exportados em SVG. As páginas modeladas correspondem às telas dos [wireframes](../wireframes/README.md), e cada componente indica a história de usuário do GitLab que o justifica.
+Os diagramas foram desenhados na página "02 · IFML" do arquivo do Figma "[Gestão de Oficina Mecânica](https://www.figma.com/design/EHj0Js5KtOJ88TRQd5fTJI/Gest%C3%A3o-de-Oficina-Mec%C3%A2nica?node-id=10164-723)" e exportados em SVG. As páginas modeladas correspondem às telas dos [wireframes](../wireframes/README.md), e cada componente indica a história de usuário do GitLab que o justifica.
 
 ## Modelos
 
@@ -18,7 +18,7 @@ Os diagramas foram desenhados na página "02 · IFML" do arquivo do Figma "[Gest
 | IFML-06 | [Histórico do veículo](#ifml-06-histórico-do-veículo) | Cadastros › Veículos › Histórico | US-029, US-030                                 | [6 - Veículos](<../wireframes/Meuprojetooficina/6 - Veículos/>) (6.07 a 6.11)                                          |
 | IFML-07 | [Peças e estoque](#ifml-07-peças-e-estoque)           | Cadastros › Peças e estoque      | US-019 a US-024                                | [7 - Peças e estoque](<../wireframes/Meuprojetooficina/7 - Peças e estoque/>)                                          |
 
-O sistema tem um único perfil de acesso no escopo atual, a secretária. Por isso não há um modelo por perfil: a divisão segue as áreas do menu lateral (Atendimento, Cadastros e Gestão).
+O [site map](../site-map.md) distribui as áreas entre três perfis: secretária, estoquista e gerente. Os modelos concentram-se na secretária, que é quem mais usa o sistema, e a divisão segue as áreas do menu lateral (Atendimento, Cadastros e Gestão), não os perfis. O IFML-07 descreve as telas de peças, que no site map pertencem ao estoquista.
 
 ## Notação usada
 

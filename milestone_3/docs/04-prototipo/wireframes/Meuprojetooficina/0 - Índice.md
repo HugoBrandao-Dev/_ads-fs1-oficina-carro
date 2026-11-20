@@ -1,5 +1,7 @@
 # Índice das telas organizadas
 
+Relação entre o nome de cada tela nesta pasta e o nome do quadro exportado do Figma. A convenção de nomes e a ligação com o site map estão no [README do protótipo](../../README.md).
+
 
 ## 1 - Login
 
