@@ -75,11 +75,10 @@ Leitura: o número junto a uma classe indica quantas instâncias dela se ligam a
 
 ## Decisões de modelagem
 
-- **Papel como enumeração, não classe.** `Usuario.papeis` é um conjunto de `Papel`. A tabela `usuario_papeis` é só a persistência desse conjunto. Não há herança entre perfis: um mesmo usuário pode acumular papéis (ex.: admin de instituição que também atende como operador), então subclasses como `Operador` ou `Cidadao` estariam erradas.
-- **Escopo do domínio.** Ficaram fora as tabelas técnicas do BetterAuth (`sessions`, `accounts`, `verifications`), as chaves primárias e as chaves estrangeiras. Identificadores e FKs são do modelo lógico, não do diagrama de classes.
-- **Composição onde a parte não tem sentido sozinha.** Tipos de etapa, filas, mesas, QR Codes, etapas e transições de fluxo, e o histórico de um rastreio. Senha não é composição de Fila: é associação, com ciclo próprio como registro de atendimento. A exclusão em cascata de fila é regra do banco, não do domínio.
-- **Operações de domínio, não endpoints.** Os nomes seguem as regras (ex.: `Senha.chamar`, `Fila.emitirOnline`, `Instituicao.reconsiderar`), não as rotas HTTP. Cada operação corresponde a uma transição ou regra do service.
-- **Estados ficam em `estados/`.** O enum `StatusSenha` aparece como atributo; as transições e guardas (ex.: cancelar só em AGUARDANDO) são do diagrama de estados.
+- **Papel como enumeração, não classe.** `Funcionario.funcao` é um conjunto de `Funcao`.
+- **Composição onde a parte não tem sentido sozinha.** Endereço de cliente, funcinonário ou distribuidora fica em Endereco e não podem existir sem dono; O serviço de um orçamento esta em ItemOrcamentoServico e não pode existir sem o orçamento; As peças para o orçamento ficam em ItemOrcamentoPeca e não pode existir sem o orçamento; Todas as vezes que o status de uma OS muda, tal mudança é registrada em HistoricoStatusOS e não pode existir sem um OS.
+- **Operações de domínio, não endpoints.** Os nomes seguem as regras (ex.: `OrdemServico.iniciar()`, `Orcamento.aprovar()`, `Peca.cadastrarEstoque()`), não as rotas HTTP. Cada operação corresponde a uma transição ou regra do service.
+- **Estados ficam em `estados/`.** Os enums `HistoricoStatusOS.statusAnterior`, `HistoricoStatusOS.statusNovo`, `OrdemServico.status`, `Orcamento.status`, `Box.status` aparece como atributo; as transições são do diagrama de estados.
 - **Prioridade congelada na emissão.** `Senha.prioridadePeso` guarda o peso no momento da criação, porque a ordem de atendimento (`prioridadePeso`, `posicao`) depende dele. Mudar a configuração da fila não reordena senhas emitidas.
 - **Snapshots.** `HistoricoFluxo.filaSnapshot` e `ChatMensagem.nomeAutor` guardam texto do momento do registro, para que o histórico sobreviva a alterações ou exclusões.
 - **Mesa referenciada pelo número.** Em `Senha`, a estação é gravada pelo número. A associação Mesa e Senha existe no modelo, mas é ligação lógica (ver divergências).
