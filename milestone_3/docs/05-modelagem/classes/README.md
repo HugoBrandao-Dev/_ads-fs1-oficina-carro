@@ -6,23 +6,20 @@ O diagrama modela o domínio da Gestão de Oficina Mecânica de Carros: as class
 
 ## Arquivos
 
-- [classes.svg](classes.svg): núcleo do domínio (Instituicao, TipoEtapa, Usuario, Fila, Mesa, QrCode, Senha) e enumerações.
-- [classes-apoio.svg](classes-apoio.svg): fluxos (Fluxo, EtapaFluxo, TransicaoFluxo, RastreioFluxo, HistoricoFluxo), ChatMensagem, Notificacao, Auditoria e LandingPage. Instituicao, Fila, Senha e Usuario aparecem tracejadas, como referência ao núcleo.
+- [classes.svg](classes.svg): núcleo do domínio (Cliente, Funcionario, Veiculo, Orcamento, OrdemServico, etc.) e enumerações.
 
 ![Diagrama de classes do núcleo do domínio](classes.svg)
 
 ## Lista oficial de classes
-
-Nomes oficiais. OCL, estados e sequência usam estes mesmos nomes. Telas são citadas por perfil (CID, OPE, ADI, ADP, PUB); os IDs finais dos wireframes são da frente de protótipo.
 
 | Classe | Responsabilidade | Telas (perfil) | Tabela |
 |---|---|---|---|
 | Pessoa | Pessoa com ou sem acesso ao sistema. Pode estar vinculada a um Cliente ou Funcionário. | Secretária login, cadastros, listagens, atualizações, visualiações. Estoquista: login, cadastros, listagens, atualizações, visualiações, Gerente: visualizações | `pessoa` (papéis em `funcionario`) |
 | Endereço | Informação de localização do cliente | Secretária (cadastro, listagem, atualização e visualização) | papéis em `pessoa` |
 | Cliente | Pessoa que traz o veículo para fazer o orçamento. |  ||
-| Veículo | Veículo do cliente. Se víncula ao Orçamento | Secretária (cadastro, listagem, atualização e visualização) | `veiculo` |
-| Orçamento | Orçamento feito para o Veículo. Passa pelo ciclo EM ABERTA, ORÇADA, APROVADA e RECUSADO | Secretária (cadastro, listagem, atualização e visualização) | `orcamento ` |
-| OrdemServico | Valor e detalhes do serviço a ser executado no veículo. Possa pelo ciclo APROVADO, EM EXECUÇÃO e CONCLUÍDO| Secretária (cadastro, listagem, atualização e visualização) | `ordem_servico` |
+| Veiculo | Veículo do cliente. Se víncula ao Orçamento | Secretária (cadastro, listagem, atualização e visualização) | `veiculo` |
+| Orcamento | Orçamento feito para o Veículo. Passa pelo ciclo EM ABERTA, ORÇADA, APROVADA e RECUSADO | Secretária (cadastro, listagem, atualização e visualização) | `orcamento ` |
+| OrdemServico | Valor e detalhes do serviço a ser executado no veículo. Possa pelo ciclo APROVADO, EM EXECUÇÃO e CONCLUÍDO | Secretária (cadastro, listagem, atualização e visualização) | `ordem_servico` |
 | Box | Local onde será executada a Ordem de Serviço. Passa pelo ciclo LIVRE e EM EXECUÇÃO | Secretária: (seleção) | `box` |
 | Servico | Tipo de servico a ser realizado no veículo. | Secretária (seleção) | `servico ` |
 | Funcao | Função desemplenhada pelo funcionário e é, também, o __NÍVEL DE ACESSO__ ao sistema. | DBA | `funcao` |
@@ -41,46 +38,40 @@ Leitura: o número junto a uma classe indica quantas instâncias dela se ligam a
 
 | Associação | Multiplicidade (A e B) | Tipo | Observação |
 |---|---|---|---|
-| Instituicao e TipoEtapa | 1 e 0..* | Composição | Tipos pertencem à instituição |
-| Instituicao e Fila | 1 e 0..* | Composição | Filas pertencem à instituição |
-| Instituicao e Usuario | 0..1 e 0..* | Associação | Usuário pode não ter instituição (cidadão, admin da plataforma) |
-| Fila e Mesa | 1 e 0..* | Composição | |
-| Fila e QrCode | 1 e 0..* | Composição | Modo fixo mantém um QR Code ativo; rotativo gera vários |
-| Fila e Senha | 1 e 0..* | Associação | Senha é registro de atendimento, não parte da fila |
-| Mesa e Senha | 0..1 e 0..* | Associação | Senha atendida em uma estação. Sem FK no banco (ver divergências) |
-| Usuario e Senha (solicitante) | 0..1 e 0..* | Associação | Senha presencial não tem cidadão |
-| Usuario e Senha (operador) | 0..1 e 0..* | Associação | Preenchido na chamada |
-| Instituicao e Fluxo | 1 e 0..* | Associação | |
-| Fluxo e EtapaFluxo | 1 e 1..* | Composição | Fluxo precisa de ao menos uma etapa |
-| Fluxo e TransicaoFluxo | 1 e 0..* | Composição | |
-| EtapaFluxo e TransicaoFluxo | 1 e 0..* | Associação | Duas vezes: origem e destino |
-| Fila e EtapaFluxo | 1 e 0..* | Associação | Etapa executada em uma fila |
-| Fluxo e RastreioFluxo | 1 e 0..* | Associação | |
-| Senha e RastreioFluxo | 1 e 0..1 | Associação | Um rastreio ativo por senha |
-| RastreioFluxo e EtapaFluxo | 0..* e 0..1 | Associação | Etapa atual, atributo `etapaAtual` |
-| RastreioFluxo e HistoricoFluxo | 1 e 0..* | Composição | |
-| Senha e ChatMensagem | 1 e 0..* | Associação | |
-| Usuario e ChatMensagem | 1 e 0..* | Associação | Autor da mensagem |
-| Usuario e Notificacao | 1 e 0..* | Associação | Destinatário |
-| Instituicao e Notificacao | 0..1 e 0..* | Associação | Não desenhada em classes-apoio.svg para evitar cruzamentos |
-| Usuario e Auditoria | 0..1 e 0..* | Associação | Ator da ação (vazio em processos do sistema) |
-| Instituicao e Auditoria | 0..1 e 0..* | Associação | Não desenhada em classes-apoio.svg para evitar cruzamentos |
+| Cliente e Pessoa | -- | Herança | |
+| Cliente e Veiculo | 1 e * | Agregação | Cliente deve ser cadastrado antes do veículo |
+| ItemOrcamentoPeca e Orcamento | * e 1 | Composição | |
+| ItemOrcamentoServico e Orcamento | * e 1 | Composição | |
+| Funcionario e HistoricoStatusOS | 1 e * | Associação | |
+| Funcionario e Orcamento | 1 e * | Associação | |
+| Funcionario e Funcao | * e 1 | Associação | As funções devem estar previamente cadastradas no sistema |
+| Funcionario e Pessoa | -- | Herança | Informações pessoais, ficam em Pessoa |
+| OrdemServico e Box | * e 0..1 | Associação | |
+| OrdemServico e Funcionario | * e 0..1 | Associação | |
+| CarroMarca e CarroModelo | 1 e * | Associação | Marca deve existir antes do modelo |
+| CarroModelo e Veiculo | 1 e * | Associação | Modelo deve existir antes do veículo |
+| CarroModelo e Compatibilidade | 1 e * | Associação | |
+| Peca e Compatibilidade | 1 e * | Associação | |
+| Peca e ItemOrcamentoPeca | 1 e * | Associação | |
+| Peca e PecaDistribuidora | 1 e * | Associação | |
+| Distribuidora e PecaDistribuidora | 1 e * | Associação | |
+| Endereco e Distribuidora | 1 e 0..1 | Composição | |
+| Endereco e Pessoa | 1 e 0..1 | Composição | |
+| Servico e ItemOrcamentoServico| 1 e * | Associação | |
+| HistoricoStatusOS e OrdemServico | * e 1 | Composição | |
+| Veiculo e Orcamento | 1 e * | Associação | |
+| Orcamento e OrdemServico | 1 e 0..1 | Associação | OS só pode ser aberta para orçamento `APROVADO` |
 
 ## Enumerações
 
 | Enumeração | Literais | Usada em |
 |---|---|---|
-| Papel | ADMIN_PLATAFORMA, ADMIN_INSTITUICAO, OPERADOR, USUARIO_FINAL | Usuario.papeis |
-| StatusInstituicao | PENDENTE, APROVADA, REJEITADA | Instituicao.status |
-| TipoAtendimento | ONLINE, PRESENCIAL, HIBRIDO | Fila.tipoAtendimento |
-| ModoQrCode | ROTATIVO, FIXO | Fila.modoQrCode |
-| StatusSenha | AGUARDANDO, EM_ATENDIMENTO, CANCELADA, FINALIZADA | Senha.status |
-| PrioridadeSenha | LEGAL (peso 1), FIDELIDADE (peso 2), NORMAL (peso 3) | Senha.prioridade |
-| TipoTransicao | SEQUENCIAL, CONDICIONAL, ALTA | TransicaoFluxo.tipo |
-| StatusRastreio | EM_ANDAMENTO, CONCLUIDO, CANCELADO | RastreioFluxo.status |
-| TipoNotificacao | SENHA_CHAMADA, SENHA_FINALIZADA, SENHA_CANCELADA, SENHA_PROXIMA, SENHA_NOVA_NA_FILA, SENHA_TRANSFERIDA, SENHA_ENCAMINHADA_FLOW, SENHA_MOVIDA_FILA, FILA_CRIADA, FILA_REMOVIDA, FILA_ATUALIZADA, SOLICITACAO_INSTITUICAO, INSTITUICAO_APROVADA, INSTITUICAO_REJEITADA, USUARIO_CRIADO, SISTEMA | Notificacao.tipo |
-
-Os enums do banco foram mantidos com os mesmos literais. Os nomes dos papéis vêm de `src/constants/roles.js`.
+| Papel | Secretária, Estoquista, Gerente | Funcionario.funcao |
+| status(OS) | Aprovado, Em Execução e Concluído | OrdemServico.status |
+| statusAnterior | Aprovado, Em Execução e Concluído | HistoricoStatusOS.statusAnterior |
+| statusNovo | Aprovado, Em Execução e Concluído | HistoricoStatusOS.statusNovo |
+| status(Box) | Livre e Em Execução | Box.status |
+| status(Orcamento) | Em Aberta, Orçada, Aprovada e Recusado | Orcamento.status |
 
 ## Decisões de modelagem
 
